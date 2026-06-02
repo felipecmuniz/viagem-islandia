@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ísland — Roteiro 12 dias · Setembro 2026</title>
-<meta name="description" content="Guia completo da Ring Road da Islândia em 12 dias. Hotel Rangá + glacier hike + baleias em Húsavík + Friðheimar + Forest Lagoon. Setembro de 2026, dois casais, autoguiado.">
+<meta name="description" content="Guia completo da Ring Road da Islândia em 12 dias. Golden Circle + glacier hike no Vatnajökull + baleias em Húsavík + Friðheimar + Forest Lagoon + Sky Lagoon. Setembro de 2026, dois casais, autoguiado.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1092,6 +1092,51 @@ em { font-style: italic; color: var(--ice-soft); }
   color: var(--copper);
   letter-spacing: 0.05em;
 }
+.lodging-link {
+  display: inline-block;
+  color: var(--ice);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.lodging-link:hover { color: var(--aurora); }
+.lodging-link-icon { color: var(--aurora); font-size: 0.85em; }
+.lodging-book {
+  display: inline-block;
+  margin-top: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--aurora);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 203, 161, 0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.lodging-book:hover { border-color: var(--aurora); opacity: 0.85; }
+
+/* Botão "Ver rota no Google Maps" na área de mapa do dia */
+.map-gmaps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  padding: 0.7rem 1.2rem;
+  background: rgba(107, 203, 161, 0.08);
+  border: 1px solid rgba(107, 203, 161, 0.35);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--aurora);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.map-gmaps-btn:hover {
+  background: rgba(107, 203, 161, 0.16);
+  border-color: var(--aurora);
+}
+.map-gmaps-arrow { transition: transform 0.2s ease; }
+.map-gmaps-btn:hover .map-gmaps-arrow { transform: translateX(4px); }
 
 .food-list { list-style: none; }
 .food-list li {
@@ -1579,7 +1624,7 @@ table tr:hover { background: rgba(244, 241, 235, 0.02); }
             A escolha do sentido anti-horário não é estética — é estratégica. Os pontos turísticos mais densos ficam no início, quando energia e curiosidade estão no auge. Os trechos contemplativos ficam para o fim, quando o cansaço acumulado pede paisagens mais lentas.
           </p>
           <p>
-            Doze dias permitem cobrir todos os marcos icônicos da ilha com folga, incluindo pernoite premium no <strong style="color: var(--ice);">🌌 Hotel Rangá</strong>, glacier hike no Vatnajökull, baleias em Húsavík, Forest Lagoon e a icônica sopa de tomate em Friðheimar. Os Westfjords ficam fora deste recorte: exigiriam três dias adicionais e estradas mais difíceis.
+            Doze dias permitem cobrir todos os marcos icônicos da ilha com folga: o <strong style="color: var(--ice);">Golden Circle completo</strong> em um dia, glacier hike no Vatnajökull, baleias em Húsavík, banhos geotérmicos (Mývatn, Forest Lagoon e Sky Lagoon), a foto da aurora sobre o Kirkjufell e a icônica sopa de tomate em Friðheimar. Os Westfjords ficam fora deste recorte: exigiriam três dias adicionais e estradas mais difíceis.
           </p>
         </div>
         <div class="overview-meta reveal">
@@ -1687,7 +1732,7 @@ table tr:hover { background: rgba(244, 241, 235, 0.02); }
           <div>
             <div class="pillar-num">/aurora</div>
             <h3>Aurora boreal</h3>
-            <p>Quando esperar, onde maximizar, como prever e como fotografar. Nove noites estratégicas — incluindo observatório astronômico do Rangá e Forest Lagoon.</p>
+            <p>Quando esperar, onde maximizar, como prever e como fotografar. Noites estratégicas — incluindo Mývatn, Forest Lagoon e a foto da aurora sobre o Kirkjufell.</p>
           </div>
           <span class="pillar-arrow">→</span>
         </div>
@@ -1825,32 +1870,24 @@ const MAP_DATA = {
     ]
   },
   2: {
-    center: [64.20, -20.85],
+    center: [64.27, -20.65],
     zoom: 9,
     stops: [
       { name: "Reykjavík", lat: 64.1396, lng: -21.9376, type: "start" },
       { name: "Þingvellir", lat: 64.2822, lng: -21.0764, type: "poi" },
       { name: "Friðheimar (almoço)", lat: 64.1775, lng: -20.4449, type: "poi" },
-      { name: "Brúarfoss", lat: 64.2643, lng: -20.5157, type: "poi" },
-      { name: "Brúarárbyggð", lat: 64.2480, lng: -20.5260, type: "end" }
+      { name: "Brúarárfoss", lat: 64.2643, lng: -20.5157, type: "poi" },
+      { name: "Gullfoss", lat: 64.3271, lng: -20.1199, type: "poi" },
+      { name: "Strokkur / Geysir", lat: 64.3127, lng: -20.3007, type: "poi" },
+      { name: "Hotel Geysir", lat: 64.3088, lng: -20.3018, type: "end" }
     ]
   },
   3: {
-    center: [64.15, -20.40],
-    zoom: 9,
+    center: [63.88, -19.85],
+    zoom: 8,
     stops: [
-      { name: "Brúarárbyggð", lat: 64.2480, lng: -20.5260, type: "start" },
-      { name: "Geysir / Strokkur", lat: 64.3127, lng: -20.3007, type: "poi" },
-      { name: "Gullfoss", lat: 64.3271, lng: -20.1199, type: "poi" },
+      { name: "Hotel Geysir", lat: 64.3088, lng: -20.3018, type: "start" },
       { name: "Kerið (cratera)", lat: 64.0413, lng: -20.8851, type: "poi" },
-      { name: "Hotel Rangá (Hella)", lat: 63.7803, lng: -20.3011, type: "end" }
-    ]
-  },
-  4: {
-    center: [63.55, -19.5],
-    zoom: 9,
-    stops: [
-      { name: "Hotel Rangá (Hella)", lat: 63.7803, lng: -20.3011, type: "start" },
       { name: "Seljalandsfoss", lat: 63.6156, lng: -19.9886, type: "poi" },
       { name: "Gljúfrabúi", lat: 63.6209, lng: -19.9864, type: "poi" },
       { name: "Skógafoss", lat: 63.5321, lng: -19.5114, type: "poi" },
@@ -1858,20 +1895,20 @@ const MAP_DATA = {
       { name: "Vík", lat: 63.4177, lng: -18.9974, type: "end" }
     ]
   },
-  5: {
-    center: [63.85, -17.5],
+  4: {
+    center: [63.85, -17.6],
     zoom: 9,
     stops: [
       { name: "Vík", lat: 63.4177, lng: -18.9974, type: "start" },
       { name: "Fjaðrárgljúfur (cânion)", lat: 63.7706, lng: -18.1718, type: "poi" },
-      { name: "Skaftafell (ponto de encontro)", lat: 64.0165, lng: -16.9665, type: "poi" },
+      { name: "Skaftafell (Visitor Center)", lat: 64.0165, lng: -16.9665, type: "poi" },
       { name: "Skaftafellsjökull (glacier hike)", lat: 64.0654, lng: -16.8635, type: "poi" },
-      { name: "Svartifoss (se sobrar energia)", lat: 64.0275, lng: -16.9753, type: "poi" },
+      { name: "Svartifoss (opcional)", lat: 64.0275, lng: -16.9753, type: "poi" },
       { name: "Fosshotel Skaftafell", lat: 63.9905, lng: -16.8922, type: "end" }
     ]
   },
-  6: {
-    center: [64.05, -16.4],
+  5: {
+    center: [64.05, -16.1],
     zoom: 9,
     stops: [
       { name: "Fosshotel Skaftafell", lat: 63.9905, lng: -16.8922, type: "start" },
@@ -1882,34 +1919,46 @@ const MAP_DATA = {
       { name: "Höfn", lat: 64.2552, lng: -15.2088, type: "end" }
     ]
   },
-  7: {
-    center: [64.85, -14.6],
+  6: {
+    center: [64.80, -14.5],
     zoom: 8,
     stops: [
       { name: "Höfn", lat: 64.2552, lng: -15.2088, type: "start" },
       { name: "Stokksnes / Vestrahorn", lat: 64.2464, lng: -14.9699, type: "poi" },
       { name: "Djúpivogur", lat: 64.6568, lng: -14.2848, type: "poi" },
-      { name: "East Fjords", lat: 64.95, lng: -14.0, type: "poi" },
-      { name: "Seyðisfjörður", lat: 65.2602, lng: -14.0095, type: "end" }
+      { name: "Fáskrúðsfjörður (almoço)", lat: 64.9276, lng: -14.0090, type: "poi" },
+      { name: "Seyðisfjörður", lat: 65.2602, lng: -14.0095, type: "poi" },
+      { name: "Egilsstaðir (Hérað)", lat: 65.2641, lng: -14.3946, type: "end" }
+    ]
+  },
+  7: {
+    center: [65.30, -15.7],
+    zoom: 8,
+    stops: [
+      { name: "Egilsstaðir", lat: 65.2641, lng: -14.3946, type: "start" },
+      { name: "Hengifoss", lat: 65.0772, lng: -14.8838, type: "poi" },
+      { name: "Stuðlagil (cânion leste)", lat: 65.1633, lng: -15.3069, type: "poi" },
+      { name: "Mývatn · Laxá Hótel", lat: 65.5663, lng: -17.0274, type: "end" }
     ]
   },
   8: {
-    center: [65.5, -15.7],
-    zoom: 8,
+    center: [65.63, -16.88],
+    zoom: 10,
     stops: [
-      { name: "Seyðisfjörður", lat: 65.2602, lng: -14.0095, type: "start" },
-      { name: "Hengifoss", lat: 65.0951, lng: -14.8892, type: "poi" },
-      { name: "Stuðlagil (cânion)", lat: 65.1633, lng: -15.3069, type: "poi" },
+      { name: "Laxá Hótel (Mývatn)", lat: 65.5663, lng: -17.0274, type: "start" },
+      { name: "🛁 Mývatn Nature Baths", lat: 65.6309, lng: -16.8476, type: "poi" },
+      { name: "Dimmuborgir", lat: 65.5917, lng: -16.9163, type: "poi" },
+      { name: "Grjótagjá", lat: 65.6259, lng: -16.8838, type: "poi" },
       { name: "Hverir / Námafjall", lat: 65.6409, lng: -16.8093, type: "poi" },
       { name: "Krafla / Víti", lat: 65.7171, lng: -16.7544, type: "poi" },
-      { name: "Mývatn Nature Baths", lat: 65.6309, lng: -16.8476, type: "end" }
+      { name: "Laxá Hótel (Mývatn)", lat: 65.5663, lng: -17.0274, type: "end" }
     ]
   },
   9: {
     center: [65.85, -17.6],
     zoom: 8,
     stops: [
-      { name: "Mývatn", lat: 65.6039, lng: -16.9961, type: "start" },
+      { name: "Mývatn", lat: 65.5663, lng: -17.0274, type: "start" },
       { name: "🐋 Húsavík (baleias)", lat: 66.0463, lng: -17.3437, type: "poi" },
       { name: "Goðafoss", lat: 65.6828, lng: -17.5502, type: "poi" },
       { name: "🛁 Forest Lagoon", lat: 65.7218, lng: -18.0793, type: "poi" },
@@ -1917,35 +1966,36 @@ const MAP_DATA = {
     ]
   },
   10: {
-    center: [65.20, -21.5],
-    zoom: 8,
+    center: [65.20, -21.0],
+    zoom: 7,
     stops: [
       { name: "Akureyri", lat: 65.6826, lng: -18.0907, type: "start" },
-      { name: "Borgarnes (parada)", lat: 64.5407, lng: -21.9209, type: "poi" },
-      { name: "Stykkishólmur (check-in)", lat: 65.0724, lng: -22.7334, type: "poi" },
-      { name: "Kirkjufell · pôr-do-sol", lat: 64.9417, lng: -23.3069, type: "end" }
+      { name: "Borgarnes (almoço)", lat: 64.5407, lng: -21.9209, type: "poi" },
+      { name: "Stykkishólmur (parada)", lat: 65.0724, lng: -22.7334, type: "poi" },
+      { name: "Kirkjufell · pôr-do-sol", lat: 64.9417, lng: -23.3069, type: "poi" },
+      { name: "Grundarfjörður (Framnes)", lat: 64.9216, lng: -23.2530, type: "end" }
     ]
   },
   11: {
-    center: [64.88, -23.5],
+    center: [64.83, -23.6],
     zoom: 9,
     stops: [
-      { name: "Stykkishólmur", lat: 65.0724, lng: -22.7334, type: "start" },
-      { name: "Kirkjufell", lat: 64.9417, lng: -23.3069, type: "poi" },
+      { name: "Kirkjufell (manhã)", lat: 64.9417, lng: -23.3069, type: "start" },
+      { name: "Ólafsvík", lat: 64.8945, lng: -23.7106, type: "poi" },
       { name: "Snæfellsjökull NP", lat: 64.7316, lng: -23.8018, type: "poi" },
-      { name: "Arnarstapi", lat: 64.7643, lng: -23.6249, type: "poi" },
-      { name: "Búðakirkja", lat: 64.8217, lng: -23.3840, type: "poi" },
-      { name: "Stykkishólmur", lat: 65.0724, lng: -22.7334, type: "end" }
+      { name: "Djúpalónssandur", lat: 64.7522, lng: -23.9035, type: "poi" },
+      { name: "Arnarstapi (cabana)", lat: 64.7693, lng: -23.6242, type: "poi" },
+      { name: "Búðakirkja", lat: 64.8217, lng: -23.3840, type: "end" }
     ]
   },
   12: {
-    center: [64.20, -22.30],
-    zoom: 9,
+    center: [64.35, -22.4],
+    zoom: 8,
     stops: [
-      { name: "Stykkishólmur", lat: 65.0724, lng: -22.7334, type: "start" },
+      { name: "Arnarstapi", lat: 64.7693, lng: -23.6242, type: "start" },
+      { name: "Borgarnes", lat: 64.5407, lng: -21.9209, type: "poi" },
       { name: "Reykjavík", lat: 64.1396, lng: -21.9376, type: "poi" },
-      { name: "Sky Lagoon (alternativa)", lat: 64.1165, lng: -21.9463, type: "poi" },
-      { name: "Blue Lagoon", lat: 63.8807, lng: -22.4473, type: "poi" },
+      { name: "🛁 Sky Lagoon", lat: 64.1165, lng: -21.9463, type: "poi" },
       { name: "Aeroporto Keflavík", lat: 63.9949, lng: -22.6239, type: "end" }
     ]
   }
@@ -1955,26 +2005,23 @@ const MAP_DATA = {
 const FULL_ROUTE = [
   { name: "Reykjavík", lat: 64.1396, lng: -21.9376, day: 1 },
   { name: "Þingvellir", lat: 64.2822, lng: -21.0764, day: 2 },
-  { name: "Brúarárbyggð", lat: 64.2480, lng: -20.5260, day: 2 },
-  { name: "Gullfoss", lat: 64.3271, lng: -20.1199, day: 3 },
-  { name: "Hotel Rangá (Hella)", lat: 63.7803, lng: -20.3011, day: 3 },
-  { name: "Skógafoss", lat: 63.5321, lng: -19.5114, day: 4 },
-  { name: "Reynisfjara", lat: 63.4143, lng: -19.0104, day: 4 },
-  { name: "Vík", lat: 63.4177, lng: -18.9974, day: 4 },
-  { name: "Skaftafellsjökull", lat: 64.0654, lng: -16.8635, day: 5 },
-  { name: "Fosshotel Skaftafell", lat: 63.9905, lng: -16.8922, day: 5 },
-  { name: "Jökulsárlón", lat: 64.0784, lng: -16.2306, day: 6 },
-  { name: "Höfn", lat: 64.2552, lng: -15.2088, day: 6 },
-  { name: "Stokksnes", lat: 64.2464, lng: -14.9699, day: 7 },
-  { name: "Seyðisfjörður", lat: 65.2602, lng: -14.0095, day: 7 },
-  { name: "Hengifoss", lat: 65.0951, lng: -14.8892, day: 8 },
-  { name: "Stuðlagil", lat: 65.1633, lng: -15.3069, day: 8 },
-  { name: "Mývatn", lat: 65.6039, lng: -16.9961, day: 8 },
+  { name: "Gullfoss", lat: 64.3271, lng: -20.1199, day: 2 },
+  { name: "Hotel Geysir", lat: 64.3088, lng: -20.3018, day: 2 },
+  { name: "Skógafoss", lat: 63.5321, lng: -19.5114, day: 3 },
+  { name: "Vík", lat: 63.4177, lng: -18.9974, day: 3 },
+  { name: "Skaftafell", lat: 63.9905, lng: -16.8922, day: 4 },
+  { name: "Jökulsárlón", lat: 64.0784, lng: -16.2306, day: 5 },
+  { name: "Höfn", lat: 64.2552, lng: -15.2088, day: 5 },
+  { name: "Stokksnes", lat: 64.2464, lng: -14.9699, day: 6 },
+  { name: "Egilsstaðir", lat: 65.2641, lng: -14.3946, day: 6 },
+  { name: "Hengifoss", lat: 65.0772, lng: -14.8838, day: 7 },
+  { name: "Mývatn", lat: 65.5663, lng: -17.0274, day: 7 },
+  { name: "Krafla (Mývatn)", lat: 65.7171, lng: -16.7544, day: 8 },
   { name: "🐋 Húsavík", lat: 66.0463, lng: -17.3437, day: 9 },
   { name: "Goðafoss", lat: 65.6828, lng: -17.5502, day: 9 },
   { name: "Akureyri", lat: 65.6826, lng: -18.0907, day: 9 },
-  { name: "Stykkishólmur", lat: 65.0724, lng: -22.7334, day: 10 },
-  { name: "Kirkjufell", lat: 64.9417, lng: -23.3069, day: 11 },
+  { name: "Kirkjufell / Grundarfjörður", lat: 64.9417, lng: -23.3069, day: 10 },
+  { name: "Arnarstapi (Snæfellsnes)", lat: 64.7693, lng: -23.6242, day: 11 },
   { name: "Reykjavík (volta)", lat: 64.1396, lng: -21.9376, day: 12 }
 ];
 
@@ -2025,529 +2072,617 @@ const ROTEIRO = [
     ],
     tips: [
       "Ative o eSIM antes de sair do aeroporto e baixe mapas offline da Islândia inteira.",
-      "Confirme reservas de Friðheimar e Brúarárbyggð para amanhã.",
+      "Confirme reservas de Friðheimar (almoço) e Hotel Geysir para amanhã.",
       "Compre suprimentos no Bonus se sobrar tempo — economiza muito ao longo da viagem."
     ]
   },
   {
     n: 2,
-    title: "Þingvellir, Friðheimar e pernoite perto de Brúarfoss",
-    subtitle: "<em>Þingvellir · Friðheimar · Brúarfoss · Brúarárbyggð</em> · 01 Set (ter)",
-    short: "Manhã contemplativa em Þingvellir, almoço de sopa de tomate na estufa do Friðheimar, tarde em Brúarfoss e pernoite em apartamento equipado a poucos minutos da cachoeira azul-elétrica.",
-    tags: ["Þingvellir", "Friðheimar", "Brúarfoss"],
+    title: "Golden Circle completo e pernoite no Hotel Geysir",
+    subtitle: "<em>Þingvellir · Friðheimar · Brúarárfoss · Gullfoss · Geysir</em> · 01 Set (ter)",
+    short: "Todo o Golden Circle em um dia, com folga de luz: Þingvellir e as placas tectônicas, almoço de sopa de tomate na estufa do Friðheimar, a cachoeira azul-turquesa Brúarárfoss, a imponente Gullfoss, o gêiser Strokkur jorrando, e pernoite ali mesmo no Hotel Geysir.",
+    tags: ["Golden Circle", "Þingvellir", "Geysir"],
     photos: [
       { id: "26336846", caption: "Þingvellir — onde as placas tectônicas se encontram" },
-      { id: "10589819", caption: "Águas cristalinas da fissura de Silfra (visita externa)" },
-      { id: "32154420", caption: "Brúarfoss — a cachoeira azul-elétrica do Golden Circle" }
+      { id: "32154420", caption: "Brúarárfoss — a cachoeira azul-turquesa elétrica" },
+      { id: "19500069", caption: "Gullfoss — a 'cachoeira de ouro' em duas quedas" }
     ],
     meta: {
-      "Trajeto": "Reykjavík → Brúarfoss",
-      "Direção": "120 km · 2h líquidas",
-      "Foco": "Þingvellir + Friðheimar + Brúarfoss",
+      "Trajeto": "Reykjavík → Geysir",
+      "Direção": "172 km · 2h51 líquidas",
+      "Foco": "Golden Circle clássico em um dia",
       "Refeições": "Almoço (Friðheimar), jantar"
     },
     sections: [
       {
         title: "Manhã — Þingvellir",
-        body: `<p>Saída de Reykjavík por volta das 9h. <strong>Þingvellir</strong> (50 min): parque nacional onde as placas tectônicas norte-americana e euroasiática se afastam, e onde foi fundado o primeiro parlamento do mundo no ano 930. Patrimônio UNESCO.</p>
-        <p>Caminhe pelo desfiladeiro <strong>Almannagjá</strong> (entre as placas), passe pela cachoeira <strong>Öxarárfoss</strong> e desça até <strong>Þingvallavatn</strong>, o maior lago natural do país. Reserve 1h30 a 2h.</p>
-        <p>É possível ver de cima a fissura de <strong>Silfra</strong>, onde acontecem os mergulhos famosos entre as placas tectônicas — uma paisagem com a água azul-elétrica filtrada por séculos pelas rochas vulcânicas.</p>
+        body: `<p>Café reforçado, check-out tranquilo e abastecimento em Reykjavík — o dia tem luz de sobra (~14h45). Saída por volta das 9h, ~50 min pela estrada 36 até <strong>Þingvellir</strong>.</p>
+        <p>Parque Nacional e Patrimônio UNESCO onde as placas tectônicas norte-americana e euroasiática se afastam. <strong>Reserve 2h aqui — vale.</strong> Caminhe pela fenda <strong>Almannagjá</strong>, suba ao mirante <strong>Hakið</strong> com vista do lago, veja a cachoeira <strong>Öxarárfoss</strong> (no mesmo percurso) e a igrejinha histórica de Þingvallakirkja. Estacionamento P1 (~ISK 750) é o melhor ponto de partida.</p>
         <div class="callout">
-          <div class="callout-title">Por que não fazer o snorkel</div>
-          <p>O tour de mergulho/snorkel em Silfra <strong>não é recomendado para gestantes</strong> (água a 2°C, dry suit pressionando o abdômen, esforço respiratório). A visita externa entrega 100% da paisagem geológica sem nenhum risco.</p>
+          <div class="callout-title">Por que não fazer o snorkel em Silfra</div>
+          <p>O mergulho na fissura de Silfra <strong>não é recomendado para gestantes</strong> (água a 2°C, dry suit pressionando o abdômen, esforço respiratório). A vista do alto entrega 100% da paisagem geológica sem risco.</p>
         </div>`
       },
       {
-        title: "Almoço — Friðheimar",
-        body: `<p><strong>Friðheimar</strong> (40 min de Þingvellir): fazenda de tomates em estufa geotérmica. Você almoça <strong>literalmente entre os pés de tomate</strong>, com abelhas polinizando ao redor. A estrela é a sopa de tomate (refil grátis), com pão artesanal e variações como tagliatelle de tomate, mussel em molho de tomate e cheesecake de tomate verde.</p>
-        <p>Reserva é <strong>obrigatória com 2—3 meses de antecedência</strong> — esgota sempre. Site: fridheimar.is. Aberto 11h30—16h. Reserve para 12h ou 12h30.</p>
-        <p>Aproveite para fazer o tour guiado da estufa (incluso, 15—20 min) — explica o sistema geotérmico e os tomates Tomatito.</p>`
+        title: "Almoço — Friðheimar 🍅",
+        body: `<p>~30 min pela estrada 35 até o <strong>Friðheimar</strong>, restaurante <strong>dentro de uma estufa de tomates geotérmica</strong>. A estrela é a sopa de tomate ilimitada com pão caseiro; experimente também o Bloody Mary com vodka de tomate. Tour rápido pela produção (polinização feita por abelhas trazidas da Holanda) está incluso.</p>
+        <div class="callout warning">
+          <div class="callout-title">Reserva obrigatória</div>
+          <p>Reserve em fridheimar.is com semanas de antecedência — é lotadíssimo. Aberto 11h30—16h.</p>
+        </div>`
       },
       {
-        title: "Tarde — Brúarfoss",
-        body: `<p><strong>Brúarfoss</strong> (15 min de Friðheimar): a "cachoeira mais azul da Islândia". Água azul-elétrica de geleira corre por uma série de rápidos antes de cair. Foi escondida do turismo de massa por anos porque o estacionamento era em terra privada.</p>
-        <p>Hoje há estacionamento oficial pago e uma <strong>caminhada de 8—10 min</strong> até a ponte que dá a vista clássica. Trilha curta e plana — confortável para gestante.</p>`
+        title: "Tarde — Brúarárfoss e Gullfoss",
+        body: `<p><strong>Brúarárfoss</strong> (25 min de Friðheimar): cachoeira de água <strong>azul-turquesa elétrica</strong>, uma das mais fotogênicas do país. A vista clássica fica a ~3,5 km do estacionamento (~40 min de caminhada por trilha de terra), ~7 km ida e volta.</p>
+        <div class="callout">
+          <div class="callout-title">Alternativa se cansar</div>
+          <p>Trocar por <strong>Faxi</strong> (cachoeira menor, 5 min do estacionamento, no caminho): perde o azul-turquesa, mas ganha 1h30 de descanso.</p>
+        </div>
+        <p><strong>Gullfoss</strong> (25 min): a "cachoeira de ouro", duas quedas em ângulo de 90°. Veja o mirante superior (acessível, vista do conjunto) e o inferior (escadaria que chega perto da queda — molha). Café quente no centro de visitantes se quiser uma pausa.</p>`
       },
       {
-        title: "Noite — Brúarárbyggð",
-        body: `<p>Check-in no <strong>Brúarárbyggð</strong>, conjunto de apartamentos a 5 min de carro de Brúarfoss, em pleno coração do Golden Circle. Cozinha equipada (ideal para preparar o jantar com o que comprar no Bonus de Selfoss), Wi-Fi, sem multidão de hotel grande, ambiente rural e silencioso.</p>
-        <p>Localização privilegiada: a 30 min de Geysir e Gullfoss (paradas do Dia 3) e a 1h de Reykjavík.</p>
+        title: "Final de tarde — Strokkur e área Geysir",
+        body: `<p>A 10 min de Gullfoss, a área <strong>Geysir</strong>. O <strong>Strokkur</strong> explode a cada 6—10 min em jato de 15—30 m de altura. O Geysir original (que dá nome ao fenômeno mundial) está dormente desde 2000. Uma trilha curta passa por fontes termais coloridas e fumarolas. Em setembro, a luz ainda está boa às 19h.</p>`
+      },
+      {
+        title: "Noite — Hotel Geysir e aurora",
+        body: `<p>Check-in no <strong>Hotel Geysir</strong> — fica ali mesmo, sem deslocamento noturno. Jantar prático no restaurante do hotel ou no Geysir Glíma, ali perto.</p>
         <div class="callout">
           <div class="callout-title">Aurora · noite 2</div>
-          <p>Brúarárbyggð fica em zona rural sem poluição luminosa significativa. Saia ao pátio entre 22h e 1h se o índice Kp estiver razoável e o céu limpo.</p>
+          <p>Geysir tem <strong>céu muito mais escuro que Reykjavík</strong>, longe da poluição luminosa — condição ideal. Cheque o vedur.is (índice Kp + nuvens) antes de dormir; se Kp ≥ 3 e céu limpo, vale despertador na madrugada (~00h—02h).</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Brúarárbyggð A2 (apartamento)", detail: "Apartamento equipado para casal/família, 5 min de Brúarfoss. Cozinha completa, Wi-Fi, estacionamento.", price: "≈ R$ 1.800 / casal", url: "https://www.booking.com/hotel/is/bruararbyggd-a2.pt-pt.html" },
-      { name: "Brúarárbyggð B1 (apartamento)", detail: "Mesma propriedade, unidade alternativa — escolher conforme disponibilidade na data.", price: "≈ R$ 1.800 / casal", url: "https://www.booking.com/hotel/is/bruararbyggd-b1.pt-pt.html" }
+      { name: "Hotel Geysir", detail: "No próprio complexo de Geysir, em frente ao Strokkur. Restaurante próprio, prático para chegar e jantar sem dirigir. Céu escuro para aurora.", price: "≈ R$ 1.700 / casal" }
     ],
     food: [
-      "<strong>Almoço:</strong> Friðheimar — sopa de tomate com refil + pão artesanal.",
-      "<strong>Jantar:</strong> compre no Bonus de Selfoss (no caminho) e cozinhe no apartamento. Salmão ou cordeiro local + vegetais simples + pão de centeio."
+      "<strong>Almoço:</strong> Friðheimar — sopa de tomate ilimitada + pão caseiro (reserva obrigatória).",
+      "<strong>Jantar:</strong> restaurante do Hotel Geysir (prático) ou Geysir Glíma (casual), ali perto."
     ],
     tips: [
-      "Para Þingvellir: bota impermeável e capa, vento forte é comum. Pague o estacionamento (P1 é o mais central).",
-      "Bonus de Selfoss fecha às 19h30 — passe lá antes de subir para o apartamento.",
-      "Reservas em ordem: Brúarárbyggð (3—4 meses), Friðheimar (2—3 meses)."
-    ]
+      "Tanque cheio antes de sair de Reykjavík.",
+      "Calçado confortável — Þingvellir + Brúarárfoss somam bastante caminhada.",
+      "Casaco térmico, capa de chuva e power bank carregado (frio acaba a bateria rápido).",
+      "Reserva no Friðheimar confirmada; cheque vedur.is à noite para aurora."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Reykjavik,+Isl%C3%A2ndia/%C3%96xar%C3%A1rfoss,+7V8J%2B8RH,+806+Thingvellir,+Isl%C3%A2ndia/%C3%9Eingvellir,+806+Selfoss,+Isl%C3%A2ndia/5HH4%2B225,+Fri%C3%B0heimar+806,+320+Reykholt,+Isl%C3%A2ndia/Br%C3%BAar%C3%A1rfoss,+Hlauptunga,+806+Bl%C3%A1sk%C3%B3gabygg%C3%B0,+Isl%C3%A2ndia/Strokkur+Geyser,+8M7X%2B3PJ,+Hafnart%C3%BAn,+806+Selfoss,+Isl%C3%A2ndia/Gullfoss+Waterfall,+Gullfoss+Nature+Reserve,+35,+846,+Isl%C3%A2ndia/Hotel+Geysir,+Geysir+Haukadalur,+806,+Isl%C3%A2ndia"
   },
   {
     n: 3,
-    title: "Golden Circle e segunda noite premium no Hotel Rangá",
-    subtitle: "<em>Geysir · Gullfoss · Kerið · 🌌</em> · 02 Set (qua)",
-    short: "Saída sem pressa de Brúarárbyggð. Strokkur jorrando a cada 10 minutos, Gullfoss em duplo nível, a cratera vermelha de Kerið e pernoite no Hotel Rangá com observatório astronômico privado.",
-    tags: ["Golden Circle", "Geysir", "Hotel Rangá"],
-    photos: [
-      { id: "19500069", caption: "Gullfoss — a queda de duplo nível em forma de Z" },
-      { id: "10582416", caption: "Kerið — a cratera vermelha com lago turquesa no fundo" },
-      { id: "32154420", caption: "Aurora boreal sobre o sul islandês" }
-    ],
-    meta: {
-      "Trajeto": "Brúarfoss → Hella (Rangá)",
-      "Direção": "180 km · 3h líquidas",
-      "Foco": "Golden Circle clássico",
-      "Refeições": "Almoço, jantar premium"
-    },
-    sections: [
-      {
-        title: "Manhã",
-        body: `<p>Café tranquilo no apartamento. Saída por volta das 9h.</p>
-        <p><strong>Geysir e Strokkur</strong> (30 min de Brúarárbyggð): o Geysir original raramente entra em erupção, mas o <strong>Strokkur ao lado lança uma coluna de água de 20 metros a cada 5—10 minutos</strong>. 45 min de visita.</p>
-        <p><strong>Gullfoss</strong> (10 min de Geysir): cachoeira de duplo nível, queda de 32 metros. Dois mirantes — o inferior molha bem.</p>`
-      },
-      {
-        title: "Tarde",
-        body: `<p>Almoço em Geysir (Geysir Glíma — sopa de carneiro lendária) ou em Flúðir.</p>
-        <p><strong>Kerið</strong> (45 min de Gullfoss): cratera vulcânica com paredes vermelhas e lago turquesa no fundo. Caminhe pela borda e desça os degraus até a margem do lago. ISK 600/pessoa, 30—45 min.</p>
-        <p>Em seguida, siga rumo a Hella (1h de Kerið). Na chegada ao Rangá, descanso antes do jantar — o hotel tem hot tubs com vista privilegiada que valem mais do que qualquer fonte termal de fazenda.</p>`
-      },
-      {
-        title: "Noite — Hotel Rangá",
-        body: `<p>Check-in no <strong>Hotel Rangá em Hella</strong>. Hotel de luxo discreto à beira do rio Rangá.</p>
-        <ul style="list-style: none; padding-left: 0;">
-          <li style="padding-left: var(--sp-4); color: var(--ice-soft); margin-bottom: var(--sp-2);"><strong style="color: var(--ice);">Observatório astronômico privado</strong> — telescópios profissionais, astrônomo guia em noites limpas.</li>
-          <li style="padding-left: var(--sp-4); color: var(--ice-soft); margin-bottom: var(--sp-2);"><strong style="color: var(--ice);">Wake-up call de aurora</strong> — staff te acorda se a aurora aparecer.</li>
-          <li style="padding-left: var(--sp-4); color: var(--ice-soft); margin-bottom: var(--sp-2);"><strong style="color: var(--ice);">Hot tubs externos</strong> com vista do céu.</li>
-          <li style="padding-left: var(--sp-4); color: var(--ice-soft);"><strong style="color: var(--ice);">Restaurante 2 garfos</strong> reconhecido nacionalmente.</li>
-        </ul>
-        <div class="callout">
-          <div class="callout-title">Aurora · Rangá</div>
-          <p>Localização privilegiada, sem luzes urbanas. Observatório guiado é experiência única.</p>
-        </div>`
-      }
-    ],
-    lodging: [
-      { name: "🌌 Hotel Rangá (SLH)", detail: "A experiência da noite. Suítes deluxe Master ou tematicamente decoradas. Observatório astronômico, hot tubs externos, restaurante reconhecido.", price: "≈ R$ 3.524 / casal", url: "https://www.booking.com/hotel/is/ranga-hella.pt-pt.html" }
-    ],
-    food: [
-      "<strong>Almoço:</strong> Geysir Glíma (sopa de carneiro) ou Flúðir Apparel Bistró (Flúðir).",
-      "<strong>Jantar:</strong> Restaurante do próprio Hotel Rangá — menu degustação 3—5 pratos com proteínas islandesas."
-    ],
-    tips: [
-      "Manhã sem pressa em Brúarárbyggð: termine os mantimentos do café da manhã antes de partir.",
-      "Para o observatório do Rangá: agende no check-in. Sessão guiada dura ~1h.",
-      "Wake-up call de aurora: ative no check-in."
-    ]
-  },
-  {
-    n: 4,
-    title: "Cachoeiras icônicas e a praia preta de Reynisfjara",
-    subtitle: "<em>Seljalandsfoss · Gljúfrabúi · Skógafoss · Reynisfjara · Vík</em> · 03 Set (qui)",
-    short: "Saída tranquila do Rangá rumo às cachoeiras lendárias da costa sul. O trio Seljalandsfoss + Gljúfrabúi + Skógafoss e, ao fim do dia, a praia preta de Reynisfjara em luz dourada de pôr-do-sol.",
+    title: "Geysir → Vík: Kerið e as cachoeiras da costa sul",
+    subtitle: "<em>Kerið · Seljalandsfoss · Gljúfrabúi · Skógafoss · Reynisfjara · Vík</em> · 02 Set (qua)",
+    short: "Saída tranquila de Geysir. A cratera vermelha de Kerið, o trio de cachoeiras lendárias da costa sul (Seljalandsfoss, Gljúfrabúi e Skógafoss) e, ao fim do dia, a praia preta de Reynisfjara na hora dourada antes do pernoite em Vík.",
     tags: ["Cachoeiras", "Costa sul", "Reynisfjara"],
     photos: [
+      { id: "10582416", caption: "Kerið — a cratera vermelha com lago turquesa no fundo" },
       { id: "19267246", caption: "Seljalandsfoss — cachoeira que se atravessa por trás" },
-      { id: "29018995", caption: "Skógafoss com arco-íris duplo na neblina" },
       { id: "31974260", caption: "Reynisfjara — basaltos colunares ao pôr do sol" }
     ],
     meta: {
-      "Trajeto": "Hella → Vík",
-      "Direção": "180 km · 3h líquidas",
-      "Foco": "Trio de cachoeiras + Reynisfjara",
-      "Refeições": "Almoço leve, jantar"
+      "Trajeto": "Geysir → Vík",
+      "Direção": "208 km · 3h líquidas",
+      "Foco": "Kerið + trio de cachoeiras + Reynisfjara",
+      "Refeições": "Almoço (Hvolsvöllur), jantar em Vík"
     },
     sections: [
       {
-        title: "Manhã",
-        body: `<p>Saída do Rangá após café tranquilo (9h).</p>
-        <p><strong>Seljalandsfoss</strong> (30 min): cachoeira de 60 m com trilha que passa <strong>por trás da queda</strong>. Capa impermeável obrigatória. A trilha por trás é curta mas escorregadia — opcional para gestante; a vista frontal já é espetacular.</p>
-        <p><strong>Gljúfrabúi</strong> (500 m a oeste de Seljalandsfoss): cachoeira escondida dentro de uma fenda de rocha. Você precisa atravessar um pequeno riacho dentro do cânion. <strong>Bota impermeável obrigatória.</strong> Visual cinematográfico.</p>`
+        title: "Manhã — Kerið",
+        body: `<p>Café e check-out no Hotel Geysir, tanque cheio. ~45 min até <strong>Kerið</strong>: cratera vulcânica com lago turquesa e paredes vermelhas. Trilha curta de ~30 min pela borda; quem quiser desce até a água. Entrada ~ISK 600/adulto.</p>
+        <p>Depois, ~1h15 pela Ring Road até a costa sul — a paisagem se abre conforme o sul vai aparecendo.</p>`
       },
       {
-        title: "Tarde",
-        body: `<p>Almoço leve no Black Beach Restaurant (perto de Skógafoss) ou sanduíches do Bonus.</p>
-        <p><strong>Skógafoss</strong> (30 min de Seljalandsfoss): cachoeira de 60 m de fácil acesso. Os 400 degraus à direita levam ao topo — vista impressionante mas exige fôlego; <strong>opcional para gestante</strong>, a base entrega a maior parte da experiência.</p>`
+        title: "Cachoeiras — Seljalandsfoss e Gljúfrabúi",
+        body: `<p><strong>Seljalandsfoss</strong>: a graça é caminhar <strong>por trás da cachoeira</strong> — experiência única na Islândia. Leve capa de chuva e calçado com aderência; a pedra molhada é escorregadia (a passagem por trás é opcional para gestante — a vista frontal já é espetacular).</p>
+        <p><strong>Gljúfrabúi</strong> (5 min a pé): cachoeira escondida dentro de um cânion — você entra pela fenda e a descobre lá dentro. Vale o pequeno desvio. Bota impermeável ajuda.</p>`
       },
       {
-        title: "Final de tarde — Reynisfjara",
-        body: `<p>De Skógafoss, siga 35 min até <strong>Reynisfjara</strong>: a praia de areia preta mais famosa do mundo. Basaltos colunares, arco de Reynisdrangar e ondas mortais. Em setembro o pôr do sol é por volta das <strong>19h45—20h</strong> — chegue 1h antes para luz dourada nos basaltos.</p>
+        title: "Almoço — Hvolsvöllur",
+        body: `<p><strong>Gamla Fjósið</strong> — restaurante num estábulo convertido, especialidade em cordeiro local. Alternativa rápida: sopa de cordeiro no food truck de Gljúfrabúi.</p>`
+      },
+      {
+        title: "Tarde — Skógafoss",
+        body: `<p>~45 min de estrada plana até <strong>Skógafoss</strong>: cachoeira de 60 m com queda perfeitamente retangular. Duas experiências: a <strong>base</strong> (sinta a força da água e cace o arco-íris quando o sol bate) e o <strong>topo</strong> (escadaria de 527 degraus pela direita, com vista da costa — opcional para gestante).</p>`
+      },
+      {
+        title: "Final de tarde — Reynisfjara na hora dourada",
+        body: `<p>~45 min até <strong>Reynisfjara</strong>, a praia de areia preta com colunas de basalto e os pináculos Reynisdrangar ao fundo. Em setembro, a luz dourada vem entre 18h e 19h30.</p>
         <div class="callout danger">
-          <div class="callout-title">⚠ Atenção crítica · Reynisfjara</div>
-          <p><strong>NUNCA fique de costas para o mar</strong> e não se aproxime da água. Mantenha distância de 30 metros mínimo. As "sneaker waves" chegam sem aviso e levam pessoas. Para gestante isso é ainda mais crítico — fique sempre nas dunas, longe da linha de quebra.</p>
-        </div>
-        <p>Reserve 1h30 a 2h. <strong>Dyrhólaey</strong> opcional ao lado — promontório com arco de pedra e vista panorâmica.</p>`
+          <div class="callout-title">⚠ Atenção crítica · sneaker waves</div>
+          <p>As "sneaker waves" são <strong>letais</strong> e chegam sem aviso. Nunca dê as costas para o mar e mantenha <strong>distância mínima de 30 m</strong> da linha d'água. Há mortes documentadas todo ano — para gestante, redobre o cuidado.</p>
+        </div>`
       },
       {
-        title: "Noite",
-        body: `<p>Continue até <strong>Vík</strong> (5 min de Reynisfjara). Jantar e descanso.</p>
+        title: "Noite — Vík",
+        body: `<p>Check-in no <strong>Hotel Vík í Mýrdal</strong> (10—15 min de Reynisfjara) e jantar na cidade: Suður-Vík (o melhor da cidade, cozinha islandesa com toques asiáticos — reserve), Halldorskaffi (casual, pizza e cordeiro) ou Skool Beans (café leve).</p>
         <div class="callout">
           <div class="callout-title">Aurora · Vík</div>
-          <p>Vík tem céu razoavelmente escuro. Após o jantar, dirija 5 min para fora da cidade.</p>
+          <p>Em setembro já há chance real. Cheque o vedur.is; a vista da igreja Víkurkirkja, no morro, é excelente.</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Vík Apartments", detail: "Apartamento equipado em frente ao supermercado Krónan e à pizzaria Black Crust. Cozinha completa, máquina de lavar, piso aquecido. Ideal para 2 casais.", price: "≈ R$ 2.100 / casal", url: "https://www.booking.com/hotel/is/vik-apartments.pt-pt.html" },
-      { name: "Hotel Vík í Mýrdal", detail: "Alternativa: vista para o mar, conforto, 4 estrelas." },
+      { name: "Hotel Vík í Mýrdal", detail: "Central em Vík, prático para Reynisfjara e jantar na cidade. Recarregar câmeras e descansar antes da hora dourada.", price: "≈ R$ 1.700 / casal" },
+      { name: "Vík Apartments", detail: "Alternativa: apartamento equipado em frente ao Krónan, cozinha completa e piso aquecido — bom para 2 casais.", url: "https://www.booking.com/hotel/is/vik-apartments.pt-pt.html" },
       { name: "Hotel Kría (Vík)", detail: "Alternativa: moderno, recém-inaugurado, ótima localização." }
     ],
     food: [
-      "<strong>Almoço leve:</strong> Black Beach Restaurant (perto de Skógafoss) ou sanduíches do Bonus.",
-      "<strong>Jantar em Vík:</strong> The Soup Company (sopas em pão de centeio) ou Suður-Vík (cozinha contemporânea, peixe local)."
+      "<strong>Almoço:</strong> Gamla Fjósið (Hvolsvöllur) — cordeiro local em estábulo convertido.",
+      "<strong>Jantar em Vík:</strong> Suður-Vík (reservar) ou Halldorskaffi (casual)."
     ],
     tips: [
-      "Bota impermeável é obrigatória hoje — Seljalandsfoss molha por fora, Gljúfrabúi exige atravessar riacho.",
-      "Vento na costa sul é o mais forte da Islândia — segure portas com as duas mãos.",
-      "Reynisfjara ao pôr do sol: chegue cedo para garantir estacionamento, leia os avisos vermelhos sobre ondas."
-    ]
+      "Capa de chuva e calçado com aderência — Seljalandsfoss molha mesmo.",
+      "Casaco térmico (vento gelado mesmo em setembro) + bateria extra de câmera.",
+      "Tanque cheio antes de sair de Geysir; cheque vedur.is pela manhã (vento).",
+      "Reserve jantar em Suður-Vík."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Hotel+Geysir,+Geysir+Haukadalur,+806,+Isl%C3%A2ndia/Keri%C4%91,+805+Klausturholar,+Isl%C3%A2ndia/Seljalandsfoss,+249,+861,+Isl%C3%A2ndia/Glj%C3%BAfrab%C3%BAi,+249,+861,+Isl%C3%A2ndia/Sk%C3%B3gafoss,+861,+Isl%C3%A2ndia/Reynisfjara+Beach,+Isl%C3%A2ndia/V%C3%ADk+%C3%AD+M%C3%BDrdal,+870,+Isl%C3%A2ndia/@63.4426009,-19.1183709,11.99z/data=!4m44!4m43!1m5!1m1!1s0x48d6a39efe5935dd:0x5ffed261ade2378f!2m2!1d-20.2989704!2d64.3101943!1m5!1m1!1s0x48d68bb755f6f257:0x515a44e0c12ed907!2m2!1d-20.8851466!2d64.0412785!1m5!1m1!1s0x48d71eadc4d081ed:0x46b389d26b602e45!2m2!1d-19.9886113!2d63.6155997!1m5!1m1!1s0x48d71eb01553b317:0x966a55b6ec145f2e!2m2!1d-19.9864486!2d63.6208631!1m5!1m1!1s0x48d73b7639a58c15:0xf60c71fcdfe7948!2m2!1d-19.5113705!2d63.5320523!1m5!1m1!1s0x48d74984d567267d:0xe07954a3f4b36bd5!2m2!1d-19.0716193!2d63.4057404!1m5!1m1!1s0x48d74a424936b0d1:0xbe83531b006d778d!2m2!1d-18.9974396!2d63.4176505!3e0?entry=ttu&amp;g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
   },
   {
-    n: 5,
-    title: "Fjaðrárgljúfur e trilha guiada na geleira Vatnajökull",
-    subtitle: "<em>Cânion serpenteante · Glacier hike no Skaftafellsjökull</em> · 04 Set (sex)",
-    short: "Manhã pelo cânion cinematográfico de Fjaðrárgljúfur. Tarde no ponto alto do roteiro: trilha guiada de 3 horas com crampons sobre a geleira Skaftafellsjökull — operadora confirmou compatibilidade com gestação. Pernoite a 5 minutos do Visitor Center.",
+    n: 4,
+    title: "Fjaðrárgljúfur e glacier hike no Vatnajökull",
+    subtitle: "<em>Fjaðrárgljúfur · Glacier hike · Skaftafell</em> · 03 Set (qui)",
+    short: "Manhã pelo cânion cinematográfico de Fjaðrárgljúfur e o ponto alto do roteiro: trilha guiada de 3 horas com crampons sobre a língua glacial do Skaftafellsjökull, no Vatnajökull. Pernoite a 5 min do Visitor Center.",
     tags: ["Cânion", "Glacier hike", "Vatnajökull"],
     photos: [
+      { id: "9532584", caption: "Fjaðrárgljúfur — cânion de paredões serpenteantes" },
       { id: "20582185", caption: "Caminhada na superfície da geleira com crampons" },
-      { id: "9532584", caption: "Cânion verde com paredões serpentinados (Fjaðrárgljúfur)" },
       { id: "18421397", caption: "Svartifoss — cachoeira com basaltos colunares (opcional)" }
     ],
     meta: {
-      "Trajeto": "Vík → Fjaðrárgljúfur → Skaftafell",
-      "Direção": "190 km · 3h líquidas",
+      "Trajeto": "Vík → Skaftafell",
+      "Direção": "146 km · 1h50 líquidas",
       "Foco": "Fjaðrárgljúfur + glacier hike 3h",
       "Refeições": "Almoço leve, jantar no hotel"
     },
     sections: [
       {
+        title: "Antes de viajar",
+        body: `<div class="callout warning">
+          <div class="callout-title">Glacier hike e gestação</div>
+          <ul>
+            <li><strong>Validação obstétrica explícita</strong> do glacier hike com crampons (não apenas "trilha leve").</li>
+            <li>Reserva da operadora <strong>por escrito mencionando a gestação</strong> + recomendação médica para 30 semanas em mãos.</li>
+            <li>Tour reservado para <strong>13h30 ou 14h</strong> — manhã livre para Fjaðrárgljúfur e margem para remarcar se cancelar por clima.</li>
+          </ul>
+          <p style="margin-top: var(--sp-2);">Operadoras (reservar com 2 meses): Troll Expeditions · Glacier Guides · Icelandic Mountain Guides · Arctic Adventures.</p>
+        </div>`
+      },
+      {
         title: "Manhã — Fjaðrárgljúfur",
-        body: `<p>Saída de Vík às 8h30 com <strong>jantar para a noite já comprado no Krónan/Bonus de Vík</strong> — em Skaftafell há apenas o restaurante do hotel, não há supermercado nem outras opções de jantar.</p>
-        <p><strong>Fjaðrárgljúfur</strong> (1h30 de Vík): um dos cânions mais cinematográficos do país — paredões serpenteantes de 100 m de altura, 2 km de extensão, esculpidos por um rio glacial. Justin Bieber gravou clipe aqui em 2015 (e quase destruiu o ecossistema com o turismo subsequente).</p>
-        <p>Dois mirantes acessíveis: o inferior (5 min plano, vista do rio) e o superior (15 min de subida moderada com escadões; <strong>opcional para gestante</strong> — peça para os outros do grupo subirem e fotografarem). Reserve 45 min a 1h.</p>
-        <p>Almoço leve a caminho de Skaftafell — sanduíches do Bonus de Vík.</p>`
+        body: `<p>Café em Vík e compras no Krónan ou Bonus: <strong>almoço do dia e jantar para a noite</strong> — em Skaftafell não há supermercado nem opções além do restaurante do hotel. Tanque cheio antes de pegar a estrada.</p>
+        <p>~1h30 pela Ring Road até <strong>Fjaðrárgljúfur</strong>: um dos cânions mais cinematográficos do país — paredões serpenteantes de <strong>100 m de altura, 2 km de extensão</strong>, esculpidos por rio glacial. O mirante inferior (5 min plano) já entrega ~80% da experiência; o superior (15 min de subida com escadões) é <strong>opcional para gestante</strong>.</p>`
       },
       {
         title: "Tarde — Glacier hike no Skaftafellsjökull (3h)",
-        body: `<p>30 min de Fjaðrárgljúfur até o ponto de encontro da operadora em <strong>Skaftafell</strong>. Briefing, equipagem com crampons, capacete e machado de gelo, caminhada de 15 min até o pé da geleira e <strong>2h sobre o gelo</strong> com guia certificado. Total ~3h.</p>
-        <p>O Skaftafellsjökull é uma língua do <strong>Vatnajökull</strong>, maior geleira da Europa por volume. Você caminha entre fendas (crevasses), poças de água glacial azul-elétrica (moulins) e formações esculpidas pelo derretimento. Atividade rara que define a viagem.</p>
-        <div class="callout">
-          <div class="callout-title">Sobre a confirmação para gestante</div>
-          <p>Uma das operadoras já confirmou que o tour de 3h é <strong>compatível com gravidez</strong> — atividade de baixo impacto, ritmo do guia ajustado ao grupo, sem trechos técnicos. Vista a confirmação por escrito ao reservar (proteção em caso de mudança de turno) e tenha a recomendação da obstetra para 30 semanas em mãos.</p>
-        </div>
+        body: `<p>~1h30 até Skaftafell. Almoço leve no Skaftafellsstofa (sanduíches do Bonus ou bistrô do Visitor Center) e <strong>pagar estacionamento no app Parka (ISK 1.000)</strong>. Ponto de encontro da operadora geralmente próximo ao Visitor Center.</p>
+        <p>Briefing e equipagem (crampons, capacete, machado de gelo), 15 min de caminhada até o pé da geleira e <strong>~2h sobre o gelo</strong>: fendas (crevasses), poças de água glacial azul-elétrico (moulins) e formações esculpidas pelo derretimento. O Skaftafellsjökull é uma língua do <strong>Vatnajökull</strong>, maior geleira da Europa em volume.</p>
         <div class="callout warning">
           <div class="callout-title">O que levar</div>
           <ul>
-            <li><strong>Botas de trilha rígidas</strong> com cano alto e ankle support — não tênis, e não bota leve. Os crampons precisam fixar firme. Algumas operadoras alugam.</li>
-            <li>Camadas: térmica, fleece, shell impermeável. Esquenta caminhando, esfria parando.</li>
-            <li>Luvas, gorro, óculos de sol (reflexão na neve é forte).</li>
-            <li>Garrafa de água + barra de cereal — esforço sustentado por 2h.</li>
-            <li>Câmera com alça segura no pescoço (não no bolso, com crampons você não se ajoelha facilmente).</li>
+            <li><strong>Botas de trilha rígidas</strong> com cano alto — crampons precisam fixar firme (não tênis).</li>
+            <li>Camadas: térmica + fleece + shell impermeável; luvas, gorro, óculos de sol.</li>
+            <li>Garrafa de água + barra de cereal; câmera com alça no pescoço.</li>
+            <li>Power bank carregado (frio descarrega o iPhone rápido).</li>
           </ul>
         </div>
-        <p><strong>Operadoras:</strong> Troll Expeditions, Glacier Guides, Icelandic Mountain Guides ou Arctic Adventures. <strong>Reserve com 2 meses de antecedência</strong> e marque para o início da tarde — se cancelar por clima de manhã, ainda dá tempo de remarcar para outro horário ou recorrer ao plano B.</p>`
+        <p>⚠️ Cancelamentos por vento/neblina acontecem em 10—20% das saídas em setembro. Se cair, veja o plano B abaixo.</p>`
       },
       {
-        title: "Plano B — se o tour for cancelado por clima",
-        body: `<p>Cancelamentos por vento ou neblina são comuns na Islândia (10—20% das saídas em setembro). Se o glacier hike cair, você ainda tem o parque inteiro disponível:</p>
-        <ul>
-          <li><strong>Trilha autoguiada à língua do Skaftafellsjökull</strong> — 1,9 km ida (3,8 km total), terreno plano de cascalho, 1h ida e volta. Leva ao mirante frontal da geleira, onde o gelo encontra a lagoa proglacial. Vista cara a cara sem pisar no gelo.</li>
-          <li><strong>Svartifoss</strong> — 1,5 km ida (3 km total), subida suave a moderada, 45 min ida. Cachoeira emoldurada por colunas hexagonais de basalto que inspiraram a Hallgrímskirkja em Reykjavík. Trilha tem rampas de borracha em trechos macios.</li>
-        </ul>
-        <p>O Skaftafellsstofa (Visitor Center) tem café, banheiros, exposição e pessoal que orienta sobre condição das trilhas no dia. Estacionamento pago via app Parka (ISK 1.000).</p>`
+        title: "Plano B — se o glacier hike cancelar",
+        body: `<ul>
+          <li><strong>Trilha autoguiada ao Skaftafellsjökull</strong> — 1,9 km ida (3,8 km total), plano de cascalho, ~1h. Mirante frontal onde o gelo encontra a lagoa proglacial.</li>
+          <li><strong>Svartifoss</strong> (ver abaixo — vira a atividade principal).</li>
+          <li><strong>Skaftafellsstofa</strong> — café, banheiros, exposição; a equipe orienta sobre as trilhas do dia.</li>
+        </ul>`
       },
       {
-        title: "Svartifoss · se sobrar energia",
-        body: `<p>Mesmo com o glacier hike confirmado, se você terminar bem-disposta por volta das 16h30—17h, vale considerar a trilha curta a <strong>Svartifoss</strong>. Sai do mesmo Visitor Center, 45 min ida, 30 min volta. Cachoeira preta com colunas hexagonais — uma das imagens mais reconhecíveis da Islândia.</p>
-        <p>Se o cansaço falar mais alto (provável após 3h sobre gelo), pule sem culpa — você verá basaltos colunares em outros pontos do roteiro.</p>`
+        title: "Bifurcação — Svartifoss (opcional)",
+        body: `<p>Se ela terminar bem-disposta: <strong>Svartifoss</strong> — 1,5 km ida (45 min), 30 min de volta. Cachoeira preta emoldurada por <strong>colunas hexagonais de basalto</strong> que inspiraram a Hallgrímskirkja em Reykjavík; trilha com rampas de borracha nos trechos macios.</p>
+        <p>Se o cansaço falar mais alto (provável após 3h de gelo), pule sem culpa — há basaltos colunares em outros pontos do roteiro.</p>`
       },
       {
         title: "Noite — Fosshotel Skaftafell",
-        body: `<p><strong>5 minutos de carro do Visitor Center</strong> — escolha estratégica para evitar voltar 1h até Klaustur depois de um dia intenso. O Fosshotel Skaftafell é um hotel de montanha 3 estrelas com restaurante próprio, vista para a geleira de algumas suítes e ambiente acolhedor.</p>
-        <p>Como em Skaftafell <strong>não há supermercado nem outras opções de jantar</strong>, o jantar é no próprio restaurante do hotel ou com o que você comprou em Vík (o quarto não tem cozinha, mas aceita microondas/chaleira para refeições simples).</p>
+        body: `<p>5 min do Visitor Center. Check-in, banho quente e jantar no <strong>restaurante do hotel</strong> (peixe local, cordeiro, sopas — reserve no check-in) ou refeição leve no quarto com o que comprou em Vík.</p>
         <div class="callout">
-          <div class="callout-title">Aurora · noite 5</div>
-          <p>Sudeste tem latitude alta e zero poluição luminosa. Probabilidade boa após um dia intenso de geleira. Se chover ou estiver nublado, vá descansar — a próxima parada (Höfn no Dia 6) também tem céu escuro.</p>
+          <div class="callout-title">Aurora · noite 4</div>
+          <p>Sudeste islandês com <strong>zero poluição luminosa</strong> — condição ideal. Cheque o vedur.is antes de deitar; se Kp ≥ 3 e céu limpo, vale despertador 00h—01h. Se nublado, durma — Höfn amanhã também tem céu escuro.</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Fosshotel Skaftafell", detail: "5 min do Visitor Center. Restaurante próprio, vista para a geleira em algumas suítes, prático para evitar 1h de volta a Klaustur após o glacier hike.", price: "≈ R$ 1.400 / casal", url: "https://www.booking.com/hotel/is/fosshotel-skaftafell.pt-pt.html" },
-      { name: "Fosshotel Glacier Lagoon", detail: "Alternativa: 30 min adiante (em direção a Höfn), vista para o oceano, restaurante reconhecido — mais caro." }
+      { name: "Fosshotel Skaftafell", detail: "5 min do Visitor Center. Restaurante próprio, vista para a geleira em algumas suítes — evita 1h de volta a Klaustur após o glacier hike.", price: "≈ R$ 1.400 / casal", url: "https://www.booking.com/hotel/is/fosshotel-skaftafell.pt-pt.html" },
+      { name: "Skaftafell Lodges by Adventure Hotels", detail: "Alternativa próxima ao parque — conferir disponibilidade na data.", url: "https://www.booking.com/hotel/is/skaftafell-lodges-by-adventure-hotels.pt-br.html" }
     ],
     food: [
       "<strong>Almoço leve:</strong> sanduíches do Bonus de Vík (compre na saída) ou bistrô do Skaftafellsstofa antes do tour.",
-      "<strong>Jantar:</strong> restaurante do Fosshotel Skaftafell — peixe local, cordeiro, sopas. Reserve no check-in para evitar lotação."
+      "<strong>Jantar:</strong> restaurante do Fosshotel Skaftafell — reserve no check-in (não há outras opções na região)."
     ],
     tips: [
-      "Hidrate bem durante o glacier hike — você sua mais do que parece sob as camadas.",
-      "Tem celular antigo? Leve. Frio extremo descarrega bateria de iPhone modernos rapidamente.",
-      "Reserve o tour para 13h30 ou 14h — manhã livre para Fjaðrárgljúfur e tempo de chegada confortável.",
-      "Skaftafellsstofa: pague o estacionamento no app Parka antes de sair do carro."
-    ]
+      "Compras no Bonus de Vík antes de sair (almoço + jantar) — não há supermercado em Skaftafell.",
+      "Botas de trilha rígidas para os crampons; power bank carregado.",
+      "App Parka instalado para pagar o estacionamento (ISK 1.000).",
+      "Confirmação da operadora por escrito mencionando a gestação."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/V%C3%ADk+%C3%AD+M%C3%BDrdal,+870,+Isl%C3%A2ndia/Fja%C3%B0r%C3%A1rglj%C3%BAfur,+881,+Isl%C3%A2ndia/Parque+Nacional+Skaftafell,+785+Skaftafell,+Isl%C3%A2ndia/Svartifoss,+785,+Isl%C3%A2ndia"
   },
   {
-    n: 6,
+    n: 5,
     title: "Sudeste glacial: Svínafellsjökull, Múlagljúfur, Jökulsárlón e Diamond Beach",
-    subtitle: "<em>O 'dia coroa' do roteiro — paisagens de geleira em sequência</em> · 05 Set (sáb)",
-    short: "Mais geleiras, o cânion oculto de Múlagljúfur, e o ponto alto: lagoa glacial Jökulsárlón com icebergs azul-elétrico, passeio de barco anfíbio entre eles, e a Diamond Beach.",
-    tags: ["Geleiras", "Lagoa glacial", "Cânion"],
+    subtitle: "<em>Svínafellsjökull · Múlagljúfur · Jökulsárlón · Diamond Beach · Höfn</em> · 04 Set (sex)",
+    short: "Mais geleiras, o cânion oculto de Múlagljúfur e o ponto alto da costa sul: a lagoa glacial Jökulsárlón com icebergs azul-elétrico, passeio de barco anfíbio entre eles e a Diamond Beach. Jantar de humarsúpa em Höfn, capital da lagosta.",
+    tags: ["Geleiras", "Lagoa glacial", "Diamond Beach"],
     photos: [
-      { id: "9532584", caption: "Cânion verde com paredões serpentinados (Múlagljúfur)" },
+      { id: "9532584", caption: "Múlagljúfur — cânion oculto de paredões verde-musgo" },
       { id: "20582185", caption: "Jökulsárlón — icebergs azul-elétrico flutuando até o mar" },
       { id: "4087258", caption: "Diamond Beach — fragmentos de gelo na areia preta" }
     ],
     meta: {
       "Trajeto": "Skaftafell → Höfn",
-      "Direção": "190 km · 2h45 líquidas",
+      "Direção": "143 km · 2h06 líquidas",
       "Foco": "Svínafellsjökull + Múlagljúfur + Jökulsárlón + Diamond Beach",
-      "Refeições": "Almoço, jantar especial"
+      "Refeições": "Almoço rápido, jantar especial (humarsúpa)"
     },
     sections: [
       {
-        title: "Manhã",
-        body: `<p>Café no Fosshotel Skaftafell e saída por volta das 9h — sem pressa, já que dormir em Skaftafell economizou 1h de deslocamento em relação ao plano original via Klaustur.</p>
-        <p><strong>Svínafellsjökull</strong> (10 min do hotel): língua glacial mais isolada e fotogênica que a do glacier hike de ontem. Estacionamento gratuito, caminhada plana de 10 min até o mirante. Cenário usado em Interestelar e Game of Thrones. Reserve 45 min.</p>`
+        title: "Antes de viajar",
+        body: `<div class="callout warning">
+          <div class="callout-title">Reservas e logística</div>
+          <ul>
+            <li><strong>Barco anfíbio em Jökulsárlón</strong> reservado (não Zodiac — não recomendado para gestantes).</li>
+            <li><strong>Pakkhús (Höfn)</strong> com reserva confirmada para o jantar.</li>
+            <li><strong>Coordenadas de Múlagljúfur no GPS: 63.989, -16.464</strong> (não tem placa na rota 1).</li>
+            <li>Tanque cheio em Höfn — o trecho até Egilsstaðir tem a menor densidade de postos.</li>
+          </ul>
+        </div>`
       },
       {
-        title: "Tarde",
-        body: `<p><strong>Múlagljúfur (cânion oculto)</strong>: 30 min de Svínafellsjökull. Cânion espetacular com paredões verde-musgo e rio glacial. <strong>Não tem placa na rota 1</strong> — coordenadas: 63.989, -16.464. Trilha de 30—40 min até o mirante (subida moderada — opcional para gestante). Joia escondida.</p>
-        <p><strong>Jökulsárlón</strong> (30 min de Múlagljúfur): a lagoa glacial mais famosa do mundo. Reserve 2 horas. <strong>Passeio de barco anfíbio (40 min, sentado, ritmo lento)</strong> é compatível com gestante e dá uma perspectiva única entre os icebergs. O Zodiac (mais rápido, próximo à parede da geleira) <strong>não é recomendado para gestantes</strong> pelas operadoras — fique com o anfíbio.</p>
-        <p><strong>Diamond Beach</strong> (atravessando a estrada): pedaços de iceberg encalhados na areia preta. Ideal ao pôr do sol — em setembro, sol se põe ~20h-19h.</p>`
+        title: "Manhã — Svínafellsjökull",
+        body: `<p>Café no Fosshotel Skaftafell e saída por volta das 9h. <strong>Svínafellsjökull</strong> (10 min do hotel): língua glacial mais isolada e fotogênica que a do glacier hike de ontem. Estacionamento gratuito, caminhada plana de 10 min até o mirante. Cenário usado em <em>Interestelar</em> e <em>Game of Thrones</em>.</p>`
       },
       {
-        title: "Noite",
-        body: `<p>Continue até <strong>Höfn</strong> (1h). Capital da lagosta islandesa.</p>
-        <p><strong>Jante humarsúpa</strong> (sopa de lagosta) — referência nacional.</p>
+        title: "Múlagljúfur — o cânion oculto",
+        body: `<p>~30 min pela Ring Road. <strong>Não tem placa</strong> — use as coordenadas 63.989, -16.464 no GPS. Cânion com paredões verde-musgo e rio glacial, uma joia escondida. Trilha de 30—40 min até o mirante (subida moderada).</p>
+        <div class="callout">
+          <div class="callout-title">Para gestante</div>
+          <p>Considere fazer só o início da trilha e descansar — o esforço completo não compensa antes de Jökulsárlón. O grupo sobe em ritmo solto, fotografa e volta.</p>
+        </div>`
+      },
+      {
+        title: "Tarde — Jökulsárlón 🧊",
+        body: `<p>~30 min até a <strong>lagoa glacial mais famosa do mundo</strong> — icebergs azul-elétrico flutuando até o mar. Almoço rápido no food truck do estacionamento ou sanduíches trazidos.</p>
+        <p><strong>Passeio de barco anfíbio (40 min):</strong> sentado, ritmo lento, compatível com gestante, com perspectiva única entre os icebergs. Reserve antecipadamente.</p>
+        <div class="callout danger">
+          <div class="callout-title">Zodiac não</div>
+          <p>O Zodiac é mais rápido e chega próximo à parede da geleira — <strong>não recomendado para gestantes</strong> pelas operadoras. Fique com o anfíbio.</p>
+        </div>`
+      },
+      {
+        title: "Final de tarde — Diamond Beach 💎",
+        body: `<p>Do outro lado da Ring Road (mesmo estacionamento): <strong>pedaços de iceberg encalhados na areia preta vulcânica</strong>. A luz das 16h já é linda — siga em frente sem esperar o pôr do sol (não compensa voltar de Höfn à noite só por isso).</p>`
+      },
+      {
+        title: "Noite — Höfn 🦞",
+        body: `<p>~1h até <strong>Höfn</strong>, a "capital da lagosta islandesa". Check-in no Central Stays Höfn, banho quente e jantar no <strong>Pakkhús</strong>: a <strong>humarsúpa</strong> (sopa de lagosta) é referência nacional, lendária. <strong>Reserva obrigatória.</strong></p>
         <div class="callout">
           <div class="callout-title">Aurora · Höfn</div>
-          <p>Boa pela latitude e ausência de luzes. Após o jantar, dirija 5 min para fora da cidade.</p>
+          <p>Boa latitude e ausência de luzes da cidade. Cheque o vedur.is; se Kp ≥ 3 + céu limpo, dirija 5 min pra fora da cidade. Se o cansaço falar mais alto, durma — Egilsstaðir amanhã também tem céu escuro.</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Central Stays Höfn", detail: "Apartamento central em Höfn, prático para o jantar e saída cedo amanhã. Próximo ao Pakkhús.", price: "≈ R$ 1.200 / casal", url: "https://www.booking.com/hotel/is/central-stays-hofn.pt-pt.html" },
-      { name: "Hótel Höfn", detail: "Alternativa: hotel central tradicional." },
-      { name: "Milk Factory (Höfn)", detail: "Alternativa: boutique em antiga fábrica de laticínios." }
+      { name: "Central Stays Höfn", detail: "Apartamento central em Höfn, próximo ao Pakkhús — prático para o jantar e saída cedo amanhã.", price: "≈ R$ 1.200 / casal", url: "https://www.booking.com/hotel/is/central-stays-hofn.pt-pt.html" },
+      { name: "REY Lodges (Höfn)", detail: "Alternativa próxima — conferir disponibilidade na data.", url: "https://www.booking.com/hotel/is/reylodges.pt-br.html" }
     ],
     food: [
-      "<strong>Almoço:</strong> food truck na Jökulsárlón ou trazer sanduíches.",
+      "<strong>Almoço:</strong> food truck na Jökulsárlón ou sanduíches trazidos.",
       "<strong>Jantar em Höfn:</strong> Pakkhús — humarsúpa lendária. Reserve com antecedência."
     ],
     tips: [
       "Múlagljúfur exige boas botas — chão mole e rio cruzando a trilha.",
-      "Diamond Beach é melhor ao pôr do sol — luz dourada nos cristais é cinematográfica.",
-      "Trecho entre Höfn e Egilsstaðir (amanhã) é o de menor densidade de postos. Saia com tanque cheio."
-    ]
+      "Coordenadas de Múlagljúfur salvas no GPS (63.989, -16.464) — não há placa.",
+      "Reserva do barco anfíbio + Pakkhús no celular.",
+      "Tanque cheio em Höfn antes de dormir (trecho de poucos postos amanhã)."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Icelandic+Mountain+Guides+by+Icelandia+-+Skaftafell+Base+Camp,+Skaftafellsvegur,+785+Skaftafell,+Isl%C3%A2ndia/Sv%C3%ADnafellsj%C3%B6kull+Glacier,+2429%2BJGW,+785+Sv%C3%ADnafell,+Isl%C3%A2ndia/Mulagljufur+Canyon,+XGQP%2BJCH,+785,+Isl%C3%A2ndia/J%C3%B6kuls%C3%A1rl%C3%B3n,+781,+Isl%C3%A2ndia/Diamond+Beach,+781,+Isl%C3%A2ndia/H%C3%B6fn,+780,+Isl%C3%A2ndia"
   },
   {
-    n: 7,
-    title: "Stokksnes, fiordes do leste e a vila colorida",
-    subtitle: "<em>Vestrahorn · East Fjords · Seyðisfjörður</em> · 06 Set (dom)",
-    short: "Manhã em Stokksnes com a montanha Vestrahorn refletida em areia preta. Tarde de estrada cênica pelos fiordes orientais até Seyðisfjörður — a vila mais fotogênica do país.",
-    tags: ["Stokksnes", "Fiordes", "Vila colorida"],
+    n: 6,
+    title: "Stokksnes, fiordes do leste e Seyðisfjörður",
+    subtitle: "<em>Vestrahorn · Fiordes Leste · Seyðisfjörður · Egilsstaðir</em> · 05 Set (sáb)",
+    short: "Manhã em Stokksnes com a montanha Vestrahorn refletida em areia preta, depois a estrada panorâmica dos fiordes orientais. Pernoite em Egilsstaðir (Hérað Hotel) com Seyðisfjörður como passeio de tarde e jantar de rena selvagem.",
+    tags: ["Stokksnes", "Fiordes", "Seyðisfjörður"],
     photos: [
       { id: "16550148", caption: "Fiorde do leste ao crepúsculo" },
       { id: "19742780", caption: "Seyðisfjörður — vila colorida entre as montanhas" },
-      { id: "19433891", caption: "Cânion de basalto colunar no leste islandês" }
+      { id: "19433891", caption: "Estrada panorâmica dos fiordes orientais" }
     ],
     meta: {
-      "Trajeto": "Höfn → Seyðisfjörður",
-      "Direção": "320 km · 5h líquidas",
-      "Foco": "Stokksnes + estrada panorâmica",
-      "Refeições": "Almoço, jantar"
+      "Trajeto": "Höfn → Egilsstaðir",
+      "Direção": "310 km · 5h líquidas",
+      "Foco": "Stokksnes + estrada dos fiordes + Seyðisfjörður",
+      "Refeições": "Almoço (Fáskrúðsfjörður), jantar (rena)"
     },
     sections: [
       {
-        title: "Manhã",
-        body: `<p>Saída cedo de Höfn (8h). <strong>Stokksnes / Vestrahorn</strong> (15 min de Höfn): península com a montanha Vestrahorn refletida em duna de areia preta. Visual lunar e dramático. <strong>Pequeno vilarejo viking cenográfico</strong> ao lado (cenário de filme não terminado, hoje atração turística — meio precária mas vale a foto). Entrada €15/carro no Viking Café.</p>
-        <p>Reserve 1h30. Marca registrada da Islândia oriental.</p>`
+        title: "Estratégia do dia",
+        body: `<p>Dormir em <strong>Egilsstaðir (Hérað Hotel)</strong> em vez de Seyðisfjörður traz três vantagens: sem subir/descer o passe Fjarðarheiði no escuro; o Lyng Restaurant tem <strong>rena selvagem</strong> (prato único do leste); e o café da manhã elogiado facilita a saída cedo amanhã. Seyðisfjörður vira passeio de tarde (25 min de Egilsstaðir).</p>`
       },
       {
-        title: "Tarde",
-        body: `<p>De volta à rota 1, suba pelos <strong>fiordes do leste</strong>. A estrada serpenteia entre montanhas e mar — uma das mais cênicas do país. Pequenas vilas pesqueiras: <strong>Djúpivogur, Stöðvarfjörður, Fáskrúðsfjörður</strong>.</p>
-        <p>Almoço em Stöðvarfjörður ou Fáskrúðsfjörður.</p>
-        <p>Suba o passe Fjarðarheiði até <strong>Seyðisfjörður</strong>. Cuidado em dias de neblina.</p>`
+        title: "Manhã — Stokksnes / Vestrahorn",
+        body: `<p>Saída cedo de Höfn (8h), tanque cheio. <strong>Stokksnes</strong> (15 min): península com a montanha <strong>Vestrahorn refletida em dunas de areia preta</strong> — visual lunar e dramático, marca registrada da Islândia oriental. Entrada €15/carro no Viking Café (cobre tudo). Caminhada plana, tranquila para gestante; vilarejo viking cenográfico ao lado rende 15 min de fotos.</p>`
       },
       {
-        title: "Noite",
-        body: `<p><strong>Seyðisfjörður</strong>: vila colorida com a famosa Rua Arco-íris e a Igreja Azul (Bláa Kirkjan). Para muitos, a vila mais fotogênica da Islândia.</p>
-        <p>Caminhe pela vila ao pôr do sol — luz dourada nos pinhões coloridos é mágica.</p>`
+        title: "Estrada dos fiordes e almoço",
+        body: `<p>~2h30 contornando os fiordes — <strong>a estrada é a atração</strong> (média real de 60—70 km/h). Pare onde sentir vontade; <strong>Djúpivogur</strong> (1h de Höfn) rende uma pausa de 15—20 min.</p>
+        <p>Almoço em <strong>Fáskrúðsfjörður</strong> no <strong>Kaffihúsið Sumarlína</strong> — peixe fresco. Curiosidade: a vila tem herança francesa (placas em francês), de pescadores que se estabeleceram aqui no século XIX.</p>`
+      },
+      {
+        title: "Tarde — Egilsstaðir e Seyðisfjörður 🌈",
+        body: `<p>Check-in no <strong>Hérað Hotel</strong> em Egilsstaðir (~15h), depois ~25 min pelo passe Fjarðarheiði (620 m) até <strong>Seyðisfjörður</strong>, para muitos a vila mais fotogênica do país: a <strong>Rua Arco-íris (Regnbogagata)</strong> levando à <strong>Bláa Kirkjan (Igreja Azul)</strong>, lojinhas e cafés. Luz dourada nos pinhões coloridos a partir das 18h.</p>
+        <div class="callout warning">
+          <div class="callout-title">Cheque road.is antes de subir</div>
+          <p>O passe Fjarðarheiði tem neblina e vento frequentes. Verifique road.is antes de subir — e veja o Plano B abaixo se estiver fechado.</p>
+        </div>`
+      },
+      {
+        title: "Noite — Lyng Restaurant 🦌",
+        body: `<p>Volta a Egilsstaðir e jantar no <strong>Lyng Restaurant</strong> (no próprio Hérað Hotel, sem dirigir): <strong>rena selvagem</strong> — Egilsstaðir é a única região da Islândia com renas selvagens —, além de peixe e cordeiro local com ingredientes da região.</p>
+        <div class="callout">
+          <div class="callout-title">Aurora · Egilsstaðir</div>
+          <p>Várias reviews mencionam ver aurora do próprio quarto/lounge do hotel — janelas amplas e pouca poluição luminosa. Cheque o vedur.is antes de dormir.</p>
+        </div>`
+      },
+      {
+        title: "Plano B — se Fjarðarheiði estiver fechado",
+        body: `<p>Pular Seyðisfjörður e ficar em Egilsstaðir: <strong>East Iceland Heritage Museum</strong> (7 min a pé), <strong>Selskógur</strong> (mata com trilhas, 10 min de carro), o parque <strong>Tjarnargarðurinn</strong> no centro, ou o <strong>East Iceland Reindeer Park</strong> (Fellabær).</p>`
       }
     ],
     lodging: [
-      { name: "Við Lónið Guesthouse (Egilsstaðir)", detail: "Quartos decorados com cuidado, próximos ao lago Lagarfljót. Localização prática para a rota leste — alternativa moderna a Seyðisfjörður (30 min de carro).", price: "≈ R$ 1.400 / casal", url: "https://www.booking.com/hotel/is/vid-lonid.pt-pt.html" },
-      { name: "Hótel Aldan (Seyðisfjörður)", detail: "Alternativa: pequenas casas históricas convertidas. Charme da vila colorida — mas exige descer/subir o passo Fjarðarheiði todo dia." },
+      { name: "Hérað — Berjaya Iceland Hotels (Egilsstaðir)", detail: "Hotel central, certificado Green Hotel (ISO 14001), 60 quartos, Wi-Fi e parking grátis. Lyng Restaurant elogiado (rena, peixe, cordeiro), bar/lounge com aurora visível das janelas em muitas noites. Check-in 15h / check-out 11h.", price: "≈ R$ 1.500 / casal" },
+      { name: "Hótel Aldan (Seyðisfjörður)", detail: "Alternativa: casas históricas convertidas, charme da vila — mas exige descer/subir o passe Fjarðarheiði." },
       { name: "Post-Hostel Seyðisfjörður", detail: "Alternativa econômica em Seyðisfjörður." }
     ],
     food: [
       "<strong>Almoço:</strong> Kaffihúsið Sumarlína (Fáskrúðsfjörður) — peixe fresco.",
-      "<strong>Jantar:</strong> Norð Austur Sushi & Bar (Seyðisfjörður) — sushi inesperadamente excelente."
+      "<strong>Jantar:</strong> Lyng Restaurant (Hérað Hotel) — rena selvagem, regional."
     ],
     tips: [
-      "Stokksnes é melhor com luz de manhã ou final de tarde — sol baixo realça a textura da duna.",
-      "Os fiordes do leste são considerados a região menos turística. Aproveite o silêncio.",
-      "Aurora aqui: campo aberto sem luzes urbanas, probabilidade alta."
-    ]
+      "Cheque road.is no dia — Fjarðarheiði (620 m) pode ter neblina/vento.",
+      "€15 (cartão ou euros) para o Viking Café (entrada de Stokksnes).",
+      "Tanque cheio em Höfn antes de sair; câmera com bateria extra (luz baixa nos fiordes é cinematográfica).",
+      "Reservas confirmadas: Kaffihúsið Sumarlína + Lyng Restaurant."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/REY+Stays+-+Small+&amp;+Cozy+Studio/Vestrahorn,+781,+Islândia/Djúpivogur,+Islândia/Stöðvarfjörður,+755,+Islândia/Fáskrúðsfjörður,+Islândia/Seyðisfjörður,+710,+Islândia"
   },
   {
-    n: 8,
-    title: "Hengifoss, Stuðlagil e a região vulcânica de Mývatn",
-    subtitle: "<em>Cachoeira em camadas · Cânion · Hverir · Krafla</em> · 07 Set (seg)",
-    short: "Saída de Seyðisfjörður passando pela trilha de Hengifoss com suas camadas vermelhas, depois Stuðlagil, área geotérmica de Hverir e a cratera Víti azul-turquesa em Krafla.",
-    tags: ["Cachoeira", "Cânion", "Geotermal"],
+    n: 7,
+    title: "Hengifoss, Stuðlagil e travessia até Mývatn",
+    subtitle: "<em>Hengifoss · Stuðlagil · Mývatn</em> · 06 Set (dom)",
+    short: "Dia puxado e recompensador: a trilha de Hengifoss com suas camadas vermelhas de argila vulcânica, o cânion de basalto colunar de Stuðlagil (lado leste) e a travessia do planalto até o lago Mývatn, com jantar no premiado Hotel Laxá.",
+    tags: ["Cachoeira", "Cânion", "Travessia"],
     photos: [
-      { id: "16170728", caption: "Hengifoss — cachoeira com camadas vermelhas de argila vulcânica" },
-      { id: "19433891", caption: "Stuðlagil — cânion de basalto colunar com rio turquesa" },
-      { id: "32577924", caption: "Hverir — fumarolas e o cheiro de enxofre" }
+      { id: "16170728", caption: "Hengifoss — camadas vermelhas de argila vulcânica" },
+      { id: "19433891", caption: "Stuðlagil — cânion de basalto colunar" },
+      { id: "17474931", caption: "Travessia do planalto rumo a Mývatn" }
     ],
     meta: {
-      "Trajeto": "Seyðisfjörður → Mývatn",
-      "Direção": "300 km · 5h líquidas",
-      "Foco": "Hengifoss + Stuðlagil + Krafla",
-      "Refeições": "Almoço leve, jantar"
+      "Trajeto": "Egilsstaðir → Mývatn",
+      "Direção": "290 km · 4h30 líquidas",
+      "Foco": "Trilha Hengifoss + Stuðlagil leste",
+      "Refeições": "Almoço (Egilsstaðir), jantar no Hotel Laxá"
     },
     sections: [
       {
-        title: "Manhã — Hengifoss",
-        body: `<p>Saída cedo de Seyðisfjörður (8h). Desça o passe de volta a Egilsstaðir, depois siga 30 min ao sul até <strong>Hengifoss</strong>.</p>
-        <p><strong>Hengifoss</strong>: terceira cachoeira mais alta da Islândia (128 m), com paredões de basalto e <strong>camadas horizontais vermelhas de argila vulcânica</strong> que registram milhões de anos de erupções. <strong>Trilha de 2h-2h30 ida e volta</strong> (4 km, sobe 300 m, dificuldade média).</p>
-        <p>No caminho, você passa por <strong>Litlanesfoss</strong> — cachoeira menor mas espetacular, cercada por colunas de basalto perfeitas. Vale a parada.</p>
+        title: "Estratégia do dia",
+        body: `<p>Dia <strong>mais puxado da viagem até aqui</strong> — duas atividades pesadas (trilha de ~3h + caminhada de 2h30) somadas a 4h30 de direção. <strong>Saída cedo é inegociável (07:30)</strong>: margem caso Hengifoss ou Stuðlagil demorem, trilhas vazias antes das 10h e chegada em Mývatn ainda com luz (~19h).</p>`
+      },
+      {
+        title: "Manhã — Trilha Hengifoss 🥾",
+        body: `<p>Café reforçado no Hérað Hotel e saída às 7h30. ~30 min até o Hengifoss carpark. <strong>Trilha mais pesada do roteiro depois do glacier hike</strong> — 4 km ida-e-volta, sobe 300 m, dificuldade média (subida íngreme nos primeiros 30 min).</p>
+        <p>No caminho, <strong>Litlanesfoss</strong> — cachoeira menor cercada por <strong>colunas de basalto perfeitas</strong>. No topo, <strong>Hengifoss</strong>: terceira cachoeira mais alta da Islândia (<strong>128 m</strong>), com camadas horizontais vermelhas de argila vulcânica que registram milhões de anos de erupções.</p>
         <div class="callout warning">
-          <div class="callout-title">Sobre a trilha de Hengifoss</div>
-          <p>É a trilha mais pesada do roteiro depois do glacier hike. Subida íngreme nos primeiros 30 min, depois mais suave. Inicialmente cascalho, depois trilha de terra. Bota de trilha boa, água, snack. Em dias de chuva, fica escorregadia.</p>
+          <div class="callout-title">Atenção</div>
+          <p>Em dias de chuva fica escorregadia — botas de trilha boas são obrigatórias e o bastão de caminhada ajuda na descida. Pace lento na subida economiza energia para Stuðlagil.</p>
         </div>`
       },
       {
-        title: "Tarde — Stuðlagil",
-        body: `<p>Almoço rápido em Egilsstaðir (Salt Cafe) e seguir para <strong>Stuðlagil</strong> (1h).</p>
-        <p><strong>Stuðlagil Canyon</strong>: cânion de paredões de basalto colunar com rio glacial turquesa correndo no fundo. Existem dois acessos: lado oeste (mais raso, vista panorâmica) e lado leste (descida ao nível do rio, mais espetacular). Trilha de 30—45 min para descer ao leito.</p>
-        <p>Reserve 1h30 a 2h. Foi descoberto turisticamente apenas em 2017 quando uma represa diminuiu o nível do rio.</p>`
-      },
-      {
-        title: "Final de tarde — Hverir e Krafla",
-        body: `<p>Travessia do planalto até a região de Mývatn (2h30 de Stuðlagil).</p>
-        <p><strong>Hverir / Námafjall</strong>: área geotérmica com fumarolas, poças de lama borbulhante e cheiro forte de enxofre. Caminhe pelos passadiços demarcados — solo a 100°C+ em pontos. 45 min.</p>
-        <p><strong>Krafla / Cratera Víti</strong> (10 min de Hverir): lago vulcânico azul-turquesa em cratera. Caminhada de 10 min do estacionamento. Você passa por uma usina geotérmica ativa no caminho. 1h.</p>`
-      },
-      {
-        title: "Noite",
-        body: `<p>Check-in em Mývatn.</p>
+        title: "Tarde — Stuðlagil (lado leste) 🪨",
+        body: `<p>~1h15 até o <strong>Stuðlagil Canyon</strong>, cânion de basalto colunar com rio glacial — descoberto turisticamente em 2017, quando a represa Kárahnjúkar baixou o nível do rio Jökla. Use o <strong>estacionamento Klaustursel</strong> (lado leste, à esquerda na placa "Stuðlagil"; ignore a placa principal que aponta para o oeste). <strong>ISK 1.000 via app Parka.</strong></p>
+        <p>30 min de caminhada até o canyon, ~1h30 explorando (descida entre as colunas, a cachoeira Stuðlafoss no caminho), 30 min de volta.</p>
         <div class="callout">
-          <div class="callout-title">Mývatn Nature Baths · opcional</div>
-          <p>A "Blue Lagoon do norte" (€56/pessoa, abre até 23h) é uma alternativa relaxante após um dia denso, mas <strong>não é obrigatório</strong> — você terá outras chances de banho geotérmico (Forest Lagoon em Akureyri no Dia 9, Blue Lagoon ou Sky Lagoon no Dia 12). Pule sem culpa se estiver cansada.</p>
-        </div>
+          <div class="callout-title">Sobre a cor da água em setembro</div>
+          <p>O turquesa famoso aparece de março a julho. De agosto a outubro a água pode estar cinzenta (sedimento do derretimento glacial) — mas as colunas de basalto continuam espetaculares.</p>
+        </div>`
+      },
+      {
+        title: "Travessia até Mývatn 🚗",
+        body: `<p>Almoço em Egilsstaðir (<strong>Salt Cafe and Bistro</strong> — peixe e cordeiro, praticamente na rota de volta à 1) e ~2h45 pelo planalto via rota 1: tundra e formações vulcânicas. <strong>Baixa densidade de postos</strong> — abasteça em Egilsstaðir antes de seguir.</p>`
+      },
+      {
+        title: "Noite — Hotel Laxá",
+        body: `<p>Chegada e check-in no <strong>Hotel Laxá</strong> (design contemporâneo premiado, vista para o lago Mývatn). Jantar no restaurante do próprio hotel — <strong>reserva feita previamente</strong>, depois de um dia de 11h ninguém quer dirigir.</p>
         <div class="callout">
           <div class="callout-title">Aurora · Mývatn</div>
-          <ul>
-            <li>Latitude alta, sem luzes, lago refletindo. Um dos melhores spots do país.</li>
-            <li>Se optar pelos Nature Baths, ficar na água quente vendo aurora é uma das experiências mais marcantes da viagem.</li>
-          </ul>
+          <p>Um dos melhores spots do país. As janelas do hotel já permitem ver se aparecer; se quiser sair, 5 min dirigindo em qualquer direção tira a luz urbana. Cheque o vedur.is.</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Hotel Laxá", detail: "Design contemporâneo premiado, vista para o lago Mývatn, restaurante próprio. Localização privilegiada para aurora.", price: "≈ R$ 1.900 / casal", url: "https://www.booking.com/hotel/is/laxa.pt-pt.html" },
-      { name: "Sel-Hotel Mývatn", detail: "Alternativa: moderno, conectado à área dos banhos." },
-      { name: "Vogafjós Farm Resort", detail: "Alternativa: fazenda funcional onde você janta vendo as vacas." }
+      { name: "Laxá Hótel (Mývatn)", detail: "Design contemporâneo premiado, vista para o lago, restaurante próprio. Localização privilegiada para aurora. Duas noites (06 e 07/09).", price: "≈ R$ 1.900 / casal", url: "https://www.booking.com/hotel/is/laxa.pt-pt.html" }
     ],
     food: [
-      "<strong>Almoço:</strong> Salt Cafe and Bistro (Egilsstaðir) — moderno, peixe e cordeiro.",
-      "<strong>Jantar:</strong> Vogafjós Farm Resort — laticínios próprios, peixe defumado, cordeiro."
+      "<strong>Almoço:</strong> Salt Cafe and Bistro (Egilsstaðir) — peixe e cordeiro.",
+      "<strong>Jantar:</strong> restaurante do Hotel Laxá — prático após um dia exaustivo (reservar)."
     ],
     tips: [
-      "Hengifoss é cansativa mas linda — a foto vale o esforço.",
-      "Stuðlagil acesso leste exige 4x4 — estrada de cascalho 923. Lado oeste é asfaltado.",
-      "Os passadiços em Hverir não são por estética — solo a 100°C. Não saia deles.",
-      "Reserve hospedagem em Mývatn com 3+ meses. Lota rápido."
-    ]
+      "Saída 07:30 é inegociável — dia com duas atividades pesadas + 4h30 de direção.",
+      "Botas de trilha + bastão (Hengifoss exige aderência e ajuda na descida).",
+      "Sanduíches/snacks comprados na noite anterior (Bonus de Egilsstaðir) — almoço entre Hengifoss e Stuðlagil é difícil.",
+      "App Parka instalado (Stuðlagil cobra ISK 1.000); tanque cheio em Egilsstaðir."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Hérað+-+Berjaya+Iceland+Hotels,+Miðvangur+1-7,+700+Egilsstaðir,+Islândia/Hengifoss+carpark,+34F9+9R2,+701+Brekka,+Islândia/Stuðlagil+Canyon,+5M6Q+HP,+701+Eiriksstadhir,+Islândia/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia"
+  },
+  {
+    n: 8,
+    title: "Dia completo em Mývatn: banhos, lava e geotermia",
+    subtitle: "<em>Nature Baths · Dimmuborgir · Grjótagjá · Hverir · Krafla</em> · 07 Set (seg)",
+    short: "Dia equilibrado de recuperação após o dia 7 puxado. Banho geotérmico de manhã no Mývatn Nature Baths, tarde de atrações próximas (castelos de lava de Dimmuborgir, caverna de Grjótagjá, fumarolas de Hverir e a cratera Víti em Krafla) e jantar na fazenda Vogafjós.",
+    tags: ["Banho termal", "Lava", "Geotermal"],
+    photos: [
+      { id: "32577924", caption: "Hverir / Námafjall — fumarolas e lama borbulhante" },
+      { id: "28304723", caption: "Aurora boreal sobre a região de Mývatn" },
+      { id: "10589819", caption: "Águas geotérmicas — banho com vista no norte" }
+    ],
+    meta: {
+      "Trajeto": "Mývatn (rotas locais)",
+      "Direção": "120 km · 2h total",
+      "Foco": "Nature Baths + Dimmuborgir + Grjótagjá + Hverir + Krafla",
+      "Refeições": "Almoço (Kaffi Borgir), jantar (Vogafjós)"
+    },
+    sections: [
+      {
+        title: "Antes de viajar",
+        body: `<div class="callout warning">
+          <div class="callout-title">Banho geotérmico e gestação · reservas</div>
+          <ul>
+            <li><strong>Validação obstétrica</strong> para banho geotérmico (água 36—40°C; recomendado até 20 min por imersão).</li>
+            <li><strong>Mývatn Nature Baths</strong> com reserva em myvatnnaturebaths.is (€56/pessoa).</li>
+            <li><strong>Vogafjós Farm Resort</strong> com reserva confirmada para o jantar.</li>
+          </ul>
+        </div>
+        <p>Sequência diferente do mapa do Google: <strong>Nature Baths → Dimmuborgir → Grjótagjá → Hverir → Krafla</strong> é a ordem geográfica natural (oeste → leste do lago); o Google sugere um zigue-zague, ignorado aqui.</p>`
+      },
+      {
+        title: "Manhã — Mývatn Nature Baths 🛁",
+        body: `<p>Café tranquilo no Hotel Laxá (sem pressa — abre 10h) e ~15 min até o <strong>Mývatn Nature Baths</strong>, a "Blue Lagoon do Norte", com vista panorâmica do vale geotérmico. Águas a 36—40°C, sauna a vapor inclusa. De manhã há menos turistas e libera o resto do dia.</p>
+        <div class="callout warning">
+          <div class="callout-title">Para gestante (29 semanas)</div>
+          <ul>
+            <li>Validar com obstetra antes da viagem; até 20 min por imersão, alternando entrar/sair.</li>
+            <li>Manter ombros pra fora ajuda a regular a temperatura; hidratar bem.</li>
+            <li>Sair imediatamente se sentir tontura ou náusea.</li>
+          </ul>
+        </div>`
+      },
+      {
+        title: "Tarde — Dimmuborgir e Grjótagjá",
+        body: `<p>Almoço no <strong>Kaffi Borgir</strong> (vista do lago, sopa de cordeiro de destaque). <strong>Dimmuborgir</strong> ("Castelos Negros"): formações de lava bizarras criadas há 2.300 anos quando a lava encontrou um lago. Pequeno Círculo (1 km, plano) é ideal para gestante; cenário do acampamento de Mance Rayder em <em>Game of Thrones</em>.</p>
+        <p><strong>Grjótagjá</strong> (10 min): caverna geotérmica com lago azul-turquesa dentro — cenário icônico de <em>Game of Thrones</em>. <strong>Banho proibido desde 2013</strong> (água 45—50°C); apenas visita visual e fotos.</p>`
+      },
+      {
+        title: "Final de tarde — Hverir e Krafla 🌋",
+        body: `<p><strong>Hverir / Námafjall</strong>: fumarolas, poças de lama borbulhante e cheiro forte de enxofre — paisagem marciana. <strong>Não saia dos passadiços</strong> (solo a 100°C+). Caminhada plana, ~45 min.</p>
+        <p><strong>Krafla / Cratera Víti</strong> (15 min): lago vulcânico azul-turquesa em cratera formada na erupção de 1724. Caminhada de 10 min do estacionamento, passando por uma usina geotérmica ativa. <strong>Última atividade com luz</strong> — pôr do sol ~19:30.</p>
+        <div class="callout">
+          <div class="callout-title">Opcional · Dettifoss (+1h30)</div>
+          <p>A cachoeira mais poderosa da Europa em volume fica a ~45 min de Krafla (rota 862 asfaltada). Vale se ela ainda estiver com pique às 18:30; caso contrário, pule sem culpa (chegariam ao hotel ~20h, jantar tarde).</p>
+        </div>`
+      },
+      {
+        title: "Noite — Vogafjós Farm Resort 🐄",
+        body: `<p>~30 min de volta. Jantar no <strong>Vogafjós Farm Resort</strong> (reserva feita): laticínios da própria fazenda, peixe defumado e cordeiro local — você janta vendo as vacas pelo estábulo de vidro adjacente.</p>
+        <div class="callout">
+          <div class="callout-title">Aurora · Mývatn</div>
+          <p>Um dos melhores spots do país: latitude alta + zero poluição luminosa + lago refletindo. A vista das janelas do hotel já basta; se quiser sair, qualquer estrada local fora de Reykjahlíð serve. Cheque o vedur.is.</p>
+        </div>`
+      }
+    ],
+    lodging: [
+      { name: "Laxá Hótel (Mývatn) — 2ª noite", detail: "Segunda noite no mesmo hotel: design contemporâneo, vista para o lago, restaurante próprio. Sem trocar de mala.", price: "≈ R$ 1.900 / casal", url: "https://www.booking.com/hotel/is/laxa.pt-pt.html" },
+      { name: "Sel-Hotel Mývatn", detail: "Alternativa: moderno, conectado à área dos banhos." },
+      { name: "Vogafjós Farm Resort", detail: "Alternativa: fazenda funcional onde se janta vendo as vacas." }
+    ],
+    food: [
+      "<strong>Almoço:</strong> Kaffi Borgir — vista do lago, sopa de cordeiro.",
+      "<strong>Jantar:</strong> Vogafjós Farm Resort — laticínios próprios, peixe defumado, cordeiro (reservar)."
+    ],
+    tips: [
+      "Roupa de banho + toalha extra para os Nature Baths (banho de manhã libera a tarde).",
+      "Garrafa de água (2L — banho geotérmico desidrata).",
+      "Calçado confortável (Dimmuborgir tem trilha); camadas (esfria rápido após as 17h).",
+      "Reservas confirmadas: Nature Baths + Vogafjós."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia/Lava+field+Dimmuborgir,+H3RQ+F3Q,+660+Skútustaðir,+Islândia/Grjótagjá,+J4G8+GQX,+660+Reykjahlíð,+Islândia/Námafjall+Hverir+Viewpoint,+J5RR+HP4,+660+Reykjahlíð,+Islândia/Krafla,+660,+Islândia/Dettifoss,+671,+Islândia/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia"
   },
   {
     n: 9,
-    title: "Baleias em Húsavík, Goðafoss e banho na Forest Lagoon",
-    subtitle: "<em>🐋 Skjálfandi · Goðafoss · 🛁 Forest Lagoon</em> · 08 Set (ter)",
-    short: "Saída tranquila de Mývatn, almoço em Húsavík e a experiência mais marcante do norte: avistamento de baleias na baía de Skjálfandi. Tarde em Goðafoss, chegada a Akureyri e pernoite após mergulho na Forest Lagoon entre as árvores.",
+    title: "Baleias em Húsavík, Goðafoss e Forest Lagoon",
+    subtitle: "<em>🐋 Skjálfandi · Goðafoss · 🛁 Forest Lagoon · Akureyri</em> · 08 Set (ter)",
+    short: "Inversão inteligente do roteiro: avistamento de baleias logo de manhã (mar mais calmo, melhor luz), a Cachoeira dos Deuses (Goðafoss) e a Forest Lagoon ao pôr do sol sobre o fiorde Eyjafjörður, antes de um jantar relaxado em Akureyri.",
     tags: ["Baleias", "Goðafoss", "Forest Lagoon"],
     photos: [
-      { id: "16251253", caption: "Goðafoss — a Cachoeira dos Deuses, em formato de meia-lua" },
-      { id: "32577924", caption: "Vista vulcânica do norte islandês" },
-      { id: "28304723", caption: "Aurora boreal sobre estrada rural ao norte" }
+      { id: "16251253", caption: "Goðafoss — a Cachoeira dos Deuses, em meia-lua" },
+      { id: "28304723", caption: "Aurora boreal sobre o norte islandês" },
+      { id: "32577924", caption: "Forest Lagoon — banho com vista do fiorde Eyjafjörður" }
     ],
     meta: {
       "Trajeto": "Mývatn → Húsavík → Akureyri",
-      "Direção": "190 km · 3h líquidas",
-      "Foco": "🐋 baleias + Goðafoss + Forest Lagoon",
+      "Direção": "190 km · 3h total",
+      "Foco": "🐋 baleias (manhã) + Goðafoss + Forest Lagoon",
       "Refeições": "Almoço em Húsavík, jantar em Akureyri"
     },
     sections: [
       {
-        title: "Manhã — Mývatn → Húsavík",
-        body: `<p>Saída sem pressa de Mývatn (9h30). <strong>Dettifoss foi deliberadamente cortada</strong> do roteiro — adiciona 1h20 de direção e a experiência se sobrepõe à de Goðafoss (que está no caminho natural e é mais fotogênica).</p>
-        <p>Direção direta para <strong>Húsavík</strong> (1h pela rota 87): pequena cidade pesqueira no norte, com casas coloridas, igreja de madeira e a melhor baía da Europa para avistamento de cetáceos.</p>`
+        title: "Estratégia do dia",
+        body: `<p>Inversão do roteiro clássico: <strong>baleias de manhã</strong> + <strong>Forest Lagoon no fim da tarde</strong> (em vez de à noite). Vantagens: mar estatisticamente mais calmo de manhã, luz alta durante o tour, Forest Lagoon no pôr do sol (~19:20) com o fiorde iluminado, e chegada relaxada em Akureyri. Custo: saída cedo de Mývatn (7h).</p>`
       },
       {
-        title: "Almoço — Húsavík",
-        body: `<p>Almoço no porto: <strong>Naustið</strong> ou <strong>Salka</strong> — peixe fresco direto dos barcos. Reserve almoço para 12h30 ou 13h, deixando pelo menos 40 min de folga antes do tour das baleias.</p>`
+        title: "Manhã — porto de Húsavík e embarque",
+        body: `<p>Café reforçado no Hotel Laxá (confirmar se podem antecipar 30 min ou levar algo pro carro), tanque cheio e ~1h pela rota 87 até <strong>Húsavík</strong>. Caminhada rápida pelo porto antes do embarque: casas coloridas, a igreja de madeira <strong>Húsavíkurkirkja</strong> e a vista da baía Skjálfandi. Embarque ~08:45 (briefing + macacão térmico fornecido).</p>`
       },
       {
-        title: "Tarde — 🐋 Whale watching em Skjálfandi Bay",
-        body: `<p><strong>Húsavík é considerada a capital europeia do whale watching</strong>. A baía de Skjálfandi tem ecossistema riquíssimo, e em setembro ainda é alta temporada (a janela vai de abril a novembro, com pico em maio—setembro). Operadoras pioneiras com ~30 anos de logbooks reportam <strong>97% de taxa de sucesso de avistamento</strong>. O alvo principal são baleias-jubarte (humpback) e minke; também é comum ver golfinhos-de-bico-branco e marsopas.</p>
+        title: "Manhã — 🐋 Whale watching em Skjálfandi Bay",
+        body: `<p><strong>Oak boat tradicional (escuna de madeira), 3h.</strong> Espaçoso, estável, com cabine aquecida e banheiro a bordo. <strong>97% de taxa de sucesso de avistamento em setembro</strong>: alvos principais baleia-jubarte (humpback) e minke; também comuns golfinhos-de-bico-branco e marsopas. Chocolate quente e cookies de canela a bordo.</p>
         <div class="callout warning">
-          <div class="callout-title">Importante para gestante · escolher o barco certo</div>
-          <p>Há dois tipos de embarcação:</p>
-          <ul>
-            <li><strong>Barco oak tradicional</strong> (escuna de madeira, 2h30—3h): espaçoso, estável, cabine aquecida, banheiro a bordo, possível mover-se livremente. <strong>É o indicado para gestante.</strong></li>
-            <li><strong>RIB speedboat</strong> (~2h): rápido, mais próximo da água, sentado em banco-cavalinho. <strong>Proibido para gestantes</strong> pelas operadoras (impacto físico).</li>
-          </ul>
+          <div class="callout-title">Importante para gestante · oak boat, não RIB</div>
+          <p>O <strong>oak boat</strong> é o indicado (estável, mobilidade livre). O <strong>RIB speedboat é proibido para gestantes</strong> pelo impacto físico. Mar em setembro pode estar agitado — leve <strong>pulseira de enjoo (Sea-Band)</strong> por precaução.</p>
         </div>
-        <p><strong>Operadoras recomendadas:</strong> North Sailing (pioneira desde 1995, frota híbrida elétrica), Gentle Giants (carbon-neutral, oak boats grandes), Salka (boa relação preço-experiência). Reserve com 2—3 semanas de antecedência. Tour das 14h ou 14h30 funciona bem com a logística do dia.</p>
-        <p>Após o tour (de volta ao porto ~17h30), siga 1h até <strong>Goðafoss</strong>.</p>`
+        <p><strong>Operadoras:</strong> North Sailing (pioneira desde 1995, frota híbrida elétrica), Gentle Giants (carbon-neutral, oak boats grandes). Sugestão: North Sailing "Húsavík Original" 09:00.</p>`
       },
       {
-        title: "Final de tarde — Goðafoss",
-        body: `<p><strong>Goðafoss</strong> (1h de Húsavík): a "Cachoeira dos Deuses". Larga e fotogênica em formato de meia-lua. Lenda diz que em 1000 d.C., quando a Islândia se converteu ao cristianismo, o líder pagão jogou seus ídolos nórdicos pela cachoeira — daí o nome. Acesse os dois lados (mirantes oeste e leste). 45 min.</p>`
+        title: "Almoço e Goðafoss 🌊",
+        body: `<p>Almoço no porto de Húsavík: <strong>Naustið</strong> (peixe e cordeiro) ou <strong>Salka</strong> (cervejaria local + peixe). Depois ~1h até <strong>Goðafoss</strong>, a "Cachoeira dos Deuses", em meia-lua: na conversão ao cristianismo (1000 d.C.), o líder pagão Þorgeir jogou seus ídolos nórdicos pela cachoeira — daí o nome. Veja os dois mirantes (atravesse pela ponte); caminhada plana.</p>`
       },
       {
-        title: "Noite — Akureyri e Forest Lagoon",
-        body: `<p>Continue até <strong>Akureyri</strong> (40 min de Goðafoss): a "capital do norte", cidade de 19 mil habitantes. Check-in no hotel.</p>
-        <p>À noite, mergulho merecido na <strong>Forest Lagoon (Skógarböð)</strong>: banhos termais geotérmicos cercados por uma floresta nativa rara na Islândia, vista panorâmica para o fiorde Eyjafjörður e a cidade. 5 min do centro de Akureyri. <strong>Aberto até 23h</strong> — ideal para fechar um dia de baleias com calma. Tem cold plunge, sauna seca, bar molhado dentro da água. Reservar online em forestlagoon.is com 1—2 semanas de antecedência.</p>
+        title: "Fim de tarde — Forest Lagoon 🛁",
+        body: `<p>~45 min (passa por Akureyri) até a <strong>Forest Lagoon (Skógarböð)</strong>: banhos termais cercados por floresta nativa rara na Islândia, com vista panorâmica para o <strong>fiorde Eyjafjörður</strong> e a cidade. Cold plunge, sauna seca e bar molhado dentro da água. Pôr do sol sobre o fiorde a partir das 17h (~19:20 em 07/09). Reservar em forestlagoon.is.</p>
+        <div class="callout warning">
+          <div class="callout-title">Para gestante (29 semanas)</div>
+          <p>Mesmas precauções do Mývatn Nature Baths: validar com obstetra, até 20 min por imersão alternando entrar/sair, ombros pra fora, hidratar bem e sair se sentir tontura.</p>
+        </div>`
+      },
+      {
+        title: "Noite — Akureyri 🍽️",
+        body: `<p>~10 min até o centro de Akureyri, a "capital do norte". Check-in e jantar: <strong>Strikið</strong> (vista panorâmica do fiorde, cozinha islandesa moderna) ou <strong>Rub23</strong> (sushi excelente, peixe direto do fiorde).</p>
         <div class="callout">
-          <div class="callout-title">Aurora · Forest Lagoon</div>
-          <p>O complexo é virado para o norte e o fiorde, com céu razoavelmente escuro. Estar na água quente vendo a aurora dançar entre as árvores é uma das memórias mais marcantes possíveis no roteiro.</p>
+          <div class="callout-title">Aurora · Akureyri</div>
+          <p>A cidade tem alguma luz urbana, mas o Eyjafjörður é amplo. Se Kp ≥ 3 e céu limpo, dirija 10—15 min pra fora. Cheque o vedur.is.</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Centrum Hostel Akureyri", detail: "Central, prático, bom custo-benefício. Café da manhã incluso.", price: "≈ R$ 1.400 / casal", url: "https://www.booking.com/hotel/is/centrum-hostel.pt-pt.html" },
-      { name: "Hotel Kea by Keahotels", detail: "Alternativa: central, ao lado da igreja Akureyrarkirkja, 4 estrelas." },
-      { name: "Hotel Akureyri Berjaya", detail: "Alternativa: moderno, bom custo-benefício." }
+      { name: "Bryggjan Boutique Hotel", detail: "Strandgata 49, 600 Akureyri — boutique central à beira do fiorde, com café da manhã.", price: "≈ R$ 1.500 / casal", url: "https://www.booking.com/hotel/is/bryggjan-boutique.pt-pt.html" },
+      { name: "Centrum Hostel Akureyri", detail: "Alternativa: central, prático, bom custo-benefício, café da manhã incluso.", url: "https://www.booking.com/hotel/is/centrum-hostel.pt-pt.html" },
+      { name: "Hotel Kea / Berjaya Akureyri", detail: "Alternativas: centrais, ao lado da Akureyrarkirkja." }
     ],
     food: [
-      "<strong>Almoço em Húsavík:</strong> Naustið (peixe e cordeiro à beira do porto) ou Salka (cervejaria local + peixe).",
-      "<strong>Jantar em Akureyri:</strong> Strikið (vista panorâmica) ou Rub23 (sushi inesperadamente excelente)."
+      "<strong>Almoço em Húsavík:</strong> Naustið ou Salka — peixe fresco.",
+      "<strong>Jantar em Akureyri:</strong> Strikið (vista panorâmica) ou Rub23 (sushi)."
     ],
     tips: [
-      "Whale watching: leve gorro, luvas, casaco grosso. Operadores fornecem macacão térmico no oak boat também.",
-      "Reserve o tour de baleias com antecedência — o oak boat das 14h costuma esgotar em setembro.",
-      "Forest Lagoon: leve toalha (ou alugue lá), traje de banho, e nada de lentes se for ficar muito tempo (vapor embaça).",
-      "Compre suprimentos no Bonus de Akureyri — última cidade grande antes de Snæfellsnes."
-    ]
+      "Whale watching: roupa quente (camadas + gorro + luvas) e pulseira de enjoo (Sea-Band) por precaução.",
+      "Forest Lagoon: leve toalha e traje de banho; sem lentes de contato (vapor embaça).",
+      "Reservas confirmadas: whale watching (oak boat) + Forest Lagoon + jantar.",
+      "Bonus de Akureyri — faça compras (última cidade grande antes de Snæfellsnes)."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia/Húsavík,+640,+Islândia/Goðafoss,+645,+Islândia/Forest+Lagoon,+Vaðlaskógur+605,+605+Akureyri,+Islândia/Akureyri,+Islândia"
   },
   {
     n: 10,
     title: "Travessia para Snæfellsnes e pôr-do-sol em Kirkjufell",
-    subtitle: "<em>Akureyri · Borgarnes · Stykkishólmur · Kirkjufell</em> · 09 Set (qua)",
-    short: "Dia de estrada cênica do norte ao oeste, sem desvios pesados. Parada de respiro em Borgarnes para almoço, check-in em Stykkishólmur e o cartão postal definitivo da Islândia ao pôr-do-sol: a montanha Kirkjufell e a cachoeira Kirkjufellsfoss.",
+    subtitle: "<em>Akureyri · Borgarnes · Stykkishólmur · Kirkjufell · Grundarfjörður</em> · 09 Set (qua)",
+    short: "Dia mais longo de direção da viagem (rota 1 asfaltada e fluida): manhã de estrada, almoço em Borgarnes, visita curta a Stykkishólmur e o cartão postal definitivo ao pôr-do-sol — Kirkjufell e Kirkjufellsfoss. Pernoite em Grundarfjörður, a 5 min da montanha, maximizando a caça à aurora.",
     tags: ["Travessia", "Kirkjufell", "Snæfellsnes"],
     photos: [
       { id: "2454681", caption: "Kirkjufell — a montanha mais fotografada da Islândia" },
@@ -2555,160 +2690,183 @@ const ROTEIRO = [
       { id: "17474931", caption: "Estrada panorâmica islandesa — paisagem do dia de transição" }
     ],
     meta: {
-      "Trajeto": "Akureyri → Stykkishólmur → Kirkjufell",
+      "Trajeto": "Akureyri → Grundarfjörður",
       "Direção": "440 km · 5h30 líquidas",
       "Foco": "Travessia + Kirkjufell ao pôr-do-sol",
-      "Refeições": "Almoço em Borgarnes, jantar em Snæfellsnes"
+      "Refeições": "Almoço em Borgarnes, jantar em Grundarfjörður"
     },
     sections: [
       {
-        title: "Manhã",
-        body: `<p>Saída de Akureyri às 8h. Dia mais longo de direção da viagem, mas pela rota 1 (asfaltada, fluida) e com paisagens lindas pelo caminho — vales, fiordes do norte, fazendas com cavalos islandeses.</p>
-        <p>Você passa próximo a Glaumbær (museu de fazendas com tetos de grama) e Hvítserkur (formação rochosa em forma de dragão). <strong>Ambos foram cortados deliberadamente</strong> — o trajeto já é longo e Snæfellsnes pede tempo de qualidade. Se quiser uma parada rápida (15-20 min), Hvítserkur fica a 15 min de desvio da rota.</p>`
+        title: "Estratégia do dia",
+        body: `<p>Manhã = rodar (3h Akureyri → Borgarnes pela rota 1); tarde = leve (Stykkishólmur curto + Kirkjufell na hora dourada). <strong>Pernoite em Grundarfjörður</strong> elimina 1h20 de ida-e-volta noturna ao Kirkjufell e dá flexibilidade para a caça à aurora. Cortes deliberados (preservam a luz): <strong>Glaumbær</strong> e <strong>Hvítserkur</strong>.</p>`
       },
       {
-        title: "Almoço — Borgarnes",
-        body: `<p>Parada estratégica em <strong>Borgarnes</strong> (~3h de Akureyri, ~1h antes de Stykkishólmur): cidade simpática à beira de fiorde com bons restaurantes para o almoço. <strong>Settlement Center</strong> tem bistrô decente; <strong>Geirabakari</strong> (a padaria do filme "The Secret Life of Walter Mitty") tem sopas e sanduíches frescos.</p>`
+        title: "Manhã — Akureyri → Borgarnes",
+        body: `<p>Saída de Akureyri às 8h, tanque cheio. ~3h pela rota 1 asfaltada e fluida — vales, fiordes do norte, fazendas com cavalos islandeses. Parada técnica sugerida em <strong>Blönduós</strong> ou <strong>Varmahlíð</strong> (banheiro, café, esticar pernas).</p>`
       },
       {
-        title: "Tarde — Chegada a Snæfellsnes",
-        body: `<p>De Borgarnes até <strong>Stykkishólmur</strong> (1h pela rota 54): vila de pescadores com casas coloridas, igreja moderna icônica e marina pitoresca. Faça check-in no hotel, descanse 1h.</p>
-        <p>De tarde, dirija até <strong>Kirkjufell</strong> (40 min de Stykkishólmur, em Grundarfjörður) para o pôr-do-sol. Em setembro, o sol se põe por volta das <strong>19h30—20h</strong> — chegue às 18h30 para luz dourada.</p>`
+        title: "Almoço — Borgarnes 🍴",
+        body: `<p><strong>Settlement Center Bistro</strong> — refeição completa (peixe e cordeiro), que prepara para o resto da viagem. Alternativa rápida: <strong>Geirabakari</strong> (a padaria do filme <em>The Secret Life of Walter Mitty</em>) — sopa e sanduíche.</p>`
       },
       {
-        title: "Final de tarde — Kirkjufell e Kirkjufellsfoss",
-        body: `<p><strong>Kirkjufell</strong> ("Montanha-Igreja"): cone de 463 m com forma de chapéu de bruxa, possivelmente <strong>a montanha mais fotografada da Islândia</strong>. Você a viu como "Arrowhead Mountain" em Game of Thrones.</p>
-        <p>O ângulo clássico vem da pequena cachoeira <strong>Kirkjufellsfoss</strong>, do outro lado da estrada — três quedas em camadas com a montanha emoldurada ao fundo. Trilha curta e plana de 5 min do estacionamento. <strong>Combo cinematográfico ao pôr-do-sol.</strong></p>
+        title: "Tarde — Stykkishólmur e check-in",
+        body: `<p>~1h pela rota 54 até <strong>Stykkishólmur</strong> (visita curta de passagem): casas coloridas, a igreja moderna <strong>Stykkishólmskirkja</strong> e o farol amarelo <strong>Súgandisey</strong>, com vista do fiorde Breiðafjörður. Depois ~45 min até <strong>Grundarfjörður</strong> e check-in no <strong>Hotel Framnes</strong> — <strong>Kirkjufell fica a 5 min daqui</strong>, vantagem decisiva.</p>`
+      },
+      {
+        title: "Final de tarde — Kirkjufell e Kirkjufellsfoss 📸",
+        body: `<p><strong>Kirkjufell</strong>: cone de 463 m em forma de chapéu de bruxa, possivelmente <strong>a montanha mais fotografada da Islândia</strong> ("Arrowhead Mountain" em <em>Game of Thrones</em>). O ângulo clássico vem do estacionamento de <strong>Kirkjufellsfoss</strong>, do outro lado da estrada — três quedas em camadas com a montanha ao fundo. Trilha curta e plana de 5 min; pague ISK 800 via app Parka. Pôr do sol ~19:55, hora dourada a partir das 18:30 — vocês têm 3h15 no local, sem pressa.</p>
         <div class="callout">
           <div class="callout-title">Aurora · Kirkjufell</div>
-          <p>Se a noite estiver limpa, volte ao mesmo ponto após o jantar (22h+). A foto clássica da aurora dançando sobre Kirkjufell é o cartão postal definitivo da viagem.</p>
+          <p>A foto clássica da aurora dançando sobre o Kirkjufell é o cartão postal definitivo da Islândia. Pernoitar em Grundarfjörður permite múltiplas tentativas (sair às 23h, 1h, 3h). Mas não comprometa o sono — o dia 11 precisa de energia.</p>
         </div>`
       },
       {
-        title: "Noite",
-        body: `<p>Jantar em Grundarfjörður (próximo a Kirkjufell) ou volta a Stykkishólmur. Descanso preparando o dia de exploração da península inteira amanhã.</p>`
+        title: "Noite — Bjargasteinn 🍽️",
+        body: `<p>Jantar no <strong>Bjargasteinn (Grundarfjörður)</strong> — peixe local elaborado, premium, restaurante pequeno (reserve). A 5 min do hotel: <strong>sem dirigir no escuro depois do jantar</strong>, vantagem da escolha de Grundarfjörður.</p>`
       }
     ],
     lodging: [
-      { name: "Fosshotel Stykkishólmur", detail: "Moderno, vista da baía, central. Ideal para 2 noites na península.", price: "€230—290 / casal" },
-      { name: "Hotel Framnes (Grundarfjörður)", detail: "Próximo ao Kirkjufell — economiza ida e volta no dia 11.", price: "€220—280 / casal" },
-      { name: "Hotel Búðir (Búðakirkja)", detail: "Icônico, ao lado da igreja preta. Restaurante premium. Mais isolado.", price: "€280—360 / casal" }
+      { name: "Hotel Framnes (Grundarfjörður)", detail: "A 5 min do Kirkjufell — elimina a ida-e-volta noturna e dá flexibilidade para a aurora. Base ideal para a península.", price: "≈ R$ 2.000 / casal" },
+      { name: "Grundarfjörður Bed & Breakfast", detail: "Alternativa em Grundarfjörður — conferir disponibilidade na data.", url: "https://www.booking.com/hotel/is/grundarfjordur-bed-and-breakfast.pt-pt.html" },
+      { name: "Hotel Búðir (Búðakirkja)", detail: "Alternativa icônica ao lado da igreja preta, restaurante premium — mais isolada." }
     ],
     food: [
-      "<strong>Almoço em Borgarnes:</strong> Settlement Center Bistro ou Geirabakari (padaria-restaurante).",
-      "<strong>Jantar:</strong> Bjargasteinn (Grundarfjörður) — peixe local elaborado, premium. Ou Sjávarpakkhúsið (Stykkishólmur) — peixe e marisco local."
+      "<strong>Almoço em Borgarnes:</strong> Settlement Center Bistro (refeição completa) ou Geirabakari.",
+      "<strong>Jantar:</strong> Bjargasteinn (Grundarfjörður) — peixe local elaborado, premium."
     ],
     tips: [
-      "Combustível: abasteça em Akureyri antes de sair, e novamente em Borgarnes. Postos esparsos no caminho.",
-      "Aurora em Snæfellsnes é excelente — costa oeste, sem luzes, oceano refletindo.",
-      "Se decidir parar em Hvítserkur (dragão de pedra), reserve só 15-20 min — não vale comprometer a luz dourada do Kirkjufell."
-    ]
+      "Abasteça em Akureyri antes de sair e novamente em Borgarnes (postos esparsos).",
+      "Snacks/sanduíches do Bonus de Akureyri para o carro; app Parka instalado (Kirkjufell ISK 800).",
+      "Tripé para a foto de aurora; lanterna/luz frontal (Kirkjufellsfoss à noite não tem iluminação).",
+      "Reservas confirmadas: Hotel Framnes + Bjargasteinn."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Bryggjan+Boutique+Hotel,+Strandgata+49,+600+Akureyri,+Islândia/Borgarnes,+310,+Islândia/Stykkishólmur,+340,+Islândia/Kirkjufell,+351,+Islândia/Stykkishólmur,+340,+Islândia"
   },
   {
     n: 11,
     title: "Snæfellsnes — \"Islândia em miniatura\"",
-    subtitle: "<em>Kirkjufell · Snæfellsjökull · Djúpalónssandur · Arnarstapi · Búðakirkja</em> · 10 Set (qui)",
-    short: "Volta horária completa pela península que concentra todos os tipos de paisagem do país: vulcão glaciar, praias pretas com pedras polidas, penhascos esculpidos, vilarejos pesqueiros, igreja preta em campo de lava e novamente Kirkjufell para o pôr-do-sol.",
-    tags: ["Kirkjufell", "Vulcão", "Igreja preta"],
+    subtitle: "<em>Kirkjufell · Djúpalónssandur · Arnarstapi · Búðakirkja</em> · 10 Set (qui)",
+    short: "Loop horário pela península que concentra todos os tipos de paisagem do país: Kirkjufell pela manhã, a praia preta de Djúpalónssandur, a trilha de penhasco Arnarstapi–Hellnar e o pôr do sol na igreja preta de Búðakirkja. Pernoite em cabana privativa em Arnarstapi.",
+    tags: ["Kirkjufell", "Djúpalónssandur", "Búðakirkja"],
     photos: [
-      { id: "32154420", caption: "Aurora boreal sobre Kirkjufell — o cartão postal definitivo" },
-      { id: "2454681", caption: "Kirkjufell ao amanhecer" },
-      { id: "29264035", caption: "Kirkjufellsfoss em primeiro plano, montanha ao fundo" }
+      { id: "2454681", caption: "Kirkjufell ao amanhecer — luz fria e azulada" },
+      { id: "29264035", caption: "Kirkjufellsfoss em primeiro plano, montanha ao fundo" },
+      { id: "32154420", caption: "Aurora boreal sobre Kirkjufell — o cartão postal definitivo" }
     ],
     meta: {
-      "Trajeto": "Volta horária pela península inteira",
-      "Direção": "150 km · 3h líquidas",
+      "Trajeto": "Loop pela península · Arnarstapi",
+      "Direção": "210 km · 3h30 total",
       "Foco": "Snæfellsjökull NP + costa sul da península",
-      "Refeições": "Almoço, jantar"
+      "Refeições": "Café em Ólafsvík, almoço em Hellnar, jantar no Hotel Búðir"
     },
     sections: [
       {
-        title: "Manhã — Kirkjufell de novo, com luz da manhã",
-        body: `<p>Saída sem pressa após café tranquilo. Volte a <strong>Kirkjufell e Kirkjufellsfoss</strong> — a luz da manhã é completamente diferente do pôr-do-sol da véspera. Em dia limpo, a montanha reflete no rio. 30 min.</p>
-        <p>Continue rumo oeste para os <strong>vilarejos pesqueiros de Ólafsvík e Hellissandur</strong> — pequenos, autênticos, sem turismo de massa. Café no Sjávarpakkhús ou Sker.</p>`
+        title: "Estratégia do dia",
+        body: `<p>Loop horário começando em Grundarfjörður (norte), passando pela ponta oeste e terminando em Arnarstapi (sul). <strong>Check-in cedo no Arnarstapi Cottages (~14h)</strong> libera o resto do dia da logística de carro. Corte deliberado: a caverna de lava Vatnshellir (escadas íngremes 35 m, <strong>incompatível com gestante</strong>).</p>`
       },
       {
-        title: "Meio-dia — Snæfellsjökull National Park",
-        body: `<p><strong>Snæfellsjökull National Park</strong>: vulcão coberto de geleira que Júlio Verne escolheu como entrada para o centro da Terra em "Viagem ao Centro da Terra" (1864). Em dia limpo, a calota glacial brilha no horizonte.</p>
-        <p><strong>Djúpalónssandur</strong>: praia preta com pedras polidas e os famosos "lifting stones" (pedras de levantamento que pescadores usavam para testar força — a maior pesa 154 kg). Trilha de 10 min do estacionamento, plana. Restos enferrujados de um navio inglês naufragado em 1948 espalhados pela praia. 45 min.</p>`
+        title: "Manhã — Kirkjufell e Ólafsvík",
+        body: `<p>5 min de Framnes até <strong>Kirkjufell</strong> de manhã: luz mais fria e azulada, montanha refletida no rio em dia limpo e sem turistas (~30—45 min). Check-out e ~30 min pela rota 54 até <strong>Ólafsvík/Hellissandur</strong> — vilarejos pesqueiros autênticos. Café no <strong>Sjávarpakkhús</strong> ou Sker, caminhada pelo porto e a igreja triangular de Ólafsvík.</p>`
       },
       {
-        title: "Tarde — Arnarstapi e Búðakirkja",
-        body: `<p>Almoço em <strong>Hellnar</strong> (Fjöruhúsið — pequeno bistrô beira-mar) ou <strong>Arnarstapi</strong>.</p>
-        <p><strong>Arnarstapi</strong>: vila pesqueira com penhascos esculpidos pelas ondas, pontes naturais de basalto e colônias de aves marinhas. <strong>Caminhada de 2,5 km</strong> à beira do penhasco até Hellnar — uma das trilhas mais bonitas e fáceis da Islândia (plana, com mirantes nos arcos de pedra Gatklettur). Faça o trecho que sentir confortável e volte.</p>
-        <p><strong>Búðakirkja</strong> (20 min): pequena igreja preta de madeira em meio a campo de lava verde-musgo. Construção de 1703, reformada várias vezes, virou ícone do "minimalismo nórdico". 20 min.</p>`
+        title: "Meio-dia — Snæfellsjökull NP e Djúpalónssandur 🪨",
+        body: `<p>Pela rota 574, entrando no <strong>Snæfellsjökull National Park</strong> — o vulcão coberto de geleira que <strong>Júlio Verne</strong> escolheu como entrada para o centro da Terra (1864).</p>
+        <p><strong>Djúpalónssandur</strong>: praia preta de pedras polidas com história trágica. As <strong>lifting stones</strong> testavam a força dos pescadores (Fullsterkur 154 kg → Amlóði 23 kg). Restos enferrujados do trauler inglês <em>Epine GY7</em> (naufragado em 1948, 14 mortos) preservados como memorial. Trilha plana de 10 min. <strong>Não leve pedras de souvenir</strong> (protegidas por lei).</p>`
       },
       {
-        title: "Final de tarde — última aurora",
-        body: `<p>Volta para a hospedagem. Última noite fora da capital — última grande chance de aurora antes da volta a Reykjavík.</p>
+        title: "Tarde — Hellnar, check-in e trilha Arnarstapi–Hellnar 🥾",
+        body: `<p>Almoço em <strong>Hellnar — Fjöruhúsið</strong>, bistrô beira-mar com peixe fresco e bolo de chocolate lendário. Check-in no <strong>Arnarstapi Cottages</strong> (~14h) para liberar o dia.</p>
+        <p><strong>Trilha Arnarstapi → Gatklettur → Hellnar</strong>: 2,5 km à beira do penhasco (ida), plana, com mirantes nos arcos de basalto e colônias de aves marinhas. Uma das trilhas mais bonitas e fáceis da Islândia. Para gestante: ida-e-volta até Gatklettur (~2 km) é confortável; decidir o pace no momento.</p>`
+      },
+      {
+        title: "Pôr do sol — Búðakirkja ⛪",
+        body: `<p>~30 min até <strong>Búðakirkja</strong>: pequena igreja preta de madeira (original de 1703) em campo de lava verde-musgo, ícone do minimalismo nórdico. Hora dourada a partir de ~18:30, pôr do sol ~19:50: igreja preta + lava verde + mar atrás = cinematográfico.</p>`
+      },
+      {
+        title: "Noite — Hotel Búðir e última aurora 🌌",
+        body: `<p>Jantar no <strong>Hotel Búðir Restaurant</strong> (premium, peixe local elaborado — reserve com 2 meses+), a 5 min de Búðakirkja. Volta a Arnarstapi ~25 min.</p>
         <div class="callout">
           <div class="callout-title">Aurora · última grande chance</div>
-          <p>Pôr do sol em Búðir ou Arnarstapi é cinematográfico — chegue 30 min antes do horário previsto. Se a noite estiver limpa, retorne a Kirkjufell para tentar a foto definitiva: aurora dançando sobre a montanha-igreja.</p>
+          <p>Última noite fora da capital. Opções: da própria cabana em Arnarstapi (campo aberto, penhascos + mar), em Búðakirkja (igreja preta + aurora) ou — só se Kp ≥ 4 e céu limpo — a foto definitiva sobre Kirkjufell (1h15). Se já conseguiram a foto ontem, durmam cedo.</p>
         </div>`
       }
     ],
     lodging: [
-      { name: "Mantenha a hospedagem do dia 10", detail: "Economiza tempo de check-in/out e mala.", price: "Negociado" }
+      { name: "Arnarstapi Cottages", detail: "Cabanas privativas com cozinha e vista dos penhascos esculpidos pelo mar, a 2 min do início da trilha Arnarstapi–Hellnar e ~20 min de Búðakirkja. Saída para Reykjavík amanhã: ~2h15.", price: "≈ R$ 2.000 / casal", url: "https://www.booking.com/hotel/is/arnarstapi-cottages.pt-pt.html" }
     ],
     food: [
-      "<strong>Almoço:</strong> Fjöruhúsið em Hellnar (peixe e bolo de chocolate lendário) ou Sjávarpakkhús em Stykkishólmur.",
-      "<strong>Jantar:</strong> Hotel Búðir Restaurant (premium, reserve com 2 meses) ou Bjargasteinn em Grundarfjörður."
+      "<strong>Café:</strong> Sjávarpakkhús ou Sker (Ólafsvík/Hellissandur).",
+      "<strong>Almoço:</strong> Fjöruhúsið (Hellnar) — bistrô beira-mar, bolo de chocolate lendário.",
+      "<strong>Jantar:</strong> Hotel Búðir Restaurant — peixe local elaborado, premium (reservar)."
     ],
     tips: [
-      "Snæfellsnes é chamada 'Islândia em miniatura' — concentra todos os tipos de paisagem do país.",
-      "Caverna de lava Vatnshellir (tour 45 min, €45/pessoa) — opcional, exige descer escadas íngremes; pule se gestante.",
-      "A trilha Arnarstapi—Hellnar tem 2,5 km mas é plana e com paradas — pode fazer só metade e voltar."
-    ]
+      "Tanque cheio em Grundarfjörður (postos esparsos na península); app Parka instalado.",
+      "Botas de trilha (penhascos úmidos) + tripé (última chance de aurora antes da capital).",
+      "Lanterna/luz frontal (Búðakirkja sem iluminação noturna).",
+      "Reservas confirmadas: Arnarstapi Cottages + Hotel Búðir Restaurant."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Kirkjufell,+351,+Islândia/Sneffels,+Islândia/Djúpalónssandur,+Islândia/Arnarstapi,+Islândia/Búðakirkja,+356+Búðir,+Islândia"
   },
   {
     n: 12,
-    title: "Volta a Reykjavík, Blue Lagoon e despedida",
-    subtitle: "<em>Snæfellsnes → Reykjavík → Blue Lagoon</em> · 11 Set (sex)",
-    short: "Travessia pelo túnel submarino, almoço em Reykjavík, tarde na Blue Lagoon e pernoite na capital. Sábado de manhã (12 Set) é só o transfer curto até o aeroporto para o voo BA801 às 10:20.",
-    tags: ["Banho termal", "Capital", "Despedida"],
+    title: "Volta a Reykjavík, Sky Lagoon e despedida",
+    subtitle: "<em>Snæfellsnes → Reykjavík → Sky Lagoon</em> · 11 Set (sex)",
+    short: "Travessia de volta pelo túnel submarino, Reykjavík cultural a pé (Hallgrímskirkja, rua arco-íris, Harpa, Sólfar), o ritual de 7 etapas da Sky Lagoon ao fim da tarde e um jantar premium de despedida. Sábado (12 Set) é só o transfer curto até o aeroporto.",
+    tags: ["Capital", "Sky Lagoon", "Despedida"],
     photos: [
-      { id: "10589819", caption: "Aurora refletida sobre rio islandês" },
-      { id: "17214262", caption: "Aurora sobre lago — fechamento da viagem" },
-      { id: "34340714", caption: "Harpa Concert Hall — última vista da capital" }
+      { id: "34340714", caption: "Harpa Concert Hall — fachada de vidro hexagonal" },
+      { id: "10589819", caption: "Reykjavík e o fiorde — fechamento da viagem" },
+      { id: "17214262", caption: "Sky Lagoon — banho com vista do Atlântico" }
     ],
     meta: {
-      "Trajeto": "Snæfellsnes → Reykjavík → Blue Lagoon → Reykjavík",
-      "Direção": "250 km · 3h30 líquidas (com Blue Lagoon)",
-      "Foco": "Relaxamento e despedida",
-      "Refeições": "Almoço, jantar premium opcional"
+      "Trajeto": "Snæfellsnes → Reykjavík → Sky Lagoon",
+      "Direção": "210 km · 2h45 total",
+      "Foco": "Reykjavík cultural + Sky Lagoon + despedida",
+      "Refeições": "Almoço no centro, jantar premium"
     },
     sections: [
       {
         title: "Manhã — travessia de volta",
-        body: `<p>Saída de Stykkishólmur sem pressa (8h—9h). Atravesse o <strong>túnel submarino de Hvalfjörður</strong> (rota 1) — economiza 1h, pedágio de ISK 1.500 cobrado depois em <a href="https://www.vehicle.is/" target="_blank" rel="noopener" style="color: var(--aurora);">vehicle.is</a> em até 3h após passar.</p>
-        <p>Chegada em <strong>Reykjavík por volta das 11h-12h</strong>. Almoço leve no centro — Sandholt, Reykjavík Roasters ou Bæjarins Beztu Pylsur para um cachorro-quente clássico de despedida.</p>`
-      },
-      {
-        title: "Tarde — Blue Lagoon (ou Sky Lagoon)",
-        body: `<p><strong>Blue Lagoon</strong> (50 min de Reykjavík): reserve com 2 meses de antecedência em <a href="https://www.bluelagoon.com/" target="_blank" rel="noopener" style="color: var(--aurora);">bluelagoon.com</a>. Horário ideal entre <strong>14h e 17h</strong> — luz dourada do fim de tarde + menos gente do que o pico do meio-dia.</p>
-        <ul style="list-style: none; padding-left: 0; margin: var(--sp-3) 0;">
-          <li style="position: relative; padding-left: var(--sp-4); margin-bottom: var(--sp-2); color: var(--ice-soft);"><strong style="color: var(--ice);">Comfort (€80):</strong> máscara de sílica, toalha, uma bebida.</li>
-          <li style="position: relative; padding-left: var(--sp-4); margin-bottom: var(--sp-2); color: var(--ice-soft);"><strong style="color: var(--ice);">Premium (€100):</strong> roupão, segunda máscara, reserva no restaurante.</li>
-        </ul>
-        <p>Ficar 2—3 horas é o ideal. A Blue Lagoon fica a <strong>20 min do aeroporto KEF</strong>, mas como o voo é só na manhã do dia 12, vale voltar para Reykjavík para o jantar de despedida.</p>
+        body: `<p>Café na cabana Arnarstapi e saída ~8h30 (última vista do vulcão Snæfellsjökull à direita). ~2h15 pela rota 54 → 1, atravessando o <strong>túnel submarino de Hvalfjörður</strong> — economiza 1h; <strong>pedágio ISK 1.500</strong> cobrado depois em <a href="https://www.vehicle.is/" target="_blank" rel="noopener" style="color: var(--aurora);">vehicle.is</a> em até 3h. Parada técnica em Borgarnes opcional.</p>
         <div class="callout">
-          <div class="callout-title">Alternativa · Sky Lagoon</div>
-          <p>Banho geotérmico em Kópavogur (Reykjavík). Vista para o oceano, ritual de 7 etapas. Muitos consideram melhor que a Blue Lagoon, com menos turistas e mais barato (€70 vs €80) — e fica dentro de Reykjavík.</p>
+          <div class="callout-title">Opcional · desvio por Reykholt (+1h45)</div>
+          <p>Se a manhã estiver boa: <strong>Hraunfossar + Barnafoss</strong> (cachoeiras brotando de campo de lava, trilhas planas) e <strong>Deildartunguhver</strong> (a fonte termal mais poderosa da Europa, 180 L/s a 97°C). Se chover, pule sem culpa — há muito a fazer em Reykjavík.</p>
         </div>`
       },
       {
-        title: "Noite — jantar de despedida em Reykjavík",
-        body: `<p>Retorne para Reykjavík (50 min). <strong>Jantar premium</strong> para fechar a viagem:</p>
-        <ul>
-          <li><strong>Dill</strong> — 1 estrela Michelin, cozinha nórdica autoral. Reserve com 1—2 meses.</li>
-          <li><strong>Matur og Drykkur</strong> — releitura moderna de pratos islandeses tradicionais.</li>
-          <li><strong>Apótek Restaurant</strong> — em prédio histórico, ambiente elegante, peixe excelente.</li>
-        </ul>
-        <p><strong>Pernoite em Reykjavík</strong> — fica perto do aeroporto (50 min) para o voo da manhã do dia seguinte sem stress.</p>`
+        title: "Início da tarde — Reykjavík a pé (parte 1) 🚶",
+        body: `<p>Chegada ~10h45; deixe as malas na recepção do hotel (check-in oficial às 15h, mas aceitam guardar bagagem). <strong>Hallgrímskirkja</strong>: igreja icônica inspirada nas colunas de basalto de Svartifoss — suba ao topo no elevador (~ISK 1.300) para a vista 360°. Desça pela <strong>Skólavörðustígur</strong> (rua arco-íris) até a <strong>Laugavegur</strong>, rua principal de compras (suéteres lopapeysa, design islandês, livrarias).</p>`
       },
       {
-        title: "Sábado 12 Set · transfer para o aeroporto",
-        body: `<p>Manhã do sábado é só logística:</p>
+        title: "Almoço e Reykjavík a pé (parte 2)",
+        body: `<p>Almoço no centro: <strong>Sandholt</strong> (padaria-restaurante artesanal), <strong>Café Loki</strong> (cozinha tradicional) ou <strong>Bæjarins Beztu Pylsur</strong> (hot dog clássico, rápido). Depois: <strong>Sólfar (Sun Voyager)</strong>, a escultura de barco viking à beira-mar, e o <strong>Harpa Concert Hall</strong> (fachada de vidro hexagonal de Olafur Eliasson, entrada gratuita ao saguão).</p>
+        <p>Escolha <strong>uma</strong> atração cultural (~1h): <strong>Settlement Exhibition</strong> (longhouse viking de 871±2), <strong>Perlan</strong> (museu da natureza + caverna de gelo artificial) ou <strong>Maritime Museum</strong>.</p>`
+      },
+      {
+        title: "Fim da tarde — Sky Lagoon 🛁",
+        body: `<p>A "Blue Lagoon urbana", em Kópavogur, 15 min do centro, com vista do oceano Atlântico. O <strong>ritual Skjól de 7 etapas</strong> (incluso no Sér Pass): lagoa quente (38—40°C) → cold plunge → sauna com vista → névoa fria → body scrub → steam room → ducha. Estime 2h30 sem pressa.</p>
+        <ul style="list-style: none; padding-left: 0; margin: var(--sp-3) 0;">
+          <li style="padding-left: var(--sp-4); margin-bottom: var(--sp-2); color: var(--ice-soft);"><strong style="color: var(--ice);">Pure Pass</strong> (~€56): lagoa + ritual.</li>
+          <li style="padding-left: var(--sp-4); color: var(--ice-soft);"><strong style="color: var(--ice);">Sér Pass</strong> (~€72): lagoa + ritual + vestiário privativo + body lotion.</li>
+        </ul>
+        <div class="callout warning">
+          <div class="callout-title">Para gestante (29 semanas)</div>
+          <p>Validar com obstetra (água 38—40°C). Até 20 min por imersão; <strong>pular o cold plunge</strong> (mudança brusca de temperatura) e a sauna seca se aconselhada (vapor é mais tolerável). Hidratar muito e sair se sentir tontura.</p>
+        </div>`
+      },
+      {
+        title: "Noite — jantar de despedida 🍽️",
+        body: `<p>Banho e descanso no hotel, depois <strong>jantar premium</strong> para fechar a viagem (reservar com 1—2 meses):</p>
+        <ul>
+          <li><strong>Dill</strong> — 1 estrela Michelin, menu degustação nórdico autoral (o mais disputado de Reykjavík).</li>
+          <li><strong>Matur og Drykkur</strong> — releitura moderna de pratos islandeses (skyr, peixe defumado, cordeiro); vibe descontraída.</li>
+          <li><strong>Apótek Restaurant</strong> — prédio histórico (antiga farmácia), elegante, peixe excelente.</li>
+        </ul>
+        <p>Pernoite em Reykjavík. Aurora aqui é improvável pela luz urbana, mas se Kp ≥ 5 + céu limpo, vale ir até o Sólfar (praia escura).</p>`
+      },
+      {
+        title: "Sábado 12 Set · voo de volta",
+        body: `<p>Manhã do sábado é só logística — <strong>dia do voo de volta</strong>:</p>
         <ul>
           <li><strong>06:30</strong> · café da manhã no hotel ou em padaria no caminho.</li>
           <li><strong>07:00</strong> · saída de Reykjavík (50 min até KEF pela rota 41).</li>
@@ -2721,20 +2879,22 @@ const ROTEIRO = [
       }
     ],
     lodging: [
-      { name: "Hotel em Reykjavík (12ª noite)", detail: "Pernoite na capital antes do voo da manhã do sábado. Sugestões: Center Hotels Plaza (mesmo do Dia 1), Hotel Berg (próximo a KEF) ou Aurora Hotel. Veja a aba Hotéis.", price: "≈ R$ 1.600" }
+      { name: "Hotel Local 101 (Reykjavík)", detail: "Hotel central na capital para a 12ª noite, antes do voo de volta na manhã de sábado.", price: "≈ R$ 1.600 / casal", url: "https://www.booking.com/hotel/is/cityhoteliceland.pt-pt.html" },
+      { name: "Center Hotels Plaza · Aurora Hotel · Hotel Berg", detail: "Alternativas: Center Hotels Plaza (mesmo do Dia 1, central), Aurora Hotel ou Hotel Berg (próximo a KEF). Veja a aba Hotéis." }
     ],
     food: [
-      "<strong>Almoço:</strong> Sandholt (padaria-restaurante) ou Reykjavík Roasters.",
-      "<strong>Jantar de despedida:</strong> Dill (1 estrela Michelin), Matur og Drykkur ou Apótek Restaurant — reserve com antecedência.",
+      "<strong>Almoço:</strong> Sandholt · Café Loki · Bæjarins Beztu Pylsur (rápido).",
+      "<strong>Jantar de despedida:</strong> Matur og Drykkur (autenticidade), Dill (Michelin) ou Apótek (elegância) — reservar.",
       "<strong>Sábado · café da manhã:</strong> no hotel ou padaria no caminho até KEF."
     ],
     tips: [
-      "Reserve a Blue Lagoon entre 14h e 17h com 2 meses de antecedência.",
-      "Última chance de comprar souvenirs no centro de Reykjavík (lojas em Laugavegur) ou no Duty Free de KEF no sábado.",
-      "Sábado: saia do hotel às 07:00 para KEF (50 min). Tanque cheio no N1 antes da devolução.",
+      "Reserve a Sky Lagoon (Pure ou Sér Pass) em skylagoon.com; sem lentes de contato (vapor embaça).",
+      "Anote lembrete: pagar o pedágio do túnel Hvalfjörður em vehicle.is em até 3h após passar.",
+      "Sábado: saia do hotel às 07:00 para KEF (50 min); tanque cheio no N1 antes da devolução.",
       "Aeroporto KEF: chegue 2h antes do voo (08:20). British Airways no balcão único.",
-      "Em Londres no retorno: cartão contactless funciona direto na catraca do Tube e do Heathrow Express."
-    ]
+      "Última chance de souvenirs no centro (Laugavegur) ou no Duty Free de KEF."
+    ],
+    mapUrl: "https://www.google.com/maps/dir/Arnarstapi,+Islândia/Sky+Lagoon,+Vesturvör+44-48,+200+Kopavogur,+Islândia"
   }
 ];
 
@@ -2985,14 +3145,13 @@ const PILLARS = {
             <tr><th>Noite</th><th>Local</th><th>Por quê</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>Dia 3</strong> 🌌</td><td>Hotel Rangá (Hella)</td><td>Wake-up call de aurora + observatório astronômico privado</td></tr>
+            <tr><td><strong>Dias 10-11</strong> 📸</td><td>Snæfellsnes (Kirkjufell / Arnarstapi)</td><td>Costa oeste, oceano refletindo, sem aglomeração — a foto da aurora sobre Kirkjufell</td></tr>
             <tr><td><strong>Dia 9</strong> 🛁</td><td>Forest Lagoon (Akureyri)</td><td>Banho geotérmico vendo aurora dançar entre as árvores</td></tr>
-            <tr><td><strong>Dia 8</strong></td><td>Mývatn</td><td>Latitude alta, sem luzes, banhos termais com vista</td></tr>
-            <tr><td><strong>Dia 10-11</strong></td><td>Snæfellsnes</td><td>Costa oeste, oceano refletindo, sem aglomeração</td></tr>
-            <tr><td><strong>Dia 5</strong></td><td>Skaftafell</td><td>Sudeste, latitude alta, parque nacional com céu totalmente escuro</td></tr>
-            <tr><td><strong>Dia 6</strong></td><td>Höfn</td><td>Sudeste, escuridão total a 5 min da cidade</td></tr>
-            <tr><td><strong>Dia 7</strong></td><td>Egilsstaðir / Seyðisfjörður</td><td>Vila isolada entre fiordes, céu escuro</td></tr>
-            <tr><td><strong>Dia 2</strong></td><td>Brúarárbyggð (Brúarfoss)</td><td>Zona rural do Golden Circle, sem luzes urbanas</td></tr>
+            <tr><td><strong>Dias 7-8</strong></td><td>Mývatn (Hotel Laxá)</td><td>Latitude alta, sem luzes, lago refletindo — duas noites</td></tr>
+            <tr><td><strong>Dia 4</strong></td><td>Skaftafell</td><td>Sudeste, latitude alta, parque nacional com céu totalmente escuro</td></tr>
+            <tr><td><strong>Dia 5</strong></td><td>Höfn</td><td>Sudeste, escuridão total a 5 min da cidade</td></tr>
+            <tr><td><strong>Dia 6</strong></td><td>Egilsstaðir / Seyðisfjörður</td><td>Aurora visível das janelas do hotel; vila isolada entre fiordes</td></tr>
+            <tr><td><strong>Dia 2</strong></td><td>Geysir (Hotel Geysir)</td><td>Céu muito mais escuro que Reykjavík, zona rural do Golden Circle</td></tr>
           </tbody>
         </table>`
       },
@@ -3143,17 +3302,17 @@ const PILLARS = {
           </thead>
           <tbody>
             <tr><td>1 · seg 31/08</td><td>Reykjavík</td><td>1.600</td></tr>
-            <tr><td>2 · ter 01/09</td><td>Brúarárbyggð (Brúarfoss)</td><td>1.800</td></tr>
-            <tr><td>3 · qua 02/09</td><td>Hella · 🌌 Hotel Rangá</td><td>3.524</td></tr>
-            <tr><td>4 · qui 03/09</td><td>Vík</td><td>2.100</td></tr>
-            <tr><td>5 · sex 04/09</td><td>Skaftafell · Fosshotel</td><td>1.400</td></tr>
-            <tr><td>6 · sáb 05/09</td><td>Höfn</td><td>1.200</td></tr>
-            <tr><td>7 · dom 06/09</td><td>Egilsstaðir / Seyðisfjörður</td><td>1.400</td></tr>
-            <tr><td>8 · seg 07/09</td><td>Mývatn · Hotel Laxá</td><td>1.900</td></tr>
-            <tr><td>9 · ter 08/09</td><td>Akureyri</td><td>1.400</td></tr>
-            <tr><td>10—11 · qua 09 e qui 10/09</td><td>Snæfellsnes (Grundarfjörður / Stykkishólmur)</td><td>4.000</td></tr>
+            <tr><td>2 · ter 01/09</td><td>Geysir · Hotel Geysir</td><td>1.700</td></tr>
+            <tr><td>3 · qua 02/09</td><td>Vík · Hotel Vík í Mýrdal</td><td>1.700</td></tr>
+            <tr><td>4 · qui 03/09</td><td>Skaftafell · Fosshotel</td><td>1.400</td></tr>
+            <tr><td>5 · sex 04/09</td><td>Höfn</td><td>1.200</td></tr>
+            <tr><td>6 · sáb 05/09</td><td>Egilsstaðir · Hérað Hotel</td><td>1.500</td></tr>
+            <tr><td>7—8 · dom 06 e seg 07/09</td><td>Mývatn · Hotel Laxá (2 noites)</td><td>3.800</td></tr>
+            <tr><td>9 · ter 08/09</td><td>Akureyri · Bryggjan Boutique</td><td>1.500</td></tr>
+            <tr><td>10 · qua 09/09</td><td>Grundarfjörður · Hotel Framnes</td><td>2.000</td></tr>
+            <tr><td>11 · qui 10/09</td><td>Arnarstapi · Arnarstapi Cottages</td><td>2.000</td></tr>
             <tr><td>12 · sex 11/09</td><td>Reykjavík</td><td>1.600</td></tr>
-            <tr style="background: rgba(107, 203, 161, 0.06);"><td colspan="2"><strong>TOTAL HOSPEDAGENS</strong></td><td><strong>R$ 23.524</strong></td></tr>
+            <tr style="background: rgba(107, 203, 161, 0.06);"><td colspan="2"><strong>TOTAL HOSPEDAGENS</strong></td><td><strong>R$ 20.000</strong></td></tr>
           </tbody>
         </table>
         <p style="margin-top: var(--sp-4); font-size: 0.85rem; color: var(--ice-mute);">Para detalhes, links e alternativas de cada hospedagem, veja a aba <a href="#hoteis" data-route="hoteis" style="color: var(--aurora); text-decoration: underline;">Hotéis</a>.</p>`
@@ -3164,7 +3323,7 @@ const PILLARS = {
           <li><strong>Alimentação:</strong> faça café da manhã no quarto (Bonus), almoce sanduíches no carro, gaste no jantar. Economia: até 40%.</li>
           <li><strong>Carro:</strong> Dacia Duster ao invés de Toyota RAV4 economiza ~R$ 2.500 nos 12 dias.</li>
           <li><strong>Friðheimar:</strong> opte só pela sopa de tomate ilimitada — entrega 90% da experiência por uma fração do menu completo.</li>
-          <li><strong>Blue Lagoon:</strong> o ingresso Comfort entrega 95% da experiência do Premium.</li>
+          <li><strong>Sky Lagoon:</strong> o Pure Pass entrega o ritual completo de 7 etapas; o Sér (vestiário privativo) é conforto extra opcional.</li>
           <li><strong>Voos:</strong> TAP via Lisboa frequentemente sai em conta. Google Flights com alertas e flexibilidade de 3 dias.</li>
           <li><strong>Hospedagem em Snæfellsnes:</strong> Grundarfjörður tem opções mais econômicas que Stykkishólmur (mas pesquise antes — região tem oferta limitada).</li>
         </ul>`
@@ -3172,11 +3331,11 @@ const PILLARS = {
       {
         h: "Onde vale gastar mais",
         body: `<ul>
-          <li><strong>🌌 Hotel Rangá:</strong> luxo discreto + observatório astronômico privado + wake-up call de aurora. Vale cada centavo.</li>
           <li><strong>🐋 Whale watching em Húsavík:</strong> capital europeia do whale watching, 97% de taxa de avistamento. Barco oak tradicional.</li>
           <li><strong>Glacier hike no Vatnajökull (3h):</strong> caminhar com crampons em geleira é experiência rara. Operadora confirmou compatibilidade com gestação.</li>
           <li><strong>Barco anfíbio em Jökulsárlón:</strong> 40 min sentado entre icebergs azul-elétrico.</li>
-          <li><strong>Forest Lagoon (Akureyri):</strong> banho geotérmico entre as árvores, possivelmente vendo aurora.</li>
+          <li><strong>Forest Lagoon (Akureyri) e Sky Lagoon (Reykjavík):</strong> banhos geotérmicos com vista — Forest entre árvores ao pôr do sol, Sky com ritual de 7 etapas no fechamento.</li>
+          <li><strong>Hotel Laxá (Mývatn):</strong> design premiado com vista do lago, base de duas noites e ótimo spot de aurora.</li>
           <li><strong>SUV 4x4 ao invés de hatch:</strong> tranquilidade nas estradas de cascalho.</li>
           <li><strong>Seguro de carro completo (com SAAP):</strong> incidentes de cinzas e cascalho são comuns.</li>
         </ul>`
@@ -3201,15 +3360,15 @@ const PILLARS = {
         h: "Reservas · ordem de prioridade",
         body: `<p>A demanda em setembro é alta. Reserve nesta ordem, idealmente com 5—6 meses de antecedência:</p>
         <ol style="list-style: decimal; padding-left: var(--sp-5); color: var(--ice-soft);">
-          <li style="margin-bottom: var(--sp-2);">🌌 <strong>Hotel Rangá (Hella)</strong> — a noite premium do roteiro. <strong>Reserve PRIMEIRO</strong>, antes mesmo dos voos. Esgota com 3—4 meses de antecedência para suítes deluxe.</li>
+          <li style="margin-bottom: var(--sp-2);"><strong>Hospedagens que esgotam primeiro</strong> — <strong>Hotel Laxá (Mývatn, 2 noites)</strong>, <strong>Friðheimar</strong> (almoço, Dia 2) e <strong>Hotel Búðir / Bjargasteinn</strong> (jantares em Snæfellsnes). Reserve com 3—4 meses, antes mesmo dos voos.</li>
           <li style="margin-bottom: var(--sp-2);"><strong>Voos internacionais</strong> (Recife → Reykjavík via Lisboa, Madri ou Londres). TAP, Iberia e Icelandair cobrem essas conexões.</li>
           <li style="margin-bottom: var(--sp-2);"><strong>Carro alugado.</strong> Fundamental para 2 casais — o transporte privado é o item mais caro proporcionalmente.</li>
-          <li style="margin-bottom: var(--sp-2);"><strong>Hospedagens regulares.</strong> Em setembro, as guesthouses em Vík, Höfn, Mývatn, Skaftafell e Snæfellsnes esgotam rápido. Veja a aba <a href="#hoteis" data-route="hoteis" style="color: var(--aurora); text-decoration: underline;">Hotéis</a> com links de cada uma.</li>
-          <li style="margin-bottom: var(--sp-2);"><strong>Atividades pagas:</strong> Glacier hike Vatnajökull (2 meses, confirmar compatibilidade gestação), 🐋 Whale watching em Húsavík (3—4 semanas, oak boat), Blue Lagoon (2 meses), passeio de barco anfíbio em Jökulsárlón (1 mês), Forest Lagoon (1—2 semanas), jantares premium (2 meses).</li>
+          <li style="margin-bottom: var(--sp-2);"><strong>Hospedagens regulares.</strong> Em setembro, as guesthouses em Geysir, Vík, Höfn, Skaftafell, Egilsstaðir, Akureyri e Snæfellsnes esgotam rápido. Veja a aba <a href="#hoteis" data-route="hoteis" style="color: var(--aurora); text-decoration: underline;">Hotéis</a> com links de cada uma.</li>
+          <li style="margin-bottom: var(--sp-2);"><strong>Atividades pagas:</strong> Glacier hike Vatnajökull (2 meses, confirmar compatibilidade gestação), 🐋 Whale watching em Húsavík (3—4 semanas, oak boat), passeio de barco anfíbio em Jökulsárlón (1 mês), Mývatn Nature Baths e Forest Lagoon (1—2 semanas), Sky Lagoon (2 meses), jantares premium (2 meses).</li>
         </ol>
         <div class="callout">
-          <div class="callout-title">Sobre o Hotel Rangá</div>
-          <p>Hotel Rangá fica em Hella, na rota da costa sul. Tem observatório astronômico privado com astrônomo guia, hot tubs externos, wake-up call de aurora e restaurante reconhecido. Faz parte do Small Luxury Hotels. Site: <strong>hotelranga.is</strong>.</p>
+          <div class="callout-title">Banhos geotérmicos no roteiro</div>
+          <p>São três oportunidades de banho com gestante (validar com obstetra): <strong>Mývatn Nature Baths</strong> (Dia 8, manhã), <strong>Forest Lagoon</strong> em Akureyri (Dia 9, pôr do sol) e <strong>Sky Lagoon</strong> em Reykjavík (Dia 12, ritual de 7 etapas). Em todas: até 20 min por imersão, hidratar e sair se sentir tontura.</p>
         </div>`
       },
       {
@@ -3254,16 +3413,18 @@ const PILLARS = {
         h: "Reservas premium (faça primeiro!)",
         type: "checklist",
         items: [
-          "🌌 Reservar Hotel Rangá (hotelranga.is) — Dia 3 — 3 a 4 meses antes",
-          "Reservar observatório astronômico do Rangá (incluso ou opcional, conferir)",
-          "Reservar Brúarárbyggð (booking.com) — Dia 2 — 3 a 4 meses antes",
-          "Reservar Fosshotel Skaftafell — Dia 5 — 3 a 4 meses antes",
+          "Reservar Hotel Laxá (Mývatn) — 2 noites (Dias 7 e 8) — 3 a 4 meses antes",
+          "Reservar Hotel Geysir — Dia 2 — 3 a 4 meses antes",
+          "Reservar Fosshotel Skaftafell — Dia 4 — 3 a 4 meses antes",
           "Reservar Friðheimar (fridheimar.is) — Dia 2 almoço — 2 a 3 meses antes",
-          "Reservar glacier hike Vatnajökull (Troll, Glacier Guides ou Arctic Adventures) — Dia 5 tarde — 2 meses antes — confirmar compatibilidade gestação por escrito",
-          "🐋 Reservar whale watching em Húsavík no oak boat (North Sailing, Gentle Giants ou Salka) — Dia 9 tarde — 3 a 4 semanas antes",
-          "🛁 Reservar Forest Lagoon (forestlagoon.is) — Dia 9 noite — 1 a 2 semanas antes",
-          "Reservar barco anfíbio em Jökulsárlón (icelagoon.is) — Dia 6 — 1 mês antes",
-          "Reservar Blue Lagoon (bluelagoon.com) — Dia 12 — 2 meses antes"
+          "Reservar glacier hike Vatnajökull (Troll, Glacier Guides ou Arctic Adventures) — Dia 4 tarde — 2 meses antes — confirmar compatibilidade gestação por escrito",
+          "🐋 Reservar whale watching em Húsavík no oak boat (North Sailing ou Gentle Giants) — Dia 9 manhã — 3 a 4 semanas antes",
+          "🛁 Reservar Mývatn Nature Baths (myvatnnaturebaths.is) — Dia 8 manhã — 1 a 2 semanas antes",
+          "🛁 Reservar Forest Lagoon (forestlagoon.is) — Dia 9 fim de tarde — 1 a 2 semanas antes",
+          "Reservar barco anfíbio em Jökulsárlón (icelagoon.is) — Dia 5 — 1 mês antes",
+          "Reservar Hotel Búðir + Bjargasteinn (jantares em Snæfellsnes) + Arnarstapi Cottages — Dias 10—11 — 2 meses antes",
+          "🛁 Reservar Sky Lagoon (skylagoon.com) — Dia 12 — 2 meses antes",
+          "Reservar jantar de despedida (Dill, Matur og Drykkur ou Apótek) — Dia 12 — 1 a 2 meses antes"
         ]
       },
       {
@@ -3295,7 +3456,7 @@ const PILLARS = {
           "Confirmar passaportes com 6 meses de validade a partir de 13/09/2026",
           "Imprimir / salvar em PDF os 3 cartões de embarque + comprovantes de hospedagem",
           "Confirmar reservas de hospedagem na Islândia com cada estabelecimento (e-mail simples)",
-          "Confirmar reservas de atividades (Blue Lagoon, baleias Húsavík, barco em Jökulsárlón)",
+          "Confirmar reservas de atividades (glacier hike, baleias Húsavík, barco em Jökulsárlón, Sky Lagoon)",
           "Tirar Permissão Internacional para Dirigir (PID) no Detran para os 3 condutores",
           "Comprar seguro viagem com cobertura mínima €60.000 para todos"
         ]
@@ -3341,7 +3502,7 @@ const PILLARS = {
   },
   hoteis: {
     title: "Hotéis dia a dia",
-    sub: "Onde dormir em cada uma das 11 noites, com cidade/região, valor médio por casal e link de reserva. Os links abaixo são para consulta — finalize as reservas conforme disponibilidade.",
+    sub: "Onde dormir em cada uma das 12 noites, com cidade/região, valor médio por casal e link de reserva. Os links abaixo são para consulta — finalize as reservas conforme disponibilidade.",
     blocks: [
       {
         h: "Visão geral",
@@ -3351,17 +3512,17 @@ const PILLARS = {
           </thead>
           <tbody>
             <tr><td><strong>1</strong> · seg 31/08</td><td>Reykjavík</td><td>Center Hotels Plaza (ou similar)</td><td>1.600</td></tr>
-            <tr><td><strong>2</strong> · ter 01/09</td><td>Brúarfoss (Golden Circle)</td><td>Brúarárbyggð A2 ou B1</td><td>1.800</td></tr>
-            <tr style="background: rgba(107, 203, 161, 0.04);"><td><strong>3</strong> 🌌 · qua 02/09</td><td>Hella</td><td>Hotel Rangá</td><td>3.524</td></tr>
-            <tr><td><strong>4</strong> · qui 03/09</td><td>Vík</td><td>Vík Apartments</td><td>2.100</td></tr>
-            <tr><td><strong>5</strong> · sex 04/09</td><td>Skaftafell</td><td>Fosshotel Skaftafell</td><td>1.400</td></tr>
-            <tr><td><strong>6</strong> · sáb 05/09</td><td>Höfn</td><td>Central Stays Höfn</td><td>1.200</td></tr>
-            <tr><td><strong>7</strong> · dom 06/09</td><td>Egilsstaðir / Seyðisfjörður</td><td>Við Lónið Guesthouse</td><td>1.400</td></tr>
-            <tr><td><strong>8</strong> · seg 07/09</td><td>Mývatn</td><td>Hotel Laxá</td><td>1.900</td></tr>
-            <tr><td><strong>9</strong> · ter 08/09</td><td>Akureyri</td><td>Centrum Hostel</td><td>1.400</td></tr>
-            <tr><td><strong>10—11</strong> · qua 09 e qui 10/09</td><td>Snæfellsnes (Grundarfjörður / Stykkishólmur)</td><td>A pesquisar</td><td>4.000</td></tr>
-            <tr><td><strong>12</strong> · sex 11/09</td><td>Reykjavík</td><td>Center Hotels Plaza (ou similar)</td><td>1.600</td></tr>
-            <tr style="background: rgba(107, 203, 161, 0.06);"><td colspan="3"><strong>TOTAL (12 noites)</strong></td><td><strong>R$ 23.524</strong></td></tr>
+            <tr><td><strong>2</strong> · ter 01/09</td><td>Geysir (Golden Circle)</td><td>Hotel Geysir</td><td>1.700</td></tr>
+            <tr><td><strong>3</strong> · qua 02/09</td><td>Vík</td><td>Hotel Vík í Mýrdal</td><td>1.700</td></tr>
+            <tr><td><strong>4</strong> · qui 03/09</td><td>Skaftafell</td><td>Fosshotel Skaftafell</td><td>1.400</td></tr>
+            <tr><td><strong>5</strong> · sex 04/09</td><td>Höfn</td><td>Central Stays Höfn</td><td>1.200</td></tr>
+            <tr><td><strong>6</strong> · sáb 05/09</td><td>Egilsstaðir</td><td>Hérað — Berjaya Iceland Hotels</td><td>1.500</td></tr>
+            <tr style="background: rgba(107, 203, 161, 0.04);"><td><strong>7—8</strong> · dom 06 e seg 07/09</td><td>Mývatn</td><td>Hotel Laxá (2 noites)</td><td>3.800</td></tr>
+            <tr><td><strong>9</strong> · ter 08/09</td><td>Akureyri</td><td>Bryggjan Boutique Hotel</td><td>1.500</td></tr>
+            <tr><td><strong>10</strong> · qua 09/09</td><td>Grundarfjörður</td><td>Hotel Framnes</td><td>2.000</td></tr>
+            <tr><td><strong>11</strong> · qui 10/09</td><td>Arnarstapi (Snæfellsnes)</td><td>Arnarstapi Cottages</td><td>2.000</td></tr>
+            <tr><td><strong>12</strong> · sex 11/09</td><td>Reykjavík</td><td>Hotel Local 101 (ou similar)</td><td>1.600</td></tr>
+            <tr style="background: rgba(107, 203, 161, 0.06);"><td colspan="3"><strong>TOTAL (12 noites)</strong></td><td><strong>R$ 20.000</strong></td></tr>
           </tbody>
         </table>
         <p style="margin-top: var(--sp-4); font-size: 0.85rem; color: var(--ice-mute);">Valores levantados em pesquisa preliminar para setembro de 2026 — confirme na hora da reserva.</p>`
@@ -3377,164 +3538,139 @@ const PILLARS = {
         <p><strong>Valor médio por casal:</strong> R$ 1.600</p>`
       },
       {
-        h: "Dia 2 · Brúarárbyggð (Brúarfoss)",
-        body: `<p>Apartamentos rurais a 5 min de carro de Brúarfoss, no coração do Golden Circle. Cozinha completa.</p>
+        h: "Dia 2 · Geysir (Golden Circle)",
+        body: `<p>Pernoite no próprio complexo de Geysir, em frente ao Strokkur — permite fechar o Golden Circle inteiro sem deslocamento noturno. Restaurante próprio e céu escuro para aurora.</p>
         <ul>
-          <li><strong>Brúarárbyggð A2</strong> — <a href="https://www.booking.com/hotel/is/bruararbyggd-a2.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
-          <li><strong>Brúarárbyggð B1</strong> — <a href="https://www.booking.com/hotel/is/bruararbyggd-b1.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li><strong>Hotel Geysir</strong> — restaurante próprio, prático, em frente ao gêiser.</li>
         </ul>
-        <p><strong>Valor médio por casal:</strong> R$ 1.800</p>`
+        <p><strong>Valor médio por casal:</strong> R$ 1.700</p>`
       },
       {
-        h: "Dia 3 · Hella · 🌌 Hotel Rangá",
-        body: `<p>A noite premium da viagem. Luxo discreto à beira do rio Rangá, observatório astronômico privado, hot tubs externos, wake-up call de aurora, restaurante reconhecido nacionalmente. Faz parte do Small Luxury Hotels.</p>
+        h: "Dia 3 · Vík",
+        body: `<p>Vila de praia preta, base para Reynisfjara. Recarregar câmeras antes da hora dourada e jantar na cidade.</p>
         <ul>
-          <li><strong>Hotel Rangá</strong> — <a href="https://www.booking.com/hotel/is/ranga-hella.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a> · <a href="https://www.hotelranga.is/" target="_blank" rel="noopener" style="color: var(--aurora);">site oficial</a></li>
-        </ul>
-        <p><strong>Valor por casal:</strong> R$ 3.524</p>
-        <p style="font-size: 0.9rem; color: var(--ice-soft);">Reserve com 3—4 meses de antecedência para suítes deluxe.</p>`
-      },
-      {
-        h: "Dia 4 · Vík",
-        body: `<p>Vila de praia preta, base para Reynisfjara e Skógafoss. Várias opções, aqui em destaque o apartamento equipado para 2 casais.</p>
-        <ul>
-          <li><strong>Vík Apartments</strong> — em frente ao supermercado Krónan e à pizzaria Black Crust. Cozinha completa, máquina de lavar, piso aquecido. <a href="https://www.booking.com/hotel/is/vik-apartments.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
-          <li>Hotel Vík í Mýrdal · alternativa: vista para o mar, 4 estrelas.</li>
+          <li><strong>Hotel Vík í Mýrdal</strong> — central, prático para Reynisfjara e jantar na cidade.</li>
+          <li>Vík Apartments · alternativa: apartamento equipado em frente ao Krónan, cozinha completa. <a href="https://www.booking.com/hotel/is/vik-apartments.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
           <li>Hotel Kría · alternativa: moderno, recém-inaugurado.</li>
         </ul>
-        <p><strong>Valor médio por casal:</strong> R$ 2.100</p>`
+        <p><strong>Valor médio por casal:</strong> R$ 1.700</p>`
       },
       {
-        h: "Dia 5 · Skaftafell · Fosshotel",
+        h: "Dia 4 · Skaftafell · Fosshotel",
         body: `<p>Hotel a 5 min do Visitor Center de Skaftafell — escolha estratégica para evitar voltar 1h até Klaustur depois do glacier hike. Restaurante próprio (não há outras opções de jantar na região).</p>
         <ul>
           <li><strong>Fosshotel Skaftafell</strong> — <a href="https://www.booking.com/hotel/is/fosshotel-skaftafell.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
-          <li>Fosshotel Glacier Lagoon · alternativa 30 min adiante, vista para o oceano, mais caro.</li>
+          <li>Skaftafell Lodges by Adventure Hotels · alternativa próxima ao parque. <a href="https://www.booking.com/hotel/is/skaftafell-lodges-by-adventure-hotels.pt-br.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
         </ul>
         <p><strong>Valor médio por casal:</strong> R$ 1.400</p>
         <p style="font-size: 0.9rem; color: var(--ice-soft);">Compre o jantar em Vík antes de partir — em Skaftafell só há o restaurante do hotel.</p>`
       },
       {
-        h: "Dia 6 · Höfn",
-        body: `<p>Capital da lagosta islandesa. Ideal pernoitar central para o jantar no Pakkhús (humarsúpa) e saída cedo no Dia 7.</p>
+        h: "Dia 5 · Höfn",
+        body: `<p>Capital da lagosta islandesa. Ideal pernoitar central para o jantar no Pakkhús (humarsúpa) e saída cedo no Dia 6.</p>
         <ul>
           <li><strong>Central Stays Höfn</strong> — apartamento central, próximo ao Pakkhús. <a href="https://www.booking.com/hotel/is/central-stays-hofn.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
-          <li>Hótel Höfn · alternativa central tradicional.</li>
-          <li>Milk Factory · alternativa boutique em antiga fábrica de laticínios.</li>
+          <li>REY Lodges · alternativa próxima. <a href="https://www.booking.com/hotel/is/reylodges.pt-br.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li>Hótel Höfn / Milk Factory · alternativas centrais.</li>
         </ul>
         <p><strong>Valor médio por casal:</strong> R$ 1.200</p>`
       },
       {
-        h: "Dia 7 · Egilsstaðir / Seyðisfjörður",
-        body: `<p>Ponto de pernoite na região leste. Egilsstaðir é a cidade-base prática; Seyðisfjörður (a 30 min) é a vila colorida famosa pela Rua Arco-íris — vale a visita mas exige descer/subir o passo Fjarðarheiði.</p>
+        h: "Dia 6 · Egilsstaðir",
+        body: `<p>Cidade-base prática do leste. Dormir aqui (em vez de Seyðisfjörður) evita subir/descer o passe Fjarðarheiði no escuro, e o Lyng Restaurant serve rena selvagem.</p>
         <ul>
-          <li><strong>Við Lónið Guesthouse (Egilsstaðir)</strong> — quartos decorados, lago próximo, self check-in. <a href="https://www.booking.com/hotel/is/vid-lonid.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
-          <li>Hótel Aldan (Seyðisfjörður) · alternativa: casas históricas convertidas, charme da vila.</li>
+          <li><strong>Hérað — Berjaya Iceland Hotels</strong> — central, certificado Green Hotel, Lyng Restaurant elogiado, aurora visível das janelas em muitas noites.</li>
+          <li>Hótel Aldan (Seyðisfjörður) · alternativa: casas históricas convertidas — exige o passe Fjarðarheiði.</li>
           <li>Post-Hostel Seyðisfjörður · alternativa econômica.</li>
         </ul>
-        <p><strong>Valor médio por casal:</strong> R$ 1.400</p>`
+        <p><strong>Valor médio por casal:</strong> R$ 1.500</p>`
       },
       {
-        h: "Dia 8 · Mývatn",
-        body: `<p>Região vulcânica do norte. Reserve com 3+ meses — opções limitadas.</p>
+        h: "Dias 7—8 · Mývatn (2 noites)",
+        body: `<p>Região vulcânica do norte, base de duas noites (dispensa trocar de mala entre o dia de chegada e o dia completo em Mývatn). Reserve com 3+ meses — opções limitadas.</p>
         <ul>
-          <li><strong>Hotel Laxá</strong> — design contemporâneo premiado, vista para o lago Mývatn, restaurante próprio. <a href="https://www.booking.com/hotel/is/laxa.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li><strong>Hotel Laxá</strong> — design contemporâneo premiado, vista para o lago Mývatn, restaurante próprio, ótimo spot de aurora. <a href="https://www.booking.com/hotel/is/laxa.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
           <li>Sel-Hotel Mývatn · alternativa moderna, conectada à área dos banhos.</li>
           <li>Vogafjós Farm Resort · alternativa: fazenda funcional onde se janta vendo as vacas.</li>
         </ul>
-        <p><strong>Valor médio por casal:</strong> R$ 1.900</p>`
+        <p><strong>Valor para 2 noites por casal:</strong> R$ 3.800</p>`
       },
       {
         h: "Dia 9 · Akureyri",
-        body: `<p>Capital do norte, cidade de 19 mil habitantes. Várias opções — link em destaque é mais econômico, mas há outras alternativas.</p>
+        body: `<p>Capital do norte, cidade de 19 mil habitantes. Chegada relaxada após as baleias e a Forest Lagoon.</p>
         <ul>
-          <li><strong>Centrum Hostel Akureyri</strong> — central, prático, café da manhã incluso. <a href="https://www.booking.com/hotel/is/centrum-hostel.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
-          <li>Hotel Kea by Keahotels · alternativa central, ao lado da igreja Akureyrarkirkja, 4 estrelas.</li>
-          <li>Hotel Akureyri Berjaya · alternativa moderna, bom custo-benefício.</li>
+          <li><strong>Bryggjan Boutique Hotel</strong> — boutique central à beira do fiorde (Strandgata 49). <a href="https://www.booking.com/hotel/is/bryggjan-boutique.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li>Centrum Hostel Akureyri · alternativa econômica, café da manhã incluso. <a href="https://www.booking.com/hotel/is/centrum-hostel.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li>Hotel Kea / Berjaya Akureyri · alternativas centrais, ao lado da Akureyrarkirkja.</li>
         </ul>
-        <p><strong>Valor médio por casal:</strong> R$ 1.400</p>`
+        <p><strong>Valor médio por casal:</strong> R$ 1.500</p>`
       },
       {
-        h: "Dias 10—11 · Snæfellsnes",
-        body: `<div class="callout warning">
-          <div class="callout-title">A pesquisar</div>
-          <p>A região de Grundarfjörður e Stykkishólmur (vilas de pescadores) é a base ideal para Snæfellsnes, mas a oferta de hospedagem boa é limitada. Continue procurando — vale considerar Hotel Búðir (icônico, ao lado da igreja preta), Fosshotel Stykkishólmur, ou Hotel Framnes (Grundarfjörður, próximo ao Kirkjufell).</p>
-        </div>
-        <p><strong>Valor médio para 2 noites por casal:</strong> R$ 4.000</p>
+        h: "Dia 10 · Grundarfjörður",
+        body: `<p>Base no norte de Snæfellsnes, a 5 min do Kirkjufell — elimina a ida-e-volta noturna e dá flexibilidade para a caça à aurora.</p>
         <ul>
-          <li>Fosshotel Stykkishólmur · moderno, vista da baía, central.</li>
-          <li>Hotel Framnes (Grundarfjörður) · próximo ao Kirkjufell.</li>
-          <li>Hotel Búðir (Búðakirkja) · icônico, ao lado da igreja preta, restaurante premium.</li>
-        </ul>`
+          <li><strong>Hotel Framnes (Grundarfjörður)</strong> — próximo ao Kirkjufell, a 5 min do Bjargasteinn para o jantar.</li>
+          <li>Grundarfjörður Bed & Breakfast · alternativa na mesma vila. <a href="https://www.booking.com/hotel/is/grundarfjordur-bed-and-breakfast.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+        </ul>
+        <p><strong>Valor médio por casal:</strong> R$ 2.000</p>`
+      },
+      {
+        h: "Dia 11 · Arnarstapi",
+        body: `<p>No sul da península, cabanas privativas com vista dos penhascos — check-in cedo libera o dia, e a saída para Reykjavík amanhã fica curta (~2h15).</p>
+        <ul>
+          <li><strong>Arnarstapi Cottages</strong> — cabanas com cozinha, a 2 min da trilha Arnarstapi–Hellnar. <a href="https://www.booking.com/hotel/is/arnarstapi-cottages.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li>Hotel Búðir (Búðakirkja) · alternativa icônica ao lado da igreja preta, restaurante premium.</li>
+        </ul>
+        <p><strong>Valor médio por casal:</strong> R$ 2.000</p>`
       },
       {
         h: "Dia 12 · Reykjavík",
-        body: `<p>Mesma estrutura do Dia 1. Cidade tem muitas opções.</p>
-        <p><strong>Valor médio por casal:</strong> R$ 1.600</p>
-        <p style="font-size: 0.9rem; color: var(--ice-soft);">Considere ficar no mesmo hotel do Dia 1 para simplificar.</p>`
+        body: `<p>Última noite na capital antes do voo de volta na manhã de sábado (12/09). Cidade tem muitas opções.</p>
+        <ul>
+          <li><strong>Hotel Local 101</strong> — central. <a href="https://www.booking.com/hotel/is/cityhoteliceland.pt-pt.html" target="_blank" rel="noopener" style="color: var(--aurora);">ver no Booking</a></li>
+          <li>Center Hotels Plaza (mesmo do Dia 1) · Aurora Hotel · Hotel Berg (próximo a KEF) · alternativas.</li>
+        </ul>
+        <p><strong>Valor médio por casal:</strong> R$ 1.600</p>`
       }
     ]
   },
   "mapa-viagem": {
     title: "Mapa de viagem",
-    sub: "Cinco mapas Google Maps cobrindo o roteiro inteiro, totalizando ~40 horas líquidas de carro ao longo dos 12 dias. O Google Maps limita 10 destinos por mapa — por isso o roteiro foi dividido em cinco trechos. Salve cada mapa como favorito no celular para uso offline.",
+    sub: "Um mapa de rota do Google Maps para cada dia de programação (do Dia 2 ao Dia 12), com as paradas na ordem do roteiro. Cada link abre a rota completa do dia — salve como favorito no celular para uso offline. Os mesmos links estão na área de mapa de cada dia.",
     blocks: [
       {
-        h: "Visão geral · 40 horas de carro",
-        body: `<table>
-          <thead>
-            <tr><th>Mapa</th><th>Trecho principal</th><th>Tempo de carro</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>1</strong></td><td>Keflavík → Golden Circle → Seljalandsfoss</td><td>5h12</td></tr>
-            <tr><td><strong>2</strong></td><td>Costa sul: cachoeiras, Skaftafell, Jökulsárlón</td><td>4h23</td></tr>
-            <tr><td><strong>3</strong></td><td>Sudeste → fiordes do leste → Mývatn</td><td>9h42</td></tr>
-            <tr><td><strong>4</strong></td><td>Mývatn → Húsavík → Akureyri → Snæfellsnes</td><td>8h25</td></tr>
-            <tr><td><strong>5</strong></td><td>Snæfellsnes inteira → Reykjavík</td><td>7h41</td></tr>
-            <tr style="background: rgba(107, 203, 161, 0.06);"><td colspan="2"><strong>TOTAL</strong></td><td><strong>≈ 40h</strong></td></tr>
-          </tbody>
-        </table>
-        <p style="margin-top: var(--sp-4); font-size: 0.85rem; color: var(--ice-mute);">Tempos calculados pelo Google Maps em condição normal. Em setembro, vento e chuva podem aumentar 15—20% — planeje folgas.</p>`
-      },
-      {
         h: "Como usar",
-        body: `<p>Abra cada mapa no navegador (links abaixo), faça login com sua conta Google e clique em <strong>"Salvar"</strong> (estrela) — eles ficam disponíveis offline no app Google Maps em <em>Seus locais → Mapas</em>.</p>
+        body: `<p>Abra o mapa do dia (links abaixo), faça login com sua conta Google e clique em <strong>"Salvar"</strong> (estrela) — eles ficam disponíveis offline no app Google Maps em <em>Seus locais → Mapas</em>.</p>
         <div class="callout">
           <div class="callout-title">Antes de viajar</div>
           <ul>
-            <li>Baixe o mapa offline da Islândia inteira no app Google Maps (sem isso, os 5 mapas custom não funcionam offline).</li>
+            <li>Baixe o mapa offline da Islândia inteira no app Google Maps (sem isso, os mapas de rota não funcionam offline).</li>
             <li>Confirme que cada mapa abre no celular antes de embarcar.</li>
             <li>Tenha um plano B (Maps.me ou capturas de tela) para áreas sem sinal.</li>
           </ul>
         </div>`
       },
       {
-        h: "Mapa 1 · Chegada e Golden Circle (Dias 1—3 + início do 4) · 5h12",
-        body: `<p><strong>Pontos:</strong> Aeroporto de Keflavík → Reykjavík → Þingvellir → Friðheimar → Brúarfoss → Strokkur Geyser → Gullfoss → Kerið → Hotel Rangá → Seljalandsfoss.</p>
-        <p><a href="https://www.google.com/maps/dir/Aeroporto+Internacional+de+Keflav%C3%ADk,+235+Keflav%C3%ADk,+Isl%C3%A2ndia/Reykjavik,+Isl%C3%A2ndia/%C3%9Eingvellir,+806+Selfoss,+Isl%C3%A2ndia/Fri%C3%B0heimar,+806+Reykholt,+Isl%C3%A2ndia/Br%C3%BAar%C3%A1rfoss,+Hlauptunga,+806+Bl%C3%A1sk%C3%B3gabygg%C3%B0,+Isl%C3%A2ndia/Strokkur+Geyser,+8M7X%2B3PJ,+Hafnart%C3%BAn,+806+Selfoss,+Isl%C3%A2ndia/Gullfoss,+846,+Isl%C3%A2ndia/Keri%C4%91,+805+Klausturholar,+Isl%C3%A2ndia/Hotel+Rang%C3%A1,+an+SLH+Hotel,+H%C3%B3tel+Rang%C3%A1,+851+Hella,+Isl%C3%A2ndia/Seljalandsfoss,+861,+Isl%C3%A2ndia/" target="_blank" rel="noopener" style="color: var(--aurora); text-decoration: underline; word-break: break-all;">Abrir no Google Maps →</a></p>`
-      },
-      {
-        h: "Mapa 2 · Costa sul e geleiras (Dias 4—6) · 4h23",
-        body: `<p><strong>Pontos:</strong> Seljalandsfoss → Gljúfrabúi → Skógafoss → Reynisfjara → Vík → Fjaðrárgljúfur → Parque Nacional Skaftafell → Svínafellsjökull → Múlagljúfur → Jökulsárlón.</p>
-        <p><a href="https://www.google.com/maps/dir/Seljalandsfoss,+861,+Isl%C3%A2ndia/Glj%C3%BAfrab%C3%BAi,+249,+861,+Isl%C3%A2ndia/Sk%C3%B3gafoss,+861,+Isl%C3%A2ndia/Reynisfjara+Beach,+Isl%C3%A2ndia/Vik,+870+V%C3%ADk+%C3%AD+M%C3%BDrdal,+Isl%C3%A2ndia/Fja%C3%B0r%C3%A1rglj%C3%BAfur,+881,+Isl%C3%A2ndia/Parque+Nacional+Skaftafell,+785+Skaftafell,+Isl%C3%A2ndia/Sv%C3%ADnafellsj%C3%B6kull,+785,+Isl%C3%A2ndia/Mulagljufur+Canyon,+XGQP%2BJCH,+785,+Isl%C3%A2ndia/J%C3%B6kuls%C3%A1rl%C3%B3n,+781,+Isl%C3%A2ndia/" target="_blank" rel="noopener" style="color: var(--aurora); text-decoration: underline; word-break: break-all;">Abrir no Google Maps →</a></p>`
-      },
-      {
-        h: "Mapa 3 · Sudeste, fiordes do leste e Mývatn (Dias 6—8) · 9h42",
-        body: `<p><strong>Pontos:</strong> Jökulsárlón → Diamond Beach → Höfn → Stokksnes → Djúpivogur → Fáskrúðsfjörður → Seyðisfjörður → Hengifoss → Stuðlagil → Hverir.</p>
-        <p style="font-size: 0.9rem; color: var(--ice-mute);">Trecho mais longo do roteiro — distribuído em três dias com pernoites em Höfn, Seyðisfjörður/Egilsstaðir e Mývatn.</p>
-        <p><a href="https://www.google.com/maps/dir/J%C3%B6kuls%C3%A1rl%C3%B3n,+781,+Isl%C3%A2ndia/Diamond+Beach,+781,+Isl%C3%A2ndia/H%C3%B6fn,+780,+Isl%C3%A2ndia/Stokksnes+Parking,+Stokksnes+781,+781,+Isl%C3%A2ndia/Dj%C3%BApivogur,+Isl%C3%A2ndia/F%C3%A1skr%C3%BA%C3%B0sfj%C3%B6r%C3%B0ur,+Isl%C3%A2ndia/Sey%C3%B0isfj%C3%B6r%C3%B0ur,+710,+Isl%C3%A2ndia/Hengifoss+carpark,+34F9%2B9R2,+701+Brekka,+Isl%C3%A2ndia/Stu%C3%B0lagil+Canyon,+5M6Q%2BHP,+701+Eiriksstadhir,+Isl%C3%A2ndia/Hverir,+J5RR%2B978,+660+Reykjahl%C3%AD%C3%B0,+Isl%C3%A2ndia/" target="_blank" rel="noopener" style="color: var(--aurora); text-decoration: underline; word-break: break-all;">Abrir no Google Maps →</a></p>`
-      },
-      {
-        h: "Mapa 4 · Mývatn ao Snæfellsnes (Dias 8—10) · 8h25",
-        body: `<p><strong>Pontos:</strong> Hverir → Krafla → Mývatn Nature Baths → Húsavík → Goðafoss → Akureyri → Forest Lagoon → Hvítserkur → Borgarnes → Stykkishólmur.</p>
-        <p style="font-size: 0.9rem; color: var(--ice-mute);">Inclui o passeio de baleias em Húsavík, a Forest Lagoon e a travessia para Snæfellsnes. Hvítserkur entra como ponto de passagem opcional na rota — pare se quiser foto rápida (15—20 min).</p>
-        <p><a href="https://www.google.com/maps/dir/Hverir,+J5RR%2B978,+660+Reykjahl%C3%AD%C3%B0,+Isl%C3%A2ndia/Krafla,+660,+Isl%C3%A2ndia/Earth+Lagoon+M%C3%BDvatn,+Jar%C3%B0ba%C3%B0sh%C3%B3lar,+660+M%C3%BDvatn,+Isl%C3%A2ndia/H%C3%BAsav%C3%ADk,+640,+Isl%C3%A2ndia/Go%C3%B0afoss,+645,+Isl%C3%A2ndia/Akureyri,+Isl%C3%A2ndia/Forest+Lagoon,+Va%C3%B0lask%C3%B3gur+605,+605+Akureyri,+Isl%C3%A2ndia/Hvitserkur,+Isl%C3%A2ndia/Borgarnes,+310,+Isl%C3%A2ndia/Stykkish%C3%B3lmur,+340,+Isl%C3%A2ndia/" target="_blank" rel="noopener" style="color: var(--aurora); text-decoration: underline; word-break: break-all;">Abrir no Google Maps →</a></p>`
-      },
-      {
-        h: "Mapa 5 · Snæfellsnes e volta a Reykjavík (Dias 10—12) · 7h41",
-        body: `<p><strong>Pontos:</strong> Hvítserkur → Borgarnes → Stykkishólmur → Kirkjufell → Ólafsvík → Hellissandur → Parque Nacional Snæfellsjökull → Djúpalónssandur → Búðakirkja → Reykjavík.</p>
-        <p style="font-size: 0.9rem; color: var(--ice-mute);">Volta horária pela península (Dia 11) e retorno à capital (Dia 12).</p>
-        <p><a href="https://www.google.com/maps/dir/Hvitserkur,+711,+Isl%C3%A2ndia/Borgarnes,+310,+Isl%C3%A2ndia/Stykkish%C3%B3lmur,+340,+Isl%C3%A2ndia/Kirkjufell,+351,+Isl%C3%A2ndia/%C3%93lafsv%C3%ADk,+355,+Isl%C3%A2ndia/Hellissandur,+360,+Isl%C3%A2ndia/Parque+Nacional+Sn%C3%A6fellsj%C3%B6kull,+Sandhraun+5,+360+Hellissandur,+Isl%C3%A2ndia/Dj%C3%BApal%C3%B3nssandur,+Isl%C3%A2ndia/B%C3%BA%C3%B0akirkja,+356+B%C3%BA%C3%B0ir,+Isl%C3%A2ndia/Reykjavik,+Isl%C3%A2ndia/" target="_blank" rel="noopener" style="color: var(--aurora); text-decoration: underline; word-break: break-all;">Abrir no Google Maps →</a></p>`
+        h: "Rotas dia a dia",
+        body: `<table>
+          <thead>
+            <tr><th>Dia</th><th>Trecho</th><th>Rota</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>2</strong></td><td>Reykjavík → Geysir (Golden Circle)</td><td><a href="https://www.google.com/maps/dir/Reykjavik,+Isl%C3%A2ndia/%C3%96xar%C3%A1rfoss,+7V8J%2B8RH,+806+Thingvellir,+Isl%C3%A2ndia/%C3%9Eingvellir,+806+Selfoss,+Isl%C3%A2ndia/5HH4%2B225,+Fri%C3%B0heimar+806,+320+Reykholt,+Isl%C3%A2ndia/Br%C3%BAar%C3%A1rfoss,+Hlauptunga,+806+Bl%C3%A1sk%C3%B3gabygg%C3%B0,+Isl%C3%A2ndia/Strokkur+Geyser,+8M7X%2B3PJ,+Hafnart%C3%BAn,+806+Selfoss,+Isl%C3%A2ndia/Gullfoss+Waterfall,+Gullfoss+Nature+Reserve,+35,+846,+Isl%C3%A2ndia/Hotel+Geysir,+Geysir+Haukadalur,+806,+Isl%C3%A2ndia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>3</strong></td><td>Geysir → Vík</td><td><a href="https://www.google.com/maps/dir/Hotel+Geysir,+Geysir+Haukadalur,+806,+Isl%C3%A2ndia/Keri%C4%91,+805+Klausturholar,+Isl%C3%A2ndia/Seljalandsfoss,+249,+861,+Isl%C3%A2ndia/Glj%C3%BAfrab%C3%BAi,+249,+861,+Isl%C3%A2ndia/Sk%C3%B3gafoss,+861,+Isl%C3%A2ndia/Reynisfjara+Beach,+Isl%C3%A2ndia/V%C3%ADk+%C3%AD+M%C3%BDrdal,+870,+Isl%C3%A2ndia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>4</strong></td><td>Vík → Skaftafell</td><td><a href="https://www.google.com/maps/dir/V%C3%ADk+%C3%AD+M%C3%BDrdal,+870,+Isl%C3%A2ndia/Fja%C3%B0r%C3%A1rglj%C3%BAfur,+881,+Isl%C3%A2ndia/Parque+Nacional+Skaftafell,+785+Skaftafell,+Isl%C3%A2ndia/Svartifoss,+785,+Isl%C3%A2ndia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>5</strong></td><td>Skaftafell → Höfn</td><td><a href="https://www.google.com/maps/dir/Icelandic+Mountain+Guides+by+Icelandia+-+Skaftafell+Base+Camp,+Skaftafellsvegur,+785+Skaftafell,+Isl%C3%A2ndia/Sv%C3%ADnafellsj%C3%B6kull+Glacier,+2429%2BJGW,+785+Sv%C3%ADnafell,+Isl%C3%A2ndia/Mulagljufur+Canyon,+XGQP%2BJCH,+785,+Isl%C3%A2ndia/J%C3%B6kuls%C3%A1rl%C3%B3n,+781,+Isl%C3%A2ndia/Diamond+Beach,+781,+Isl%C3%A2ndia/H%C3%B6fn,+780,+Isl%C3%A2ndia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>6</strong></td><td>Höfn → Egilsstaðir (fiordes)</td><td><a href="https://www.google.com/maps/dir/REY+Stays+-+Small+&amp;+Cozy+Studio/Vestrahorn,+781,+Islândia/Djúpivogur,+Islândia/Stöðvarfjörður,+755,+Islândia/Fáskrúðsfjörður,+Islândia/Seyðisfjörður,+710,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>7</strong></td><td>Egilsstaðir → Mývatn</td><td><a href="https://www.google.com/maps/dir/Hérað+-+Berjaya+Iceland+Hotels,+Miðvangur+1-7,+700+Egilsstaðir,+Islândia/Hengifoss+carpark,+34F9+9R2,+701+Brekka,+Islândia/Stuðlagil+Canyon,+5M6Q+HP,+701+Eiriksstadhir,+Islândia/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>8</strong></td><td>Mývatn (dia completo)</td><td><a href="https://www.google.com/maps/dir/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia/Lava+field+Dimmuborgir,+H3RQ+F3Q,+660+Skútustaðir,+Islândia/Grjótagjá,+J4G8+GQX,+660+Reykjahlíð,+Islândia/Námafjall+Hverir+Viewpoint,+J5RR+HP4,+660+Reykjahlíð,+Islândia/Krafla,+660,+Islândia/Dettifoss,+671,+Islândia/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>9</strong></td><td>Mývatn → Húsavík → Akureyri</td><td><a href="https://www.google.com/maps/dir/Laxá+Hótel,+Olnbogaás,+660+Mývatn,+Islândia/Húsavík,+640,+Islândia/Goðafoss,+645,+Islândia/Forest+Lagoon,+Vaðlaskógur+605,+605+Akureyri,+Islândia/Akureyri,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>10</strong></td><td>Akureyri → Grundarfjörður</td><td><a href="https://www.google.com/maps/dir/Bryggjan+Boutique+Hotel,+Strandgata+49,+600+Akureyri,+Islândia/Borgarnes,+310,+Islândia/Stykkishólmur,+340,+Islândia/Kirkjufell,+351,+Islândia/Stykkishólmur,+340,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>11</strong></td><td>Loop por Snæfellsnes</td><td><a href="https://www.google.com/maps/dir/Kirkjufell,+351,+Islândia/Sneffels,+Islândia/Djúpalónssandur,+Islândia/Arnarstapi,+Islândia/Búðakirkja,+356+Búðir,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+            <tr><td><strong>12</strong></td><td>Arnarstapi → Reykjavík (Sky Lagoon)</td><td><a href="https://www.google.com/maps/dir/Arnarstapi,+Islândia/Sky+Lagoon,+Vesturvör+44-48,+200+Kopavogur,+Islândia" target="_blank" rel="noopener" style="color: var(--aurora);">abrir →</a></td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top: var(--sp-4); font-size: 0.85rem; color: var(--ice-mute);">Tempos de carro estão no topo de cada dia (aba Roteiro). Em setembro, vento e chuva podem aumentar 15—20% — planeje folgas.</p>`
       }
     ]
   },
@@ -3543,26 +3679,25 @@ const PILLARS = {
     sub: "Variações e adições que cabem se sobrar tempo, energia ou interesse específico. Algumas exigem reserva antecipada.",
     blocks: [
       {
-        h: "Sky Lagoon · alternativa à Blue Lagoon",
-        body: `<p>Banho geotérmico em Kópavogur (Reykjavík), inaugurado em 2021. Vista panorâmica para o oceano Atlântico, ritual de 7 etapas (sauna, banho gelado, vapor, esfoliação corporal, etc).</p>
-        <p>Muitos consideram melhor experiência que a Blue Lagoon, com menos turistas e mais barato (€70 vs €80).</p>
+        h: "Blue Lagoon · alternativa à Sky Lagoon",
+        body: `<p>A <strong>Sky Lagoon</strong> (Kópavogur, ritual de 7 etapas, dentro de Reykjavík) já está no roteiro principal do <strong>Dia 12</strong>. A <strong>Blue Lagoon</strong> fica como alternativa: mais famosa e icônica, porém a ~50 min do centro (perto de KEF) e geralmente mais cheia e cara.</p>
         <h4>Onde encaixar?</h4>
-        <p>No Dia 12. Pode substituir a Blue Lagoon ou ser feita no lugar dela. <strong>Blue Lagoon ganha</strong> em fama e estética; <strong>Sky Lagoon ganha</strong> em qualidade da experiência geral.</p>`
+        <p>Se preferirem a Blue Lagoon no Dia 12, reserve em bluelagoon.com com 2 meses de antecedência (ingresso Comfort entrega 95% da experiência do Premium). <strong>Sky Lagoon ganha</strong> em proximidade e ritual; <strong>Blue Lagoon ganha</strong> em fama e estética.</p>`
       },
       {
-        h: "Fjaðrárgljúfur · cânion de Justin Bieber",
-        body: `<p>Cânion de 100 m de profundidade entre Vík e Skaftafell. Ficou famoso após Justin Bieber gravar clipe lá. Visualmente espetacular.</p>
-        <p>Parada de 45 min, gratuita. Encaixa no caminho de Vík para Jökulsárlón. <strong>Não está no roteiro padrão</strong> mas pode ser inserido como parada rápida no Dia 5 ou 6.</p>`
+        h: "Dyrhólaey · promontório na costa sul",
+        body: `<p>Promontório com arco de pedra e farol, vista panorâmica da costa de areia preta e dos pináculos de Reynisdrangar. Fica ao lado de Reynisfjara.</p>
+        <p>Parada de 30—45 min, gratuita. Encaixa no fim de tarde do <strong>Dia 3</strong>, perto de Reynisfjara, se sobrar luz. (O cânion de Fjaðrárgljúfur já está no roteiro principal, no Dia 4.)</p>`
       },
       {
         h: "Tour na geleira Sólheimajökull",
         body: `<p>Caminhada com crampons e capacete no gelo. €130—160/pessoa, 3h. Reserva prévia obrigatória.</p>
-        <p>Encaixa no Dia 3. Um casal pode fazer enquanto o outro descansa em Vík.</p>`
+        <p>Encaixa no Dia 3 (fica entre Skógafoss e Vík). Alternativa de geleira a quem não fizer o glacier hike do Dia 4.</p>`
       },
       {
         h: "Caverna de Cristal (Crystal Ice Cave)",
         body: `<p>Caverna natural dentro do glaciar Vatnajökull com paredes de gelo translúcido azul.</p>
-        <p>Tours começam em meados de outubro tipicamente. <strong>Em setembro, alguns operadores funcionam</strong> — verifique localmente em Höfn (Dia 4).</p>`
+        <p>Tours começam em meados de outubro tipicamente. <strong>Em setembro, alguns operadores funcionam</strong> — verifique localmente em Höfn (Dia 5).</p>`
       },
       {
         h: "Westman Islands · extensão de 1—2 dias",
@@ -3686,6 +3821,7 @@ function renderDay(n) {
             <span class="eyebrow">Trajeto · Dia ${day.n}</span>
             <h3>${MAP_DATA[day.n].stops.length} <em>paradas</em> · ${day.meta["Direção"] || ""}</h3>
             <div class="map-section-meta">${MAP_DATA[day.n].stops.map(s => s.name).join(' → ')}</div>
+            ${day.mapUrl ? `<a class="map-gmaps-btn" href="${day.mapUrl}" target="_blank" rel="noopener">🗺️ Ver rota do dia no Google Maps <span class="map-gmaps-arrow">→</span></a>` : ''}
           </div>
         </div>
         <div class="day-map" id="map-day-${day.n}"></div>
@@ -3739,9 +3875,12 @@ function renderDay(n) {
                 <div class="aside-card-title">Hospedagem</div>
                 ${day.lodging.map(l => `
                   <div class="lodging-item">
-                    <div class="lodging-name">${l.name}</div>
-                    <div class="lodging-detail">${l.detail}</div>
-                    <div class="lodging-price">${l.price}</div>
+                    ${l.url
+                      ? `<a class="lodging-name lodging-link" href="${l.url}" target="_blank" rel="noopener">${l.name} <span class="lodging-link-icon">↗</span></a>`
+                      : `<div class="lodging-name">${l.name}</div>`}
+                    ${l.detail ? `<div class="lodging-detail">${l.detail}</div>` : ''}
+                    ${l.price ? `<div class="lodging-price">${l.price}</div>` : ''}
+                    ${l.url ? `<a class="lodging-book" href="${l.url}" target="_blank" rel="noopener">Ver / reservar no Booking →</a>` : ''}
                   </div>
                 `).join('')}
               </div>
