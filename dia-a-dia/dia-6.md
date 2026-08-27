@@ -14,14 +14,14 @@
 ## ⚠️ Antes de viajar
 
 * \[ ] **Cheque road.is no dia** — Fjarðarheiði (620m) pode ter neblina/vento
-* \[ ] **Lyng Restaurant (Hérað Hotel)** com reserva pra rena
+* \[ ] **Lyng Restaurant** (no Hérað Hotel, centro de Egilsstaðir) com reserva pra rena — jantamos lá, mas **dormimos no East Apartment**
 * \[ ] Tanque cheio em Höfn antes de sair
 
 \---
 
 ## Estratégia do dia
 
-Dormir em **Egilsstaðir (Hérað Hotel)** em vez de Seyðisfjörður traz três vantagens:
+Dormir em **Egilsstaðir (East Apartment)** em vez de Seyðisfjörður traz três vantagens:
 
 * Sem subir/descer o passe Fjarðarheiði no escuro
 * Lyng Restaurant tem **rena selvagem** — prato único do leste islandês
@@ -61,23 +61,27 @@ Península com a montanha **Vestrahorn refletida em dunas de areia preta**. Visu
 
 * Velocidade média real: 60-70 km/h
 * Pare onde sentir vontade
-* **Djúpivogur** (1h de Höfn): pequena vila pesqueira, pausa de 15-20 min
+### 12:00 – 13:15 · Almoço em Djúpivogur 🍴
 
-### 12:30 – 13:30 · Almoço em Fáskrúðsfjörður
+\~1h de Höfn. **Við Voginn** (fish & chips no porto) ou o café da histórica **Langabúð**.
 
-**Kaffihúsið Sumarlína** — peixe fresco.
+> ⚠️ **O Sumarlína (Fáskrúðsfjörður) NÃO abre para almoço no sábado** — fins de semana só a partir das 17:00. Por isso o almoço passou para cá.
+
+### 13:15 – 14:15 · Fáskrúðsfjörður — parada de fotos
+
+\~1h de estrada, parada rápida na vila.
 
 > 🇫🇷 Curiosidade: Fáskrúðsfjörður tem herança francesa (placas em francês) — pescadores franceses se estabeleceram aqui no século XIX.
 
-### 13:30 – 15:00 · Direção até Egilsstaðir
+### 14:15 – 15:15 · Direção até Egilsstaðir
 
-\~1h30 pelo trecho final dos fiordes.
+\~1h pelo trecho final dos fiordes.
 
-### 15:00 – 15:30 · Check-in no Hérað Hotel
+### 15:15 – 15:45 · Check-in no East Apartment
 
-Hotel central em Egilsstaðir. Deixar malas, banheiro, hidratar.
+Miðás 1, Egilsstaðir · Booking **6407205153** · PIN **5894** · **self check-in** a partir das 16h. Apartamento de 2 quartos para os 4, com cozinha.
 
-> ✅ Check-in oficial às 15h00 — chegada bem alinhada.
+> ⚠️ **Sem café da manhã** e saída às 07:30 amanhã → **comprar o café hoje no Bonus/Nettó** (o apartamento tem cozinha).
 
 ### 15:30 – 16:15 · Direção até Seyðisfjörður
 
@@ -145,25 +149,20 @@ Pular Seyðisfjörður, ficar em Egilsstaðir:
 * \[ ] Power bank
 * \[ ] Tanque cheio em Höfn
 * \[ ] road.is verificado antes de subir Fjarðarheiði
-* \[ ] Reservas: Kaffihúsið Sumarlína + Lyng Restaurant confirmadas
+* \[ ] Reserva do Lyng Restaurant confirmada (sábado à noite enche) — +354 471 1500 ou Dineout
+* \[ ] Compras no Bonus/Nettó de Egilsstaðir: café da manhã de amanhã
 
 \---
 
 ## Hospedagem e refeições
 
-**Hérað - Berjaya Iceland Hotels (Egilsstaðir)**
+**East Apartment (Egilsstaðir)** · Miðás 1 · Booking **6407205153** · PIN **5894** · **PAGO**
 
-* Hotel central, certificado Green Hotel (ISO 14001)
-* 60 quartos, Wi-Fi, parking grátis
-* **Lyng Restaurant** elogiado — rena, peixe, cordeiro local
-* Bar/lounge com vista (aurora visível das janelas em muitas noites)
-* Check-in 15h00 / Check-out 11h00
+* Apartamento de 2 quartos, 4 adultos, cozinha completa
+* **Self check-in** a partir das 16h · estacionamento grátis
+* **Sem café da manhã** — comprar na véspera (saída 07:30 no Dia 7)
+* Propriedade não permite festas
 
-*Alternativas (caso queira insistir em Seyðisfjörður):*
-
-* **Hótel Aldan (Seyðisfjörður)** — casas históricas convertidas; exige passe duas vezes
-* **Post-Hostel Seyðisfjörður** — opção econômica
-
-**Almoço:** Kaffihúsið Sumarlína (Fáskrúðsfjörður) — peixe fresco
-**Jantar:** Lyng Restaurant (Hérað Hotel) — rena selvagem, regional
+**Almoço:** Við Voginn ou Langabúð (Djúpivogur) — o Sumarlína só abre 17h no sábado
+**Jantar:** Lyng Restaurant, no Hérað Hotel no centro (17h—21h) — **rena selvagem** (Local Reindeer Steak), reservar
 

@@ -198,19 +198,20 @@ Check-in oficial geralmente às 15h, mas todos os hotéis aceitam deixar bagagem
 * \[ ] Roupa elegante separada para o jantar
 * \[ ] Tanque cheio em Arnarstapi
 * \[ ] Anotar lembrete: **pagar pedágio Hvalfjörður em vehicle.is em até 3h**
-* \[ ] Reservas confirmadas: Hotel + Sky Lagoon + jantar
+* \[ ] Reserva do jantar confirmada (Sky Lagoon é opcional e não está reservada)
 
 \---
 
 ## Hospedagem e refeições
 
-**Sugestões de hotel em Reykjavík:**
+**Hotel Reykjavík Grand** — Sigtún 28, 105 Reykjavík · Hoteis.com **72075073439770** · **PAGO**
 
-**Hotel Local 101 
-Link:** https://www.booking.com/hotel/is/cityhoteliceland.pt-pt.html?aid=356980\&label=gog235jc-10CAMocDjqA0gtWANoIIgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC1-H40AbAAgHSAiRjMjI0OTczZC1kNjNlLTRiZGItYTIyNC0xNDFiYTA0ZmY1MmHYAgHgAgE\&sid=1ea24d9b37dadd623eaab3eb96eca661\&all\_sr\_blocks=22132909\_89066561\_2\_1\_0%2C22132909\_89066561\_2\_1\_0\&checkin=2026-09-11\&checkout=2026-09-12\&dest\_id=-2651804\&dest\_type=city\&dist=0\&group\_adults=4\&group\_children=0\&hapos=5\&highlighted\_blocks=22132909\_89066561\_2\_1\_0%2C22132909\_89066561\_2\_1\_0\&hpos=5\&matching\_block\_id=22132909\_89066561\_2\_1\_0\&nflt=mealplan%3D1%3Breview\_score%3D80%3Breview\_score%3D90\&no\_rooms=2\&req\_adults=4\&req\_children=0\&room1=A%2CA\&room2=A%2CA\&sb\_price\_type=total\&sr\_order=popularity\&sr\_pri\_blocks=22132909\_89066561\_2\_1\_0\_\_26394%2C22132909\_89066561\_2\_1\_0\_\_26394\&srepoch=1780363576\&srpvid=e9e009f0308402e5\&type=total\&ucfs=1\&
+* Quarto Atrium View · **café da manhã incluído** (resolve o café cedo do sábado)
+* Bairro de Laugardalur: \~25 min a pé do centro, 5 min de carro, estacionamento fácil
+* ⚠️ **Imposto local de R$ 32,46 a pagar no balcão**
 
-**Almoço:** Sandholt · Café Loki · Bæjarins Beztu Pylsur (rápido)
-**Jantar:** Matur og Drykkur (autenticidade) · Dill (Michelin) · Apótek (elegância)
+**Almoço:** Sandholt (7h—18h) · Café Loki (8h—22h) · Bæjarins Beztu Pylsur (rápido)
+**Jantar:** Dill (Michelin — 30 lugares, reserva com semanas) · Matur og Drykkur (Mýrargata 31, qua—dom 18h—23h) · Apótek (todos os dias até 23h, o mais fácil de conseguir mesa)
 
 \---
 

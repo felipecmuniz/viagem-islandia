@@ -13,20 +13,19 @@
 
 ## ⚠️ Antes de viajar
 
-* \[ ] **Arnarstapi Cottages** com reserva confirmada (cabana com cozinha — anotar)
-* \[ ] **Hotel Búðir Restaurant** com reserva pro jantar (reservar com 2 meses+, é disputado)
-* \[ ] **Fjöruhúsið (Hellnar)** sem reserva, mas chegar antes das 13h pra garantir lugar
-* \[ ] Tanque cheio em Grundarfjörður antes de sair (postos esparsos na península)
-* \[ ] App Parka instalado (Kirkjufell + Djúpalónssandur + Búðakirkja podem cobrar via QR)
+* \[ ] **Hótel Búðir Restaurant** com reserva pro jantar — budir@budir.is / +354 435 6700 (18h—21h, disputado)
+* \[ ] **Fjöruhúsið (Hellnar)** sem reserva, mas chegar perto das 12h pra garantir lugar (\~11h—17h em setembro)
+* \[ ] Tanque cheio em Stykkishólmur ou Ólafsvík (postos esparsos na península)
+* \[ ] App Parka instalado (**Kirkjufell ISK 800** + Djúpalónssandur/Búðakirkja podem cobrar via QR)
 * \[ ] **Tripé** carregado (última chance de aurora antes da capital)
 
 \---
 
 ## Estratégia do dia
 
-**Loop horário pela península** começando em Grundarfjörður (norte), passando pela ponta oeste, terminando em Arnarstapi (sul). Pernoite no sul = saída mais curta pra Reykjavík amanhã (\~2h15).
+**Loop horário pela península** começando em Stykkishólmur (nordeste), passando pelo Kirkjufell e pela ponta oeste, terminando em **Búðir** (sul). Pernoite no **Hótel Búðir**, ao lado da igreja preta e com o jantar no próprio restaurante: **zero direção noturna**. Saída pra Reykjavík amanhã: \~2h.
 
-**Sacada:** check-in cedo no Arnarstapi Cottages (\~14h, logo após Djúpalónssandur) **libera o resto do dia da logística de carro** — vocês descem da cabana pra trilha, sobem pra Búðakirkja, voltam pra cabana, sem precisar coordenar mala/check-in à noite.
+**Sacada:** o dia tem só **\~135 km / \~2h20 de carro** — é o dia mais folgado da segunda metade. Por isso o **Kirkjufell foi movido do Dia 10 para hoje de manhã**: dá pra ficar 1h lá sem comprometer nada.
 
 **Cortes deliberados:**
 
@@ -36,34 +35,37 @@
 
 ## Cronograma
 
-### 08:00 — Café no Hotel Framnes
+### 08:00 — Café na padaria Nesbrauð (Stykkishólmur)
 
-Pode ser sem pressa — distância total de hoje é curta.
+> ⚠️ O hotel **não tem café incluído** e o **Sker de Ólafsvík só abre 11:45** — resolvam o café aqui (ou buffet pago do Fransiskus).
 
-### 08:30 – 09:15 · Kirkjufell de manhã 📸
+### 08:45 – 09:00 · Check-out e saída
 
-**5 min de carro de Framnes.** Diferente da noite anterior:
+Malas no carro, tanque cheio.
 
-* Luz mais fria, azulada
-* Em dia limpo, montanha refletida em água parada do rio
-* Sem turistas (vocês foram os primeiros ontem à noite, sejam os primeiros hoje também)
-* Mais 30-45 min é suficiente
+### 09:00 – 09:40 · Direção até o Kirkjufell (\~40 min)
 
-### 09:15 – 09:30 · Check-out do Hotel Framnes
+Pela rota 54, contornando o fiorde.
 
-Malas no carro.
+### 09:40 – 10:40 · 📸 Kirkjufell + Kirkjufellsfoss — o cartão-postal
 
-### 09:30 – 10:00 · Direção até Ólafsvík (\~30 min)
+**A montanha mais fotografada da Islândia** — cone de 463 m em forma de chapéu de bruxa ("Arrowhead Mountain" em *Game of Thrones*).
+
+* **Ângulo clássico:** estacionamento de **Kirkjufellsfoss**, do outro lado da estrada — três quedas em camadas com a montanha ao fundo
+* Trilha curta e plana de 5 min (fácil pra gestante) · **ISK 800 via app Parka**
+* Luz de manhã é mais fria e azulada, e os ônibus de turismo ainda não chegaram
+* **Fiquem 1h se quiserem** — o dia tem folga de sobra
+
+### 10:40 – 11:10 · Direção até Ólafsvík (\~30 min)
 
 Pela rota 54, costa norte da península.
 
-### 10:00 – 10:45 · Café em Ólafsvík ou Hellissandur ☕
+### 11:10 – 11:45 · Ólafsvík / Hellissandur ☕
 
 **Vilarejos autênticos, pesqueiros, sem turismo de massa.**
 
-* **Sjávarpakkhús** — café/restaurante junto ao porto
-* **Sker** — alternativa local
 * Caminhada curta pelo porto e igreja moderna de Ólafsvík (Ólafsvíkurkirkja, formato triangular icônico)
+* Se quiserem um café rápido, o **Sker** abre 11:45 — mas o almoço bom é logo à frente, em Hellnar
 
 ### 10:45 – 11:15 · Direção até Djúpalónssandur (\~30 min)
 
@@ -87,25 +89,21 @@ Pela rota 574, entrando no **Snæfellsjökull National Park**.
 
 > ⚠️ \*\*Não levem pedras de souvenir\*\* — protegidas por lei, multa pesada
 
-### 12:15 – 13:00 · Direção até Arnarstapi Cottages (\~45 min)
+### 12:15 – 12:45 · Direção até Hellnar (\~30 min)
 
 Continuando pela rota 574 contornando o vulcão.
 
-### 13:00 – 14:00 · Almoço em Hellnar — Fjöruhúsið 🍴
+### 12:45 – 14:00 · Almoço em Hellnar — Fjöruhúsið 🍴
 
-**Pequeno bistrô beira-mar a 5 min de Arnarstapi.**
+**Pequeno bistrô beira-mar.** Sazonal e minúsculo, **sem reserva** — em setembro abre \~11h—17h; cheguem perto do meio-dia.
 
 * Peixe fresco do dia
 * **Bolo de chocolate lendário** — vale a parada por ele só
 * Vista das ondas batendo no penhasco
 
-### 14:00 – 14:30 · Check-in no Arnarstapi Cottages 🏡
+### 14:00 – 14:30 · Direção até Arnarstapi (\~10 min)
 
-**Decisão estratégica: cargar malas agora, liberar resto do dia.**
-
-* Cabanas privativas com cozinha
-* Vista dos penhascos esculpidos pelo mar
-* A 2 min a pé do início da trilha
+Estacionar no início da trilha.
 
 ### 14:30 – 16:30 · Trilha Arnarstapi → Gatklettur → Hellnar 🥾
 
@@ -128,7 +126,13 @@ Continuando pela rota 574 contornando o vulcão.
 
 Pela rota 574 → 54 → desvio Búðavegur.
 
-### 17:00 – 18:30 · Búðakirkja ⛪
+### 16:45 – 17:15 · Check-in no Hótel Búðir 🏡
+
+**Malas no quarto agora, e o resto do dia é a pé.** Hoteis.com **72075071861535** · quarto família · **PAGO** (sem café da manhã incluído).
+
+A **Búðakirkja fica a 2 min a pé do hotel** — nada de dirigir no escuro hoje.
+
+### 17:15 – 18:30 · Búðakirkja ⛪
 
 **Pequena igreja preta de madeira em campo de lava verde-musgo.**
 
@@ -146,51 +150,30 @@ Pela rota 574 → 54 → desvio Búðavegur.
 * Em dia claro, montanhas do norte de Snæfellsnes aparecem na linha do horizonte
 * Posicione pra pegar a igreja contra o sol baixo
 
-### 20:00 – 22:00 · Jantar no Hotel Búðir Restaurant 🍽️
+### 20:00 – 22:00 · Jantar no restaurante do Hótel Búðir 🍽️
 
-**Premium, peixe local elaborado e cordeiro.**
+**Premium, peixe local elaborado e cordeiro** — no próprio hotel, 18h—21h.
 
-* 5 min de carro de Búðakirkja
-* Reserva com 2 meses+ obrigatória
+* **Zero deslocamento** — vocês já estão hospedados aqui
+* Reservar antes por budir@budir.is / +354 435 6700 (é disputado)
 * Vista do campo de lava ao crepúsculo
-* Volta a Arnarstapi: \~25 min
 
 ### Pós-jantar — Última grande chance de aurora 🌌
 
-**Última noite fora da capital.** Snæfellsnes tem:
+**Última noite fora da capital**, e no melhor cenário possível: **Búðakirkja + aurora a 2 min a pé do quarto**.
 
-* Latitude alta
-* Costa oeste exposta ao mar (sem luzes urbanas)
-* Visibilidade ampla do horizonte norte
+* Cheque **vedur.is** (KP + nuvens)
+* Se KP ≥ 3 e céu limpo, é só vestir o casaco e sair — igreja preta + lava + aurora é uma das fotos clássicas da Islândia
+* Custo zero de deslocamento: não há motivo pra não tentar
 
-**Opções por nível de empolgação:**
-
-**Opção A — Aurora em Arnarstapi (saída da cabana)**
-
-* Sair pra trás das cabanas, campo aberto
-* Penhascos + mar + céu = composição linda
-* Volta rápida ao calor da cabana se ficar frio demais
-
-**Opção B — Aurora em Búðakirkja**
-
-* 25 min de carro
-* Igreja preta + lava + aurora = uma das fotos clássicas da Islândia
-* Vale se vedur.is mostrar KP ≥ 3
-
-**Opção C — Foto definitiva sobre Kirkjufell**
-
-* 1h15 de carro de Arnarstapi
-* Vale **só se KP ≥ 4 + céu totalmente limpo**
-* É a única noite que sobra antes de Reykjavík (onde aurora é difícil pela luz urbana)
-
-> 🎯 \*\*Decisão honesta:\*\* se vocês conseguiram a foto sobre Kirkjufell ontem, pegam aurora aqui da cabana e durmem cedo. Se não conseguiram, vale a Opção C — última chance.
+> 🎯 Amanhã a saída é tranquila (\~8h30) e Reykjavík tem muita luz urbana — hoje é a noite.
 
 \---
 
 ## Avaliação honesta do dia
 
-✅ **Dia muito bem distribuído** — direção curta, três experiências completas (Kirkjufell, Djúpalónssandur, Arnarstapi-Búðir)
-🏡 **Arnarstapi Cottages é decisão certa** — check-in cedo libera o dia, vista dos penhascos é experiência em si
+✅ **Dia mais folgado da segunda metade** — só \~2h20 de carro, três experiências completas (Kirkjufell, Djúpalónssandur, Arnarstapi-Búðir)
+🏡 **Hótel Búðir é a decisão certa** — dormir ao lado da igreja elimina toda a direção noturna e põe a aurora a 2 min a pé
 🥾 **Trilha Arnarstapi-Hellnar com gestante** — fica bem se ela controlar o pace; opções de corte sempre disponíveis
 🌌 **Última grande noite de aurora** — Reykjavík amanhã tem muita luz urbana
 ⚠️ **Risco:** clima encoberto cancela tanto pôr do sol em Búðakirkja quanto aurora. Sem controle, parte da paisagem da Islândia.
@@ -207,30 +190,23 @@ Pela rota 574 → 54 → desvio Búðavegur.
 * \[ ] Lanterna ou luz frontal (Búðakirkja não tem iluminação noturna)
 * \[ ] App Parka instalado
 * \[ ] Tanque cheio em Grundarfjörður
-* \[ ] Reservas confirmadas: Arnarstapi Cottages + Hotel Búðir Restaurant
-* \[ ] **Compras no Bonus de Akureyri** (feitas anteontem) — café da manhã do dia 12 na cabana
+* \[ ] Reserva confirmada: jantar no restaurante do Hótel Búðir
+* \[ ] Café da manhã comprado na padaria de Stykkishólmur (nem hoje nem amanhã o hotel inclui café)
 
 \---
 
 ## Hospedagem e refeições
 
-**Arnarstapi Cottages** (Arnarstapi)
+**Hótel Búðir** (Búðir, Snæfellsnes) · Hoteis.com **72075071861535** · quarto família · **PAGO**
 
-* Cabanas privativas com cozinha
-* Vista dos penhascos esculpidos pelo mar
-* A 2 min a pé do início da trilha Arnarstapi-Hellnar
-* A 20 min de Búðakirkja e Hotel Búðir Restaurant
-* Saída pra Reykjavík amanhã: \~2h15
+* Hotel icônico **ao lado da igreja preta de Búðakirkja** (2 min a pé)
+* Restaurante premium no próprio hotel — jantar sem dirigir
+* Café da manhã **não incluído** (conferir buffet pago no check-in)
+* Saída pra Reykjavík amanhã: \~2h
 
-
-
-Link: https://www.booking.com/hotel/is/arnarstapi-cottages.pt-pt.html?label=metagha-link-LUBR-hotel-447368\_dev-desktop\_los-1\_bw-0\_dow-Tuesday\_defdate-1\_room-0\_gstadt-2\_rateid-public\_aud-0\_gacid-21411116873\_mcid-10\_ppa-0\_clrid-0\_ad-1\_gstkid-0\_checkin-20260602\_ppt-\_lp-2076\_r-10416291419160607176\&aid=356937\&ucfs=1\&checkin=2026-09-09\&checkout=2026-09-10\&dest\_id=-2642902\&dest\_type=city\&group\_adults=4\&no\_rooms=2\&group\_children=0\&srpvid=6a7f06e9b2a00292\&srepoch=1780362039\&matching\_block\_id=204502501\_94919149\_0\_2\_0\_845168\&atlas\_src=sr\_iw\_title
-
-
-
-**Café:** Sjávarpakkhús ou Sker (Ólafsvík/Hellissandur)
-**Almoço:** Fjöruhúsið (Hellnar) — bistrô beira-mar, bolo de chocolate lendário
-**Jantar:** Hotel Búðir Restaurant — peixe local elaborado, premium
+**Café:** padaria Nesbrauð (Stykkishólmur) antes de sair — o Sker de Ólafsvík só abre 11:45
+**Almoço:** Fjöruhúsið (Hellnar) — bistrô beira-mar, bolo de chocolate lendário (\~11h—17h, sem reserva)
+**Jantar:** restaurante do Hótel Búðir — peixe local elaborado, premium (18h—21h)
 
 \---
 
@@ -238,6 +214,5 @@ Link: https://www.booking.com/hotel/is/arnarstapi-cottages.pt-pt.html?label=meta
 
 * **Snæfellsnes é chamada "Islândia em miniatura"** — concentra todos os tipos de paisagem do país: vulcão, geleira, praia preta, penhascos, vilarejos pesqueiros, campos de lava, igrejas históricas
 * **Última noite fora da capital** — aproveitem o silêncio
-* **Cozinha da cabana** vale pra café da manhã de amanhã antes da estrada
-* **Aurora em Arnarstapi:** se acordar de madrugada (\~2h-4h), saia pra trás da cabana — campo aberto, mar refletindo, penhascos como moldura
+* **Aurora em Búðir:** se acordar de madrugada (\~2h-4h), a igreja preta está a 2 min a pé — é a composição mais fácil e mais bonita da viagem inteira
 

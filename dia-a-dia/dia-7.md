@@ -33,7 +33,7 @@ Dia **mais puxado da viagem até aqui** — duas atividades pesadas (trilha de 3
 
 ## Cronograma
 
-### 07:00 — Café no Hérað Hotel
+### 07:00 — Café no East Apartment (comprado na véspera)
 
 Café reforçado, check-out.
 

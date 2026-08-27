@@ -12,7 +12,7 @@
 ## ⚠️ Antes de viajar
 
 * \[ ] **Validação obstétrica** para banho geotérmico (água 36-40°C, recomendação até 20 min por imersão)
-* \[ ] **Mývatn Nature Baths** com reserva online em myvatnnaturebaths.is (€56/pessoa)
+* \[ ] **Earth Lagoon** (novo nome do Mývatn Nature Baths) com reserva em **earthlagoon.is** — a partir de ISK 7.900/pessoa, preço dinâmico
 * \[ ] **Vogafjós Farm Resort** com reserva confirmada para o jantar
 * \[ ] Roupa de banho separada para a manhã
 
@@ -32,15 +32,15 @@ Dia equilibrado depois do dia 7 puxado. **Banho de manhã** (recém-aberto, meno
 
 Sem pressa — Nature Baths abre 10h.
 
-### 09:45 – 10:00 · Direção até Mývatn Nature Baths
+### 09:45 – 10:00 · Direção até o Earth Lagoon
 
 \~15 min do hotel.
 
-### 10:00 – 12:00 · 🛁 Mývatn Nature Baths
+### 10:00 – 12:00 · 🛁 Earth Lagoon (ex-Mývatn Nature Baths)
 
-"Blue Lagoon do Norte" — vista panorâmica do vale geotérmico.
+"Blue Lagoon do Norte" — vista panorâmica do vale geotérmico. **Rebatizado em 2026; mesmo lugar.**
 
-* €56/pessoa
+* A partir de ISK 7.900/pessoa (preço dinâmico por horário)
 * Águas naturais geotérmicas a 36-40°C
 * Aberto até 23h (vocês vêm de manhã: menos turistas, mais tranquilo)
 * Sauna a vapor (steam bath) incluso

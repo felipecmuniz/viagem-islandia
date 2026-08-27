@@ -69,7 +69,7 @@ Descanso, troca de roupa.
 
 ### 20:30 — Jantar
 - Restaurante do próprio **Hotel Geysir** — prático e decente
-- **Geysir Glíma** ali próximo — alternativa casual
+- ⚠️ O **Geysir Glíma** ali ao lado **só funciona de dia** (fecha \~17:45) — não serve como alternativa de jantar. Reserve mesa no restaurante do hotel ao fazer o check-in (+354 480 6800).
 
 ### Noite — Aurora Boreal 🌌
 Geysir tem **céu muito mais escuro que Reykjavík**, longe de poluição luminosa — condição ideal.

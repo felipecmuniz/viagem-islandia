@@ -107,7 +107,7 @@ Banhos termais cercados por **floresta nativa rara na Islândia** (a maioria do 
 * Cold plunge, sauna seca, **bar molhado dentro da água**
 * Vista do pôr do sol sobre o fiorde a partir das 17h (em 07/09, pôr \~19:20)
 
-> ⚠️ \\\*\\\*Para gestante (29 semanas):\\\*\\\* mesmas precauções do Mývatn Nature Baths
+> ⚠️ \\\*\\\*Para gestante (29 semanas):\\\*\\\* mesmas precauções do Earth Lagoon (ex-Mývatn Nature Baths)
 > - Validar previamente com obstetra
 > - Até 20 min por imersão, alternar entrar/sair
 > - Ombros pra fora ajuda regular temperatura
@@ -118,9 +118,11 @@ Banhos termais cercados por **floresta nativa rara na Islândia** (a maioria do 
 
 \~10 min do Forest Lagoon ao centro.
 
-### 19:00 – 19:30 · Check-in
+### 19:00 – 19:30 · Check-in no Bryggjan Boutique Hotel
 
-Centrum Hostel · Hotel Kea · Berjaya Akureyri (sua escolha).
+Strandgata 49, à beira do fiorde · Booking **6397105536** · PIN **5466** · **café da manhã incluído**.
+
+> ⚠️ Total da reserva € 255,60 e foram pagos € 237,54 — a diferença de **€ 18,06** provavelmente é cobrada no check-in.
 
 ### 20:00 — Jantar 🍽️
 

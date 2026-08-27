@@ -22,13 +22,13 @@
 
 ## Cronograma
 
-### 08:00 — Café no Fosshotel Skaftafell
+### 06:15 — Café rápido no quarto (Fosshotel Núpar)
 
-Café reforçado, check-out tranquilo.
+Comprado em Vík na véspera — o buffet pago do hotel só abre às 07h e vocês saem antes.
 
-### 09:00 — Saída
+### 06:45 — Saída rumo a Hali 🧊
 
-Tanque cheio.
+Tanque cheio. São \~1h40 até o **Glacier Adventure Base Camp** (chegar \~08:30; tour às 09:00).
 
 ### 09:00 – 09:15 · Direção até Svínafellsjökull
 
@@ -91,9 +91,12 @@ Fica do outro lado da Ring Road, mesmo estacionamento serve.
 
 \~1h pela Ring Road.
 
-### 18:00 – 19:00 · Check-in no Central Stays Höfn
+### 18:00 – 19:00 · Check-in no REY Stays (Höfn)
 
-Apartamento central, próximo ao Pakkhús. Banho quente, descanso.
+Estúdio com kitchenette, um por casal · Booking **6940724238** · PIN **7077** · self check-in a partir das 16h. Banho quente, descanso.
+
+> ⚠️ **Sem café da manhã** — comprar no Nettó de Höfn hoje à noite.
+> 🍽️ **Pakkhús não aceita reserva** (walk-in, 12h—21h30): cheguem \~17:45 pra evitar 45—60 min de fila. Planos B: Z-Bistro ou Hafnarbúðin.
 
 ### 19:00 – 19:30 · Caminhada pelo porto (opcional)
 

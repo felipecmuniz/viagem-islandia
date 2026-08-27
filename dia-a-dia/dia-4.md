@@ -88,16 +88,18 @@ Café, banheiro, hidratar.
 * Cachoeira preta emoldurada por **colunas hexagonais de basalto** que inspiraram a Hallgrímskirkja em Reykjavík
 * Trilha com rampas de borracha em trechos macios
 
-### 18:30 – 18:45 · Direção ao Fosshotel Skaftafell
+### 18:00 – 18:40 · Direção ao Fosshotel Núpar
 
-5 min do Visitor Center.
+\~40 min **de volta para oeste** pela Ring Road (Kálfafell) — vocês passam por ele na ida, vale marcar no GPS.
 
-### 18:45 – 19:45 · Check-in, banho quente, descanso
+### 18:40 – 19:45 · Check-in, banho quente, descanso
 
 ### 19:45 — Jantar
 
-* **Restaurante do Fosshotel Skaftafell** — peixe local, cordeiro, sopas. Reserve no check-in para evitar lotação.
-* Alternativa: refeição leve do Bonus no quarto (microondas/chaleira disponíveis)
+* **Restaurante do Fosshotel Núpar** — jantar 18h—21h30, janelas amplas pro campo de lava. Reserve mesa no check-in.
+* Alternativa: refeição leve do Bonus no quarto
+
+> ⚠️ **Sem café da manhã incluído e saída às 06:45 amanhã** (glacier walk 09:00 em Hali) — deixem o café comprado em Vík e as roupas do gelo separadas. **Dormir cedo.**
 
 ### Noite — Aurora Boreal 🌌
 
