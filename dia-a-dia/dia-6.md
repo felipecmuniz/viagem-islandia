@@ -3,7 +3,7 @@
 **Trajeto:** \~310 km · \~5h de direção pura (estrada dos fiordes é lenta)
 **Hospedagem:** East Apartment (Egilsstaðir; cozinha, self check-in, sem café da manhã) · PAGO
 
-> ⚠️ **ATUALIZADO 27/08:** hospedagem real é o **East Apartment**, não o Hérað. O jantar de rena no **Lyng Restaurant** (no Hérað, centro) continua valendo. Sem café incluso + saída 07:30 amanhã → **comprar o café da manhã no Bonus/Nettó hoje à noite**.
+> ⚠️ **ATUALIZADO 27/08:** o **almoço mudou para Djúpivogur** (Við Voginn ou Langabúð) — o Sumarlína de Fáskrúðsfjörður só abre 17h no sábado; Fáskrúðsfjörður vira parada de fotos. Hospedagem real é o **East Apartment**, não o Hérað. O jantar de rena no **Lyng Restaurant** (no Hérað, centro) continua valendo. Sem café incluso + saída 07:30 amanhã → **comprar o café da manhã no Bonus/Nettó hoje à noite**.
 **Foco:** Stokksnes/Vestrahorn + estrada panorâmica dos fiordes + vila colorida de Seyðisfjörður
 **Refeições especiais:** peixe fresco em Fáskrúðsfjörður · rena no Lyng Restaurant
 

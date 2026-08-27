@@ -3,7 +3,7 @@
 **Trajeto:** \~440 km · \~5h30 de direção pura (com paradas conte \~6h30)
 **Hospedagem:** Hótel Fransiskus Stykkishólmi (Stykkishólmur; sem café da manhã) · PAGO
 
-> ⚠️ **ATUALIZADO 27/08:** o pernoite é em **Stykkishólmur**, não em Grundarfjörður. Kirkjufell fica a ~40 min da vila — check-in primeiro, ida ao Kirkjufell para a hora dourada (~18:30) e jantar no Bjargasteinn (Grundarfjörður) ou de volta na vila (Sjávarpakkhúsið / Narfeyrarstofa). Aurora a pé: farol Súgandisey.
+> ⚠️ **ATUALIZADO 27/08 (v2):** o pernoite é em **Stykkishólmur** (não Grundarfjörður) e o **Kirkjufell saiu deste dia** — fica para amanhã de manhã (o Dia 11 tem folga). São ~405 km / 6h reais de volante: tarde leve na vila, pôr do sol e aurora no **farol Súgandisey** (a pé). **Bjargasteinn FECHOU em 2025** — jantar no **Sjávarpakkhúsið** (abre 18h, reservar +354 438 1800) ou Narfeyrarstofa.
 **Foco:** Travessia + Kirkjufell ao pôr do sol + caça à aurora
 **Refeições:** almoço em Borgarnes · jantar em Grundarfjörður
 

@@ -3,7 +3,7 @@
 **Trajeto:** \~210 km · \~3h30 de direção total (loop pela península)
 **Hospedagem:** Hótel Búðir (ao lado da Búðakirkja; sem café da manhã incluso) · PAGO
 
-> ⚠️ **ATUALIZADO 27/08:** o pernoite é no **Hótel Búðir**, não em Arnarstapi. O dia começa em Stykkishólmur (~40 min até o Kirkjufell), o loop continua igual, e o fim do dia fica melhor: Búðakirkja + jantar no restaurante do próprio hotel + aurora a 2 min a pé do quarto. Zero direção noturna.
+> ⚠️ **ATUALIZADO 27/08 (v2):** o pernoite é no **Hótel Búðir**, não em Arnarstapi. **O Kirkjufell é HOJE de manhã** (a visita principal — ontem não foi; o dia tem só ~2h20 de carro, dá para ficar 1h). Café na **padaria Nesbrauð** de Stykkishólmur — o Sker de Ólafsvík só abre 11:45. Almoço Fjöruhúsið (~11h–17h, sem reserva, chegar ~12h). Fim do dia: Búðakirkja + jantar no restaurante do hotel (18h–21h) + aurora a 2 min a pé.
 **Foco:** Kirkjufell manhã · Djúpalónssandur · trilha Arnarstapi-Hellnar · pôr do sol em Búðakirkja
 **Refeições:** café em Ólafsvík · almoço em Hellnar · jantar no Hotel Búðir
 
