@@ -645,6 +645,10 @@ em { font-style: italic; color: var(--ice-soft); }
   outline: none !important;
 }
 .leaflet-tile-pane { filter: contrast(1.05) saturate(0.85); }
+/* Fallback: tiles claros (OSM) invertidos para casar com o tema escuro */
+.tiles-light-inverted .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.72) contrast(0.9) saturate(0.5);
+}
 .leaflet-control-attribution {
   background: rgba(14, 14, 16, 0.85) !important;
   color: var(--ice-mute) !important;
@@ -4034,9 +4038,54 @@ function initCarousel(carousel) {
 // =====================================================================
 // MAP LOGIC
 // =====================================================================
-// Tile providers (no key required, free for OSM-attribution use)
-const MAP_TILE_URL = 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png';
-const MAP_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+// Tile providers (no key required, free for OSM-attribution use).
+// Primary: CARTO dark (endpoint atual — o antigo *.global.ssl.fastly.net foi
+// descontinuado e passou a devolver tiles "API key required").
+// Fallback: OpenStreetMap escurecido via CSS, caso o CARTO falhe.
+const TILE_PROVIDERS = [
+  {
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    subdomains: 'abcd',
+    dark: true,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  },
+  {
+    url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    subdomains: 'abc',
+    dark: false,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }
+];
+
+// Adds the base tile layer with automatic fallback: if the primary provider
+// starts erroring, swap to the next one (and invert light tiles via CSS).
+function addBaseTiles(map, minZoom) {
+  let idx = 0;
+  let layer = null;
+
+  const attach = () => {
+    const p = TILE_PROVIDERS[idx];
+    if (layer) map.removeLayer(layer);
+    map.getContainer().classList.toggle('tiles-light-inverted', !p.dark);
+    layer = L.tileLayer(p.url, {
+      attribution: p.attribution,
+      subdomains: p.subdomains,
+      maxZoom: 18,
+      minZoom: minZoom
+    });
+    let errors = 0;
+    layer.on('tileerror', () => {
+      errors++;
+      if (errors >= 3 && idx < TILE_PROVIDERS.length - 1) {
+        idx++;
+        attach();
+      }
+    });
+    layer.addTo(map);
+  };
+
+  attach();
+}
 
 // Stash existing map instances so re-renders don't double-init
 const MAP_INSTANCES = {};
@@ -4076,12 +4125,7 @@ function initDayMap(dayN) {
   map.on('click', () => map.scrollWheelZoom.enable());
   map.on('mouseout', () => map.scrollWheelZoom.disable());
 
-  L.tileLayer(MAP_TILE_URL, {
-    attribution: MAP_ATTRIBUTION,
-    subdomains: 'abcd',
-    maxZoom: 18,
-    minZoom: 5
-  }).addTo(map);
+  addBaseTiles(map, 5);
 
   // Draw route (polyline through stops)
   const routeCoords = data.stops.map(s => [s.lat, s.lng]);
@@ -4133,12 +4177,7 @@ function initOverviewMap() {
   map.on('click', () => map.scrollWheelZoom.enable());
   map.on('mouseout', () => map.scrollWheelZoom.disable());
 
-  L.tileLayer(MAP_TILE_URL, {
-    attribution: MAP_ATTRIBUTION,
-    subdomains: 'abcd',
-    maxZoom: 18,
-    minZoom: 4
-  }).addTo(map);
+  addBaseTiles(map, 4);
 
   // Full route polyline
   const routeCoords = FULL_ROUTE.map(s => [s.lat, s.lng]);
