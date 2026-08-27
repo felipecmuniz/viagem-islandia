@@ -622,6 +622,7 @@ em { font-style: italic; color: var(--ice-soft); }
   color: var(--ice-mute);
   margin-top: var(--sp-2);
 }
+.map-section-meta.route-stats { color: var(--aurora); }
 
 .day-map {
   width: 100%;
@@ -1674,6 +1675,7 @@ table tr:hover { background: rgba(244, 241, 235, 0.02); }
         <span class="eyebrow">A Hringvegur · Visão geral</span>
         <h3 style="margin-top: var(--sp-3);">A ilha inteira em <em>uma volta</em>.</h3>
         <div class="map-section-meta">Cada ponto é um dia. Clique para abrir os detalhes.</div>
+        <div class="map-section-meta route-stats" id="route-stats-overview"></div>
       </div>
     </div>
     <div class="overview-map" id="overview-map"></div>
@@ -2801,7 +2803,7 @@ const ROTEIRO = [
       }
     ],
     lodging: [
-      { name: "Hótel Búðir ✓ reservado", detail: "Hotel icônico ao lado da igreja preta de Búðakirkja, restaurante premium no local. Café da manhã NÃO incluído na reserva (conferir buffet pago no check-in). Pago por Felipe para os 2 casais — conferir cobrança/acerto. Saída para Reykjavík amanhã: ~2h.", price: "€ 310,45 / casal · PAGO" }
+      { name: "Hótel Búðir ✓ reservado", detail: "Hotel icônico ao lado da igreja preta de Búðakirkja, restaurante premium no local. Café da manhã NÃO incluído na reserva (conferir buffet pago no check-in). Saída para Reykjavík amanhã: ~2h.", price: "€ 310,45 / casal · PAGO" }
     ],
     food: [
       "<strong>Café:</strong> padaria de Stykkishólmur ou Sker (Ólafsvík).",
@@ -3502,7 +3504,7 @@ const PILLARS = {
   },
   checklist: {
     title: "Checklist final",
-    sub: "Quatro semanas antes da viagem. Marque cada item conforme conclui — o progresso fica salvo no seu navegador.",
+    sub: "Antes e durante a viagem. Marque cada item conforme conclui — o progresso fica salvo no seu navegador.",
     blocks: [
       {
         h: "Já garantido ✓",
@@ -3525,7 +3527,6 @@ const PILLARS = {
           "Glacier walk (GAD-T137625211) — ISK 67.600 — status 'Awaiting Payment': quitar online ou no base camp em Hali (04/09)",
           "Whale watching (420013) — pagar no ticket office da North Sailing às 08:30 do dia 08/09",
           "Hótel Laxá — € 619,56/casal — pagar em 02/09 (WISE Felipe + cartão Paloma)",
-          "Hótel Búðir — conferir quando a cobrança cair no cartão de Felipe e acertar divisão entre os casais",
           "Pedágio do túnel Hvalfjörður (Dia 12) — pagar em vehicle.is em até 3h após passar"
         ]
       },
@@ -3618,7 +3619,7 @@ const PILLARS = {
             <tr style="background: rgba(212, 162, 76, 0.08);"><td><strong>7—8</strong> · dom 06 → ter 08/09</td><td>Mývatn</td><td>Hótel Laxá (2 noites)</td><td>619,56</td><td>✓</td><td><strong>⚠️ PAGAR 02/09</strong></td></tr>
             <tr><td><strong>9</strong> · ter 08/09</td><td>Akureyri</td><td>Bryggjan Boutique Hotel</td><td>237,54</td><td>✓</td><td>PAGO</td></tr>
             <tr><td><strong>10</strong> · qua 09/09</td><td>Stykkishólmur</td><td>Hótel Fransiskus Stykkishólmi</td><td>282,15</td><td>✗</td><td>PAGO</td></tr>
-            <tr><td><strong>11</strong> · qui 10/09</td><td>Búðir</td><td>Hótel Búðir</td><td>310,45</td><td>✗</td><td>PAGO (conferir cobrança)</td></tr>
+            <tr><td><strong>11</strong> · qui 10/09</td><td>Búðir</td><td>Hótel Búðir</td><td>310,45</td><td>✗</td><td>PAGO</td></tr>
             <tr><td><strong>12</strong> · sex 11/09</td><td>Reykjavík</td><td>Hotel Reykjavík Grand</td><td>295,55</td><td>✓</td><td>PAGO</td></tr>
             <tr><td>— · sáb 12 → dom 13/09</td><td>Londres</td><td>Norfolk Towers Paddington</td><td>277,93</td><td>✓</td><td>PAGO</td></tr>
             <tr style="background: rgba(107, 203, 161, 0.06);"><td colspan="3"><strong>TOTAL (16 noites)</strong></td><td><strong>≈ € 4.583</strong></td><td colspan="2">≈ R$ 27.640 / casal</td></tr>
@@ -3629,8 +3630,6 @@ const PILLARS = {
           <div class="callout-title">Lembretes de pagamento</div>
           <ul>
             <li><strong>Hótel Laxá:</strong> única hospedagem ainda não paga — pagamento combinado para <strong>02/09</strong> (WISE Felipe + cartão Paloma). Cancelamento grátis até 03/09.</li>
-            <li><strong>Hótel Búðir:</strong> Felipe pagou pelos 2 casais — conferir quando a cobrança cair e acertar a divisão.</li>
-            <li><strong>Fosshotel Núpar:</strong> pago no cartão de Paloma pelos 2 casais — acertar a divisão.</li>
           </ul>
         </div>
         <div class="callout">
@@ -3844,6 +3843,7 @@ function renderDay(n) {
             <span class="eyebrow">Trajeto · Dia ${day.n}</span>
             <h3>${MAP_DATA[day.n].stops.length} <em>paradas</em> · ${day.meta["Direção"] || ""}</h3>
             <div class="map-section-meta">${MAP_DATA[day.n].stops.map(s => s.name).join(' → ')}</div>
+            <div class="map-section-meta route-stats" id="route-stats-${day.n}">🚗 Calculando distância e tempo pela estrada…</div>
             ${day.mapUrl ? `<a class="map-gmaps-btn" href="${day.mapUrl}" target="_blank" rel="noopener">🗺️ Ver rota do dia no Google Maps <span class="map-gmaps-arrow">→</span></a>` : ''}
           </div>
         </div>
@@ -4090,6 +4090,62 @@ function addBaseTiles(map, minZoom) {
 // Stash existing map instances so re-renders don't double-init
 const MAP_INSTANCES = {};
 
+// ---- Rota real por estrada (OSRM público, sem chave) ----
+// Calcula o trajeto de carro seguindo as estradas da Islândia (dados OSM),
+// com distância e tempo estimados. Cache em localStorage para não repetir
+// a chamada a cada abertura do dia.
+const OSRM_URL = 'https://router.project-osrm.org/route/v1/driving/';
+
+async function fetchRealRoute(stops, overview) {
+  const coordStr = stops.map(s => s.lng.toFixed(5) + ',' + s.lat.toFixed(5)).join(';');
+  const cacheKey = 'osrm2:' + overview + ':' + coordStr;
+  try {
+    const cached = localStorage.getItem(cacheKey);
+    if (cached) return JSON.parse(cached);
+  } catch (e) {}
+  const resp = await fetch(OSRM_URL + coordStr + '?overview=' + overview + '&geometries=geojson&steps=false');
+  if (!resp.ok) throw new Error('OSRM ' + resp.status);
+  const json = await resp.json();
+  if (json.code !== 'Ok' || !json.routes || !json.routes[0]) throw new Error('sem rota');
+  const r = json.routes[0];
+  const result = {
+    latlngs: r.geometry.coordinates.map(c => [c[1], c[0]]),
+    km: r.distance / 1000,
+    min: r.duration / 60
+  };
+  try { localStorage.setItem(cacheKey, JSON.stringify(result)); } catch (e) {}
+  return result;
+}
+
+function formatRouteStats(route) {
+  const h = Math.floor(route.min / 60);
+  const m = Math.round(route.min % 60);
+  const time = h > 0 ? h + 'h' + String(m).padStart(2, '0') : m + ' min';
+  return '🚗 Pela estrada: ' + Math.round(route.km) + ' km · ' + time + ' de carro (estimado, sem paradas)';
+}
+
+// Substitui a linha reta ilustrativa pelo trajeto real quando o OSRM responde.
+function drawRealRoute(map, stops, fallbackLine, statsElId, overview) {
+  const statsEl = statsElId ? document.getElementById(statsElId) : null;
+  if (statsEl) statsEl.textContent = '🚗 Calculando distância e tempo pela estrada…';
+  fetchRealRoute(stops, overview || 'full').then(route => {
+    try {
+      if (fallbackLine) map.removeLayer(fallbackLine);
+      const line = L.polyline(route.latlngs, {
+        color: '#6BCBA1',
+        weight: 3,
+        opacity: 0.85,
+        lineCap: 'round',
+        lineJoin: 'round'
+      }).addTo(map);
+      map.fitBounds(line.getBounds(), { padding: [50, 50] });
+    } catch (e) { /* mapa pode ter sido removido ao navegar */ }
+    if (statsEl) statsEl.textContent = formatRouteStats(route);
+  }).catch(() => {
+    if (statsEl) statsEl.textContent = '🚗 Rota por estrada indisponível agora — linha tracejada é ilustrativa; use o botão do Google Maps.';
+  });
+}
+
 function makeMarkerIcon(type, label) {
   const cls = type === 'start' ? 'start' : (type === 'end' ? 'end' : 'poi');
   return L.divIcon({
@@ -4127,15 +4183,18 @@ function initDayMap(dayN) {
 
   addBaseTiles(map, 5);
 
-  // Draw route (polyline through stops)
+  // Draw route (fallback: linha reta tracejada até o OSRM responder)
   const routeCoords = data.stops.map(s => [s.lat, s.lng]);
-  L.polyline(routeCoords, {
+  const fallbackLine = L.polyline(routeCoords, {
     color: '#6BCBA1',
     weight: 2,
     opacity: 0.7,
     dashArray: '4, 6',
     lineCap: 'round'
   }).addTo(map);
+
+  // Rota real pela estrada + km/tempo estimados
+  drawRealRoute(map, data.stops, fallbackLine, `route-stats-${dayN}`, 'full');
 
   // Add markers
   data.stops.forEach((s, i) => {
@@ -4179,15 +4238,19 @@ function initOverviewMap() {
 
   addBaseTiles(map, 4);
 
-  // Full route polyline
+  // Full route polyline (fallback até o OSRM responder)
   const routeCoords = FULL_ROUTE.map(s => [s.lat, s.lng]);
-  L.polyline(routeCoords, {
+  const fallbackLine = L.polyline(routeCoords, {
     color: '#6BCBA1',
     weight: 2.5,
     opacity: 0.85,
+    dashArray: '4, 6',
     lineCap: 'round',
     lineJoin: 'round'
   }).addTo(map);
+
+  // Ring Road real pela estrada + total km/tempo
+  drawRealRoute(map, FULL_ROUTE, fallbackLine, 'route-stats-overview', 'simplified');
 
   // Mark start/end with distinct colors, intermediate as POIs
   FULL_ROUTE.forEach((s, i) => {

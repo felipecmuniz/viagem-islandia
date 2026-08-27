@@ -1,7 +1,7 @@
 # Dia 11 (10/09) — Snæfellsnes: "Islândia em Miniatura"
 
 **Trajeto:** \~210 km · \~3h30 de direção total (loop pela península)
-**Hospedagem:** Hótel Búðir (ao lado da Búðakirkja; sem café da manhã incluso) · PAGO (Felipe pagou pelos 2 casais)
+**Hospedagem:** Hótel Búðir (ao lado da Búðakirkja; sem café da manhã incluso) · PAGO
 
 > ⚠️ **ATUALIZADO 27/08:** o pernoite é no **Hótel Búðir**, não em Arnarstapi. O dia começa em Stykkishólmur (~40 min até o Kirkjufell), o loop continua igual, e o fim do dia fica melhor: Búðakirkja + jantar no restaurante do próprio hotel + aurora a 2 min a pé do quarto. Zero direção noturna.
 **Foco:** Kirkjufell manhã · Djúpalónssandur · trilha Arnarstapi-Hellnar · pôr do sol em Búðakirkja
