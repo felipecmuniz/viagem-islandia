@@ -39,6 +39,23 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
+  // Dados ao vivo (previsão de Kp da NOAA): network-first — cache só como
+  // fallback offline, para nunca mostrar previsão de aurora velha.
+  if (url.hostname === 'services.swpc.noaa.gov') {
+    e.respondWith(
+      fetch(req)
+        .then((r) => {
+          if (r && r.ok) {
+            const copy = r.clone();
+            caches.open(CACHE).then((c) => c.put(req, copy));
+          }
+          return r;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
   // Demais recursos: cache-first, revalidando em segundo plano
   e.respondWith(
     caches.match(req).then((cached) => {

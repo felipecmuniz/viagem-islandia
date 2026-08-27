@@ -309,33 +309,85 @@ em { font-style: italic; color: var(--ice-soft); }
   color: var(--ice-mute);
 }
 
-/* Banner HOJE */
-.today-banner {
-  display: inline-flex;
+/* Cartão HOJE */
+.today-card {
+  border: 1px solid var(--aurora);
+  background: rgba(107, 203, 161, 0.06);
+  border-radius: 12px;
+  margin-bottom: var(--sp-6);
+  max-width: 720px;
+  overflow: hidden;
+}
+.tc-head {
+  display: flex;
   align-items: center;
   gap: var(--sp-3);
-  border: 1px solid var(--aurora);
-  background: rgba(107, 203, 161, 0.08);
-  padding: var(--sp-3) var(--sp-5);
-  border-radius: 100px;
-  cursor: pointer;
-  margin-bottom: var(--sp-5);
-  max-width: 100%;
   flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+  padding: var(--sp-4) var(--sp-5);
+  cursor: pointer;
   transition: background 0.3s ease;
+  border-bottom: 1px solid rgba(107, 203, 161, 0.25);
 }
-.today-banner:hover { background: rgba(107, 203, 161, 0.16); }
-.today-banner .tb-label {
+.tc-head:hover { background: rgba(107, 203, 161, 0.14); }
+.tc-head .tb-label {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--aurora);
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
 }
-.today-banner .tb-sub { font-size: 0.88rem; color: var(--ice-soft); }
-.today-banner .tb-arrow { color: var(--aurora); font-family: var(--font-display); font-size: 1.2rem; }
+.tc-head .tb-sub { font-size: 0.88rem; color: var(--ice-soft); flex: 1; min-width: 200px; }
+.tc-head .tb-arrow { color: var(--aurora); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: rgba(107, 203, 161, 0.15);
+}
+.tc-item {
+  background: var(--basalt);
+  padding: var(--sp-3) var(--sp-5);
+  font-size: 0.85rem;
+  color: var(--ice-soft);
+  line-height: 1.5;
+}
+.tc-item strong { color: var(--ice); }
+.tc-item .tc-nav-links { margin-top: 2px; }
+.tc-item .tc-nav-links a {
+  color: var(--aurora);
+  text-decoration: underline;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  margin-right: var(--sp-3);
+}
+.tc-live {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  border-top: 1px solid rgba(107, 203, 161, 0.25);
+  background: var(--basalt);
+}
+.tc-chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border: 1px solid var(--basalt-line);
+  border-radius: 100px;
+  color: var(--ice-soft);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+a.tc-chip:hover { border-color: var(--aurora); color: var(--aurora); }
+.tc-chip.kp-good { border-color: var(--aurora); color: var(--aurora); font-weight: 700; }
+.tc-chip.kp-storm { border-color: var(--warning); color: var(--warning); font-weight: 700; }
 .day-card.today { background: rgba(107, 203, 161, 0.05); }
 .day-card.today::before { width: 60px; background: var(--aurora); }
 .day-card.today .day-num { color: var(--aurora); }
@@ -4636,7 +4688,24 @@ function handleInitialHash() {
 }
 
 // ---------- HOJE ----------
-// Detecta em que ponto da viagem estamos e mostra um atalho direto.
+// Resumo rápido de cada dia: hotel da noite (com café e endereço p/ navegação),
+// compromisso-chave e saída. Alimenta o cartão HOJE no topo da home.
+const QUICK_INFO = {
+  1:  { hotel: 'Hotel Local 101', cafe: true,  nav: 'Hotel Local 101, Ránargata 4a, Reykjavík', chave: '10:00 retirar o RAV4 (#JCD1AP) · 12:00 Blue Lagoon (WBL05777228)' },
+  2:  { hotel: 'Hotel Geysir', cafe: true,  nav: 'Hotel Geysir, Haukadalur, Iceland', chave: 'Þingvellir → almoço Friðheimar → Gullfoss · conf. hotel 6489.846.290 (PIN 0220)' },
+  3:  { hotel: 'Hotel Vík í Mýrdal', cafe: true,  nav: 'Hotel Vík í Mýrdal, Klettsvegur 2, Vík', chave: 'Cachoeiras da costa sul · Reynisfjara na hora dourada · conf. 5286.276.176 (PIN 4013)' },
+  4:  { hotel: 'Fosshotel Núpar', cafe: false, nav: 'Fosshotel Núpar, Kálfafell, Iceland', chave: 'Fjaðrárgljúfur + trilhas de Skaftafell · comprar café de amanhã em Vík · dormir cedo (saída 07:00)' },
+  5:  { hotel: 'REY Stays – Studio', cafe: false, nav: 'REY Stays, Höfn, Iceland', chave: '07:00 saída · 09:00 glacier walk em Hali (chegar 08:40 · GAD-T137625211)' },
+  6:  { hotel: 'East Apartment', cafe: false, nav: 'East Apartment, Egilsstaðir, Iceland', chave: 'Stokksnes cedo · Seyðisfjörður à tarde · comprar café p/ amanhã (saída 07:30)' },
+  7:  { hotel: 'Hótel Laxá', cafe: true,  nav: 'Hótel Laxá, Mývatn, Iceland', chave: '💳 pagar o Laxá hoje (WISE) · saída 07:30 · Hengifoss + Stuðlagil' },
+  8:  { hotel: 'Hótel Laxá (2ª noite)', cafe: true,  nav: 'Hótel Laxá, Mývatn, Iceland', chave: 'Mývatn Nature Baths de manhã · Hverir/Krafla à tarde · jantar Vogafjós' },
+  9:  { hotel: 'Bryggjan Boutique Hotel', cafe: true,  nav: 'Bryggjan Boutique Hotel, Strandgata 49, Akureyri', chave: '08:30 ticket office North Sailing (pagar · booking 420013) · 🐋 09:00 · Forest Lagoon no fim da tarde' },
+  10: { hotel: 'Hótel Fransiskus', cafe: false, nav: 'Hótel Fransiskus, Stykkishólmur, Iceland', chave: 'Travessia longa · Kirkjufell no pôr do sol (~40 min da vila)' },
+  11: { hotel: 'Hótel Búðir', cafe: false, nav: 'Hótel Búðir, Búðir, Iceland', chave: 'Loop Snæfellsnes · jantar no próprio hotel · aurora na Búðakirkja (2 min a pé)' },
+  12: { hotel: 'Hotel Reykjavík Grand', cafe: true,  nav: 'Hotel Reykjavík Grand, Sigtún 28, Reykjavík', chave: 'Reykjavík a pé · Sky Lagoon opcional · amanhã 07:00 saída p/ KEF' }
+};
+
+// Detecta em que ponto da viagem estamos.
 function getTodayContext() {
   const now = new Date();
   if (now.getFullYear() !== 2026) return null;
@@ -4648,42 +4717,125 @@ function getTodayContext() {
   if (stamp === 827) {
     return { label: 'É hoje! Embarque à noite', sub: 'TP16 sai 04:40 — cheguem ao aeroporto ainda na noite de 27/08 (check-in fecha 03:10)', route: 'voos' };
   }
-  if (stamp === 828) return { label: '📍 Hoje · Voo + chegada em Londres', sub: 'REC 04:40 → LIS → LHR 22:55 · Piccadilly Line ou Uber até o Novotel', route: 'londres' };
-  if (stamp === 829) return { label: '📍 Hoje · Londres (sábado)', sub: 'Westminster → Buckingham → Mercato Mayfair → Soho → South Bank', route: 'londres' };
-  if (stamp === 830) return { label: '📍 Hoje · Londres (domingo)', sub: '🦖 Natural History Museum → Kensington → Tower Bridge → Borough · agendar táxi das 04:45!', route: 'londres' };
+  const novotel = { hotel: 'Novotel London Blackfriars', cafe: true, nav: 'Novotel London Blackfriars, 46 Blackfriars Road, London' };
+  if (stamp === 828) return { label: '📍 Hoje · Voo + chegada em Londres', sub: 'REC 04:40 → LIS → LHR 22:55 · Piccadilly Line ou Uber até o hotel', route: 'londres', quick: { ...novotel, chave: 'Chegada 22:55 em LHR — só chegar e dormir' } };
+  if (stamp === 829) return { label: '📍 Hoje · Londres (sábado)', sub: 'Westminster → Buckingham → Mercato Mayfair → Soho → South Bank', route: 'londres', quick: { ...novotel, chave: '🍴 Almoço no Mercato Mayfair (13A North Audley St) · descanso 17h—19h' } };
+  if (stamp === 830) return { label: '📍 Hoje · Londres (domingo)', sub: '🦖 Natural History Museum → Kensington → Tower Bridge → Borough', route: 'londres', quick: { ...novotel, chave: 'NHM às 10:00 (ingresso grátis reservado) · 🚕 agendar táxi das 04:45 hoje à noite!' } };
   if (stamp === 831 || stamp <= 911) {
     const n = stamp === 831 ? 1 : (stamp - 900) + 1;
     const day = ROTEIRO.find(x => x.n === n);
-    return { label: `📍 Hoje · Dia ${n} de 12 na Islândia`, sub: day ? day.title : '', day: n };
+    return { label: `📍 Hoje · Dia ${n} de 12 na Islândia`, sub: day ? day.title : '', day: n, quick: QUICK_INFO[n], luz: day && day.meta ? day.meta['Luz do dia'] : null, aurora: true };
   }
-  if (stamp === 912) return { label: '📍 Hoje · Voo de volta', sub: 'Devolver o RAV4 às 08:00 · BA801 10:20 → LHR 14:25 · Norfolk Towers Paddington', day: 12 };
-  if (stamp === 913) return { label: '📍 Hoje · Voltando pra casa', sub: 'TP1367 11:20 (LHR T2) → TP11 17:05 → Recife 20:50', route: 'voos' };
+  if (stamp === 912) return { label: '📍 Hoje · Voo de volta', sub: 'Devolver o RAV4 às 08:00 · BA801 10:20 → LHR 14:25', day: 12, quick: { hotel: 'Norfolk Towers Paddington', cafe: true, nav: 'Norfolk Towers Paddington Hotel, London', chave: 'KEF: tanque cheio no N1 → devolução 08:00 → check-in BA 08:20' } };
+  if (stamp === 913) return { label: '📍 Hoje · Voltando pra casa', sub: 'TP1367 11:20 (LHR T2) → TP11 17:05 → Recife 20:50', route: 'voos', quick: { hotel: 'Saída do Norfolk Towers até 08:30', cafe: true, nav: 'Heathrow Terminal 2', chave: 'Heathrow Express de Paddington → Heathrow Central (T2&3)' } };
   return null;
 }
 
+// Kp desta noite (NOAA SWPC — mesma fonte que os apps de aurora usam).
+async function fetchKpTonight() {
+  const resp = await fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index-forecast.json');
+  const rows = await resp.json();
+  const now = new Date();
+  // "Esta noite" na Islândia (UTC): 18h de hoje até 06h de amanhã;
+  // de madrugada (antes das 06 UTC), a noite corrente começou ontem.
+  let start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 18));
+  if (now.getUTCHours() < 6) start = new Date(start.getTime() - 86400e3);
+  const end = new Date(start.getTime() + 12 * 3600e3);
+  let max = null;
+  rows.forEach(row => {
+    if (!row || !row.time_tag) return;
+    const d = new Date(row.time_tag + 'Z');
+    if (d >= start && d < end) {
+      const v = parseFloat(row.kp);
+      if (!isNaN(v) && (max === null || v > max)) max = v;
+    }
+  });
+  return max;
+}
+
+function kpChipContent(kp) {
+  if (kp === null || isNaN(kp)) return { text: '🌌 Kp indisponível — cheque vedur.is', cls: '' };
+  const v = Math.round(kp * 10) / 10;
+  if (v >= 5) return { text: `🌌 Kp ${v} esta noite — TEMPESTADE, noite rara!`, cls: 'kp-storm' };
+  if (v >= 3.5) return { text: `🌌 Kp ${v} esta noite — chance FORTE`, cls: 'kp-good' };
+  if (v >= 2.5) return { text: `🌌 Kp ${v} esta noite — boa chance c/ céu limpo`, cls: 'kp-good' };
+  if (v >= 1.5) return { text: `🌌 Kp ${v} esta noite — possível c/ céu limpo`, cls: '' };
+  return { text: `🌌 Kp ${v} esta noite — atividade fraca`, cls: '' };
+}
+
+let todayBannerStamp = null;
 function renderTodayBanner() {
+  const existing = document.querySelector('.today-card');
+  if (existing) existing.remove();
   const ctx = getTodayContext();
+  todayBannerStamp = new Date().toDateString();
   if (!ctx) return;
-  const banner = document.createElement('button');
-  banner.className = 'today-banner';
-  banner.innerHTML = `
-    <span class="tb-label">${ctx.label}</span>
-    <span class="tb-sub">${ctx.sub}</span>
-    <span class="tb-arrow">→</span>
+
+  const q = ctx.quick;
+  const navLinks = q && q.nav ? `
+    <div class="tc-nav-links">
+      <a href="https://waze.com/ul?q=${encodeURIComponent(q.nav)}&navigate=yes" target="_blank" rel="noopener">Abrir no Waze ↗</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q.nav)}" target="_blank" rel="noopener">Google Maps ↗</a>
+    </div>` : '';
+
+  const card = document.createElement('div');
+  card.className = 'today-card';
+  card.innerHTML = `
+    <button class="tc-head">
+      <span class="tb-label">${ctx.label}</span>
+      <span class="tb-sub">${ctx.sub}</span>
+      <span class="tb-arrow">${ctx.day ? 'Abrir o dia →' : 'Detalhes →'}</span>
+    </button>
+    ${q ? `
+    <div class="tc-grid">
+      <div class="tc-item">🏨 <strong>${q.hotel}</strong> · café da manhã ${q.cafe ? '✓ incluído' : '✗ NÃO incluído'}${navLinks}</div>
+      <div class="tc-item">⏰ ${q.chave}</div>
+      ${ctx.day && MAP_DATA[ctx.day] ? `<div class="tc-item">🚗 <span id="tc-route">${(ROTEIRO.find(x => x.n === ctx.day) || {meta:{}}).meta['Direção'] || 'calculando…'}</span></div>` : ''}
+      ${ctx.luz ? `<div class="tc-item">${ctx.luz}</div>` : ''}
+    </div>` : ''}
+    ${ctx.aurora ? `
+    <div class="tc-live">
+      <span class="tc-chip" id="tc-kp">🌌 Aurora: carregando Kp…</span>
+      <a class="tc-chip" href="https://en.vedur.is/weather/forecasts/aurora/" target="_blank" rel="noopener">☁️ Nuvens + aurora · vedur.is ↗</a>
+      <a class="tc-chip" href="https://umferdin.is/en" target="_blank" rel="noopener">🛣️ Estradas fechadas · umferdin.is ↗</a>
+      <a class="tc-chip" href="https://safetravel.is/" target="_blank" rel="noopener">⚠️ Alertas · safetravel.is ↗</a>
+    </div>` : ''}
   `;
-  banner.addEventListener('click', () => {
+  card.querySelector('.tc-head').addEventListener('click', () => {
     if (ctx.day) navigateToDay(ctx.day);
     else if (ctx.route) navigateToPillar(ctx.route);
   });
   const heroContent = document.querySelector('.hero-content');
-  if (heroContent) heroContent.insertBefore(banner, heroContent.firstElementChild);
+  if (heroContent) heroContent.insertBefore(card, heroContent.firstElementChild);
+
+  // km/tempo reais do dia (usa o mesmo cache do mapa)
+  if (ctx.day && MAP_DATA[ctx.day]) {
+    fetchRealRoute(MAP_DATA[ctx.day].stops, 'full').then(route => {
+      const el = document.getElementById('tc-route');
+      if (el) el.textContent = formatRouteStats(route).replace('🚗 Pela estrada: ', '') ;
+    }).catch(() => {});
+  }
+
+  // Kp da noite (NOAA)
+  if (ctx.aurora) {
+    fetchKpTonight().then(kp => {
+      const el = document.getElementById('tc-kp');
+      if (!el) return;
+      const c = kpChipContent(kp);
+      el.textContent = c.text;
+      if (c.cls) el.classList.add(c.cls);
+    }).catch(() => {
+      const el = document.getElementById('tc-kp');
+      if (el) el.textContent = '🌌 Kp indisponível — cheque vedur.is';
+    });
+  }
 
   // Destaca o card do dia atual na lista
   if (ctx.day) {
-    const card = document.querySelector(`#daysList .day-card[data-day="${ctx.day}"]`);
-    if (card) {
-      card.classList.add('today');
-      const tags = card.querySelector('.day-tags');
+    const card2 = document.querySelector(`#daysList .day-card[data-day="${ctx.day}"]`);
+    if (card2 && !card2.classList.contains('today')) {
+      card2.classList.add('today');
+      const tags = card2.querySelector('.day-tags');
       if (tags) {
         const t = document.createElement('span');
         t.className = 'day-tag today-tag';
@@ -4693,6 +4845,11 @@ function renderTodayBanner() {
     }
   }
 }
+
+// Mantém o cartão atualizado conforme o dia vira e renova o Kp (a cada 30 min).
+setInterval(() => {
+  renderTodayBanner();
+}, 30 * 60e3);
 
 // Service worker — modo offline (só em https; no file:// é ignorado)
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
