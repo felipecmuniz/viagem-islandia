@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#0E0E10"/>
+  <circle cx="256" cy="256" r="176" fill="none" stroke="#6BCBA1" stroke-width="14"/>
+  <path d="M120 330 C 180 260, 230 300, 280 220 C 320 160, 370 200, 400 150" fill="none" stroke="#6BCBA1" stroke-width="18" stroke-linecap="round" opacity="0.85"/>
+  <text x="256" y="316" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="180" fill="#F4F1EB" text-anchor="middle">Í</text>
+</svg>

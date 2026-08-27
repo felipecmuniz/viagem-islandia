@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ísland — Roteiro 12 dias · Setembro 2026</title>
 <meta name="description" content="Guia completo da Ring Road da Islândia em 12 dias. Golden Circle + glacier hike no Vatnajökull + baleias em Húsavík + Friðheimar + Forest Lagoon + Sky Lagoon. Setembro de 2026, dois casais, autoguiado.">
+<meta name="theme-color" content="#0E0E10">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -305,6 +308,38 @@ em { font-style: italic; color: var(--ice-soft); }
   text-transform: uppercase;
   color: var(--ice-mute);
 }
+
+/* Banner HOJE */
+.today-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  border: 1px solid var(--aurora);
+  background: rgba(107, 203, 161, 0.08);
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: 100px;
+  cursor: pointer;
+  margin-bottom: var(--sp-5);
+  max-width: 100%;
+  flex-wrap: wrap;
+  transition: background 0.3s ease;
+}
+.today-banner:hover { background: rgba(107, 203, 161, 0.16); }
+.today-banner .tb-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--aurora);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.today-banner .tb-sub { font-size: 0.88rem; color: var(--ice-soft); }
+.today-banner .tb-arrow { color: var(--aurora); font-family: var(--font-display); font-size: 1.2rem; }
+.day-card.today { background: rgba(107, 203, 161, 0.05); }
+.day-card.today::before { width: 60px; background: var(--aurora); }
+.day-card.today .day-num { color: var(--aurora); }
+.day-tag.today-tag { border-color: var(--aurora); color: var(--aurora); font-weight: 700; }
 
 /* Scroll cue */
 .scroll-cue {
@@ -1563,6 +1598,7 @@ table tr:hover { background: rgba(244, 241, 235, 0.02); }
       <li><a href="#carro" data-route="carro">Carro</a></li>
       <li><a href="#orcamento" data-route="orcamento">Orçamento</a></li>
       <li><a href="#checklist" data-route="checklist">Checklist</a></li>
+      <li><a href="#sos" data-route="sos" style="color: var(--danger); font-weight: 700;">SOS</a></li>
     </ul>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1792,9 +1828,9 @@ table tr:hover { background: rgba(244, 241, 235, 0.02); }
         </div>
         <div class="pillar-card" data-route="extras">
           <div>
-            <div class="pillar-num">/extras</div>
-            <h3>Acréscimos opcionais</h3>
-            <p>Sky Lagoon, mergulho em Silfra, Fjaðrárgljúfur. Variações que cabem se sobrar tempo ou energia.</p>
+            <div class="pillar-num">/plano-b</div>
+            <h3>Plano B & se sobrar tempo</h3>
+            <p>Sky Lagoon opcional, Dyrhólaey, Sólheimajökull, ice cave. O banco de reservas para clima ruim ou energia sobrando.</p>
           </div>
           <span class="pillar-arrow">→</span>
         </div>
@@ -2040,15 +2076,16 @@ const ROTEIRO = [
     short: "Voo BA800 de Londres pousa em Keflavík às 09:45. Retirada do Toyota RAV4 na Blue Car às 10:00 e, a 20 min do aeroporto, o banho na Blue Lagoon já reservado para as 12:00 (Premium, 4 pessoas). No fim da tarde, trajeto até Reykjavík e caminhada leve pelo centro.",
     tags: ["Blue Lagoon", "Capital", "Chegada"],
     photos: [
-      { id: "20303780", caption: "Hallgrímskirkja, a igreja modernista no topo da colina" },
-      { id: "27182278", caption: "Detalhe arquitetônico da igreja Hallgrímskirkja" },
-      { id: "34340714", caption: "Harpa Concert Hall — fachada de vidro hexagonal na orla" }
+      { id: "346972", caption: "Blue Lagoon — vapor geotérmico sobre a água azul-leitosa, a 20 min do aeroporto" },
+      { id: "20955080", caption: "O banho na Blue Lagoon — reservado para as 12:00 da chegada" },
+      { id: "20303780", caption: "Hallgrímskirkja, a igreja modernista no topo da colina" }
     ],
     meta: {
       "Trajeto": "Keflavík (KEF) → Blue Lagoon → Reykjavík",
       "Direção": "70 km · 1h10",
       "Foco": "Blue Lagoon (reservada 12:00) + adaptação",
-      "Refeições": "Lanche na Blue Lagoon, jantar leve"
+      "Refeições": "Lanche na Blue Lagoon, jantar leve",
+      "Luz do dia": "☀️ ~06:08 → 20:43 (14h35)"
     },
     sections: [
       {
@@ -2111,7 +2148,8 @@ const ROTEIRO = [
       "Trajeto": "Reykjavík → Geysir",
       "Direção": "172 km · 2h51 líquidas",
       "Foco": "Golden Circle clássico em um dia",
-      "Refeições": "Almoço (Friðheimar), jantar"
+      "Refeições": "Almoço (Friðheimar), jantar",
+      "Luz do dia": "☀️ ~06:11 → 20:39 (14h28)"
     },
     sections: [
       {
@@ -2183,7 +2221,8 @@ const ROTEIRO = [
       "Trajeto": "Geysir → Vík",
       "Direção": "208 km · 3h líquidas",
       "Foco": "Kerið + trio de cachoeiras + Reynisfjara",
-      "Refeições": "Almoço (Hvolsvöllur), jantar em Vík"
+      "Refeições": "Almoço (Hvolsvöllur), jantar em Vík",
+      "Luz do dia": "☀️ ~06:14 → 20:35 (14h21)"
     },
     sections: [
       {
@@ -2244,14 +2283,15 @@ const ROTEIRO = [
     tags: ["Cânion", "Skaftafell", "Svartifoss"],
     photos: [
       { id: "9532584", caption: "Fjaðrárgljúfur — cânion de paredões serpenteantes" },
-      { id: "20582185", caption: "Caminhada na superfície da geleira com crampons" },
-      { id: "18421397", caption: "Svartifoss — cachoeira com basaltos colunares (opcional)" }
+      { id: "18421397", caption: "Svartifoss — cachoeira emoldurada por basaltos colunares" },
+      { id: "20582185", caption: "O gelo de perto — aperitivo do glacier walk de amanhã" }
     ],
     meta: {
       "Trajeto": "Vík → Skaftafell → Fosshotel Núpar",
       "Direção": "≈ 190 km · 2h30 líquidas",
       "Foco": "Fjaðrárgljúfur + Svartifoss + mirante da geleira",
-      "Refeições": "Almoço leve, jantar no hotel"
+      "Refeições": "Almoço leve, jantar no hotel",
+      "Luz do dia": "☀️ ~06:17 → 20:31 (14h14)"
     },
     sections: [
       {
@@ -2316,15 +2356,16 @@ const ROTEIRO = [
     short: "O ponto alto do roteiro logo cedo: trilha guiada com crampons no Vatnajökull pela Glacier Adventure (reservada — 09:00, saída de Hali). Depois, a lagoa glacial Jökulsárlón com icebergs azul-elétrico e a Diamond Beach. Jantar de humarsúpa em Höfn, capital da lagosta.",
     tags: ["Glacier walk", "Lagoa glacial", "Diamond Beach"],
     photos: [
-      { id: "9532584", caption: "Múlagljúfur — cânion oculto de paredões verde-musgo" },
-      { id: "20582185", caption: "Jökulsárlón — icebergs azul-elétrico flutuando até o mar" },
+      { id: "20582185", caption: "Glacier walk — crampons no gelo do Vatnajökull (09:00, reservado)" },
+      { id: "32036500", caption: "Jökulsárlón — icebergs azul-elétrico flutuando até o mar" },
       { id: "4087258", caption: "Diamond Beach — fragmentos de gelo na areia preta" }
     ],
     meta: {
       "Trajeto": "Fosshotel Núpar → Hali → Jökulsárlón → Höfn",
       "Direção": "≈ 200 km · 2h45 líquidas",
       "Foco": "🧊 Glacier walk 09:00 + Jökulsárlón + Diamond Beach",
-      "Refeições": "Café no carro, almoço rápido, jantar especial (humarsúpa)"
+      "Refeições": "Café no carro, almoço rápido, jantar especial (humarsúpa)",
+      "Luz do dia": "☀️ ~06:20 → 20:27 (14h07)"
     },
     sections: [
       {
@@ -2411,7 +2452,8 @@ const ROTEIRO = [
       "Trajeto": "Höfn → Egilsstaðir",
       "Direção": "310 km · 5h líquidas",
       "Foco": "Stokksnes + estrada dos fiordes + Seyðisfjörður",
-      "Refeições": "Almoço (Fáskrúðsfjörður), jantar (rena)"
+      "Refeições": "Almoço (Fáskrúðsfjörður), jantar (rena)",
+      "Luz do dia": "☀️ ~06:23 → 20:23 (14h00)"
     },
     sections: [
       {
@@ -2476,16 +2518,24 @@ const ROTEIRO = [
     tags: ["Cachoeira", "Cânion", "Travessia"],
     photos: [
       { id: "16170728", caption: "Hengifoss — camadas vermelhas de argila vulcânica" },
-      { id: "19433891", caption: "Stuðlagil — cânion de basalto colunar" },
+      { id: "34452686", caption: "Stuðlagil — as colunas de basalto do cânion do leste" },
       { id: "17474931", caption: "Travessia do planalto rumo a Mývatn" }
     ],
     meta: {
       "Trajeto": "Egilsstaðir → Mývatn",
       "Direção": "290 km · 4h30 líquidas",
       "Foco": "Trilha Hengifoss + Stuðlagil leste",
-      "Refeições": "Almoço (Egilsstaðir), jantar no Hotel Laxá"
+      "Refeições": "Almoço (Egilsstaðir), jantar no Hotel Laxá",
+      "Luz do dia": "☀️ ~06:26 → 20:19 (13h53)"
     },
     sections: [
+      {
+        title: "💳 Hoje (02/09): pagar o Hótel Laxá",
+        body: `<div class="callout warning">
+          <div class="callout-title">Único pagamento agendado da viagem</div>
+          <p>Combinado para hoje: <strong>€ 619,56 por casal</strong> (2 noites no Laxá) — Felipe via WISE + cartão de Paloma. Resolver de manhã no Wi-Fi do apartamento, antes de pegar a estrada (o sinal no planalto é irregular). Cancelamento grátis vai só até amanhã (03/09).</p>
+        </div>`
+      },
       {
         title: "Estratégia do dia",
         body: `<p>Dia <strong>mais puxado da viagem até aqui</strong> — duas atividades pesadas (trilha de ~3h + caminhada de 2h30) somadas a 4h30 de direção. <strong>Saída cedo é inegociável (07:30)</strong>: margem caso Hengifoss ou Stuðlagil demorem, trilhas vazias antes das 10h e chegada em Mývatn ainda com luz (~19h).</p>`
@@ -2551,7 +2601,8 @@ const ROTEIRO = [
       "Trajeto": "Mývatn (rotas locais)",
       "Direção": "120 km · 2h total",
       "Foco": "Nature Baths + Dimmuborgir + Grjótagjá + Hverir + Krafla",
-      "Refeições": "Almoço (Kaffi Borgir), jantar (Vogafjós)"
+      "Refeições": "Almoço (Kaffi Borgir), jantar (Vogafjós)",
+      "Luz do dia": "☀️ ~06:29 → 20:15 (13h46)"
     },
     sections: [
       {
@@ -2623,15 +2674,16 @@ const ROTEIRO = [
     short: "Inversão inteligente do roteiro: avistamento de baleias logo de manhã (mar mais calmo, melhor luz), a Cachoeira dos Deuses (Goðafoss) e a Forest Lagoon ao pôr do sol sobre o fiorde Eyjafjörður, antes de um jantar relaxado em Akureyri.",
     tags: ["Baleias", "Goðafoss", "Forest Lagoon"],
     photos: [
+      { id: "13820932", caption: "Cauda de jubarte na baía — o espetáculo de Skjálfandi (09:00, reservado)" },
       { id: "16251253", caption: "Goðafoss — a Cachoeira dos Deuses, em meia-lua" },
-      { id: "28304723", caption: "Aurora boreal sobre o norte islandês" },
-      { id: "32577924", caption: "Forest Lagoon — banho com vista do fiorde Eyjafjörður" }
+      { id: "28304723", caption: "Aurora boreal sobre o norte islandês" }
     ],
     meta: {
       "Trajeto": "Mývatn → Húsavík → Akureyri",
       "Direção": "190 km · 3h total",
       "Foco": "🐋 baleias (manhã) + Goðafoss + Forest Lagoon",
-      "Refeições": "Almoço em Húsavík, jantar em Akureyri"
+      "Refeições": "Almoço em Húsavík, jantar em Akureyri",
+      "Luz do dia": "☀️ ~06:32 → 20:11 (13h39)"
     },
     sections: [
       {
@@ -2705,7 +2757,8 @@ const ROTEIRO = [
       "Trajeto": "Akureyri → Stykkishólmur (+ Kirkjufell)",
       "Direção": "≈ 460 km · 6h líquidas",
       "Foco": "Travessia + Kirkjufell ao pôr-do-sol",
-      "Refeições": "Almoço em Borgarnes, jantar em Grundarfjörður ou Stykkishólmur"
+      "Refeições": "Almoço em Borgarnes, jantar em Grundarfjörður ou Stykkishólmur",
+      "Luz do dia": "☀️ ~06:35 → 20:07 (13h32)"
     },
     sections: [
       {
@@ -2761,14 +2814,15 @@ const ROTEIRO = [
     tags: ["Kirkjufell", "Djúpalónssandur", "Búðakirkja"],
     photos: [
       { id: "2454681", caption: "Kirkjufell ao amanhecer — luz fria e azulada" },
-      { id: "29264035", caption: "Kirkjufellsfoss em primeiro plano, montanha ao fundo" },
-      { id: "32154420", caption: "Aurora boreal sobre Kirkjufell — o cartão postal definitivo" }
+      { id: "16128264", caption: "Búðakirkja — a igreja preta a 2 min a pé do hotel desta noite" },
+      { id: "29264035", caption: "Kirkjufellsfoss em primeiro plano, montanha ao fundo" }
     ],
     meta: {
       "Trajeto": "Stykkishólmur → loop → Hótel Búðir",
       "Direção": "≈ 200 km · 3h15 total",
       "Foco": "Snæfellsjökull NP + costa sul da península",
-      "Refeições": "Café em Ólafsvík, almoço em Hellnar, jantar no Hótel Búðir"
+      "Refeições": "Café em Ólafsvík, almoço em Hellnar, jantar no Hótel Búðir",
+      "Luz do dia": "☀️ ~06:38 → 20:03 (13h25)"
     },
     sections: [
       {
@@ -2827,13 +2881,14 @@ const ROTEIRO = [
     photos: [
       { id: "34340714", caption: "Harpa Concert Hall — fachada de vidro hexagonal" },
       { id: "10589819", caption: "Reykjavík e o fiorde — fechamento da viagem" },
-      { id: "17214262", caption: "Sky Lagoon — banho com vista do Atlântico" }
+      { id: "17214262", caption: "Sky Lagoon — o banho de despedida opcional, com vista do Atlântico" }
     ],
     meta: {
       "Trajeto": "Búðir → Reykjavík",
       "Direção": "≈ 190 km · 2h30 total",
       "Foco": "Reykjavík cultural + despedida (Sky Lagoon opcional)",
-      "Refeições": "Almoço no centro, jantar premium"
+      "Refeições": "Almoço no centro, jantar premium",
+      "Luz do dia": "☀️ ~06:41 → 19:59 (13h18)"
     },
     sections: [
       {
@@ -3349,11 +3404,12 @@ const PILLARS = {
             <tr style="background: rgba(107, 203, 161, 0.04);"><td><strong>Aluguel Toyota RAV4 · Blue Car · 12 dias (dividido)</strong></td><td><strong>≈ 6.000</strong></td></tr>
             <tr><td>Combustível (dividido)</td><td>1.700</td></tr>
             <tr><td>Estacionamentos</td><td>500</td></tr>
-            <tr><td>Passeios e atividades (Friðheimar, glacier hike, baleias, barco Jökulsárlón, Forest Lagoon)</td><td>4.500</td></tr>
-            <tr style="background: rgba(107, 203, 161, 0.06);"><td><strong>TOTAL POR CASAL</strong></td><td><strong>R$ 74.709</strong></td></tr>
+            <tr style="background: rgba(107, 203, 161, 0.04);"><td><strong>Atividades reservadas (Blue Lagoon € 274 + glacier walk ISK 33.800, por casal)</strong></td><td><strong>3.090</strong></td></tr>
+            <tr><td>Demais atividades (baleias ~ISK 22.000/casal no balcão, Mývatn Baths, Forest Lagoon, barco anfíbio) — estimativa</td><td>2.500</td></tr>
+            <tr style="background: rgba(107, 203, 161, 0.06);"><td><strong>TOTAL POR CASAL</strong></td><td><strong>R$ 75.799</strong></td></tr>
           </tbody>
         </table>
-        <p style="margin-top: var(--sp-4); font-size: 0.85rem; color: var(--ice-mute);">Voos, carro e hospedagens são valores reais (hospedagens da planilha, câmbio ≈ R$ 6,03/€). A Blue Lagoon (€274, paga em 12/07) está dentro da linha de passeios. Alimentação e atividades seguem estimadas. Valor não inclui: imprevistos, souvenirs, roupas específicas.</p>`
+        <p style="margin-top: var(--sp-4); font-size: 0.85rem; color: var(--ice-mute);">Voos, carro, hospedagens e atividades reservadas são valores reais (câmbio ≈ R$ 6,03/€ e R$ 0,0425/ISK). Alimentação e demais atividades seguem estimadas. Valor não inclui: imprevistos, souvenirs, roupas específicas.</p>`
       },
       {
         h: "Detalhe das hospedagens (valores reais · € por casal)",
@@ -3698,8 +3754,8 @@ const PILLARS = {
     ]
   },
   extras: {
-    title: "Acréscimos opcionais",
-    sub: "Variações e adições que cabem se sobrar tempo, energia ou interesse específico. Algumas exigem reserva antecipada.",
+    title: "Plano B & se sobrar tempo",
+    sub: "Alternativas para dias de clima ruim ou cancelamento, e adições que cabem se sobrar tempo e energia. Nada aqui é obrigatório — é o banco de reservas do roteiro.",
     blocks: [
       {
         h: "Sky Lagoon · opcional no Dia 12",
@@ -3729,6 +3785,66 @@ const PILLARS = {
           <div class="callout-title">Não recomendado neste roteiro de 12 dias</div>
           <p>Adicionar Westman exige sacrificar 1 dia inteiro (ferry + estadia + ferry de volta). Vale registrar como "extensão opcional" para uma viagem futura ou se vocês conseguirem 2 dias extras.</p>
         </div>`
+      }
+    ]
+  },
+  sos: {
+    title: "SOS · emergências e contatos",
+    sub: "Tudo o que importa numa emergência, numa página só. Salvem os números no celular dos quatro antes de embarcar.",
+    blocks: [
+      {
+        h: "🚨 Emergência agora",
+        body: `<table>
+          <thead><tr><th>Situação</th><th>Contato</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Islândia — qualquer emergência</strong> (polícia, ambulância, resgate)</td><td><strong>112</strong> (funciona sem chip/sinal da operadora)</td></tr>
+            <tr><td>Islândia — orientação médica não urgente</td><td><strong>1700</strong> (linha de saúde, 24h)</td></tr>
+            <tr><td>Reino Unido — emergência</td><td><strong>999</strong> ou 112 · não urgente NHS: <strong>111</strong></td></tr>
+            <tr><td>Condições de estrada / alertas</td><td>road.is · safetravel.is · vedur.is (ou 1777 na Islândia)</td></tr>
+          </tbody>
+        </table>
+        <div class="callout danger">
+          <div class="callout-title">Gestante — qualquer sintoma preocupante</div>
+          <p>Na Islândia: ligue <strong>112</strong> (urgente) ou <strong>1700</strong> (orientação). Hospital de referência: <strong>Landspítali</strong>, Reykjavík. Tenham a carta da obstetra (em inglês) sempre à mão — semanas de gestação e histórico.</p>
+        </div>`
+      },
+      {
+        h: "🛡️ Seguro Affinity (Sabemi) · 24h",
+        body: `<ul>
+          <li><strong>Da Islândia:</strong> ligação a cobrar <strong>+1 866 764 7904</strong> · WhatsApp (só texto): <strong>+1 863 201 4897</strong></li>
+          <li><strong>Do Reino Unido:</strong> 808 234 1431 · <strong>De Portugal:</strong> 800 180 177 · <strong>Do Brasil:</strong> 0800 038 0621</li>
+          <li><strong>Camila:</strong> voucher W22-1132/2134323720-646 · bilhete 4209240</li>
+          <li><strong>Felipe:</strong> voucher W22-1132/7100790762-646 · bilhete 4209239</li>
+          <li>Vigência 28/08—13/09 · DMH €180.000 · gestante coberta até 32 semanas · apólices em PDF na aba Preparação</li>
+        </ul>`
+      },
+      {
+        h: "🚗 Carro · Blue Car Rental",
+        body: `<ul>
+          <li>Reserva <strong>#JCD1AP</strong> · Toyota RAV4 · retirada 31/08 10:00 / devolução 12/09 (recomendado 08:00) · KEF</li>
+          <li><strong>Roadside assistance incluída no contrato</strong> (waiver) + LW zera franquias — telefone de assistência no voucher/contrato entregue no balcão</li>
+          <li>Acidente com terceiros: chame o 112 e registre fotos; a polícia emite o relatório que a locadora exige</li>
+          <li>Condutores autorizados: Felipe, Rodrigo e Paloma</li>
+        </ul>`
+      },
+      {
+        h: "🏨 Hotéis e atividades · confirmações",
+        body: `<ul>
+          <li><strong>Hotel Geysir</strong> (01/09) — conf. 6489.846.290 · PIN 0220 · +354 480 6800</li>
+          <li><strong>Hotel Vík í Mýrdal</strong> (02/09) — conf. 5286.276.176 · PIN 4013 · +354 487 1480</li>
+          <li><strong>Glacier Adventure</strong> (04/09 09:00, Hali) — ticket GAD-T137625211 · info@glacieradventure.is</li>
+          <li><strong>North Sailing</strong> (08/09 09:00, Húsavík) — booking 420013 · +354 464 7272 · info@northsailing.is</li>
+          <li><strong>Blue Lagoon</strong> (31/08 12:00) — WBL05777228</li>
+          <li>Demais hotéis: confirmações nos apps Booking/Hoteis.com e na <a href="https://docs.google.com/spreadsheets/d/1IBQwfjemtW1-VkSWeIfaAVYHKXN_NSeFudOvtZNOjq0/edit" target="_blank" rel="noopener" style="color: var(--aurora); text-decoration: underline;">planilha</a></li>
+        </ul>`
+      },
+      {
+        h: "💳 Perda de cartão / documentos",
+        body: `<ul>
+          <li>Bloqueio dos cartões: apps dos bancos (Wise, Visa) — anotem também os telefones internacionais de cada banco antes de sair</li>
+          <li>Passaporte perdido na Islândia: consulado honorário do Brasil em Reykjavík / Embaixada em Oslo — registrar B.O. no 112 primeiro</li>
+          <li>Backup digital: passaportes, apólices, vouchers e CNHs salvos no e-mail e no celular dos dois casais</li>
+        </ul>`
       }
     ]
   }
@@ -4057,34 +4173,72 @@ const TILE_PROVIDERS = [
   }
 ];
 
-// Adds the base tile layer with automatic fallback: if the primary provider
-// starts erroring, swap to the next one (and invert light tiles via CSS).
-function addBaseTiles(map, minZoom) {
-  let idx = 0;
-  let layer = null;
-
-  const attach = () => {
-    const p = TILE_PROVIDERS[idx];
-    if (layer) map.removeLayer(layer);
-    map.getContainer().classList.toggle('tiles-light-inverted', !p.dark);
-    layer = L.tileLayer(p.url, {
-      attribution: p.attribution,
-      subdomains: p.subdomains,
-      maxZoom: 18,
-      minZoom: minZoom
-    });
-    let errors = 0;
-    layer.on('tileerror', () => {
-      errors++;
-      if (errors >= 3 && idx < TILE_PROVIDERS.length - 1) {
-        idx++;
-        attach();
+// Testa o provedor primário ANTES de usar: baixa 1 tile do CARTO e mede a
+// luminância. Tiles genuínos do dark_all são escuros (~40); os tiles de
+// "API key required" são claros (~230). Se vier claro, falhar ou demorar,
+// cai direto para o OpenStreetMap (escurecido via CSS). Decisão única por sessão.
+let tileProviderPromise = null;
+function pickTileProvider() {
+  if (tileProviderPromise) return tileProviderPromise;
+  tileProviderPromise = new Promise(resolve => {
+    const done = ok => resolve(TILE_PROVIDERS[ok ? 0 : 1]);
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    const timer = setTimeout(() => done(false), 4000);
+    img.onload = () => {
+      clearTimeout(timer);
+      try {
+        const c = document.createElement('canvas');
+        c.width = c.height = 32;
+        const ctx = c.getContext('2d');
+        ctx.drawImage(img, 0, 0, 32, 32);
+        const d = ctx.getImageData(0, 0, 32, 32).data;
+        let sum = 0;
+        for (let i = 0; i < d.length; i += 4) sum += (d[i] + d[i + 1] + d[i + 2]) / 3;
+        done((sum / (d.length / 4)) < 120);
+      } catch (e) {
+        done(true); // CORS impediu a leitura, mas o tile carregou — segue com ele
       }
-    });
-    layer.addTo(map);
-  };
+    };
+    img.onerror = () => { clearTimeout(timer); done(false); };
+    img.src = 'https://a.basemaps.cartocdn.com/dark_all/6/29/17.png';
+  });
+  return tileProviderPromise;
+}
 
-  attach();
+// Adds the base tile layer with automatic fallback: escolhe o provedor testado
+// e, se ele começar a errar em runtime, troca para o OSM invertido.
+function addBaseTiles(map, minZoom) {
+  pickTileProvider().then(primary => {
+    let idx = TILE_PROVIDERS.indexOf(primary);
+    let layer = null;
+
+    const attach = () => {
+      const p = TILE_PROVIDERS[idx];
+      try {
+        if (layer) map.removeLayer(layer);
+        map.getContainer().classList.toggle('tiles-light-inverted', !p.dark);
+        layer = L.tileLayer(p.url, {
+          attribution: p.attribution,
+          subdomains: p.subdomains,
+          maxZoom: 18,
+          minZoom: minZoom,
+          crossOrigin: 'anonymous' // respostas CORS ficam cacheáveis pelo service worker
+        });
+        let errors = 0;
+        layer.on('tileerror', () => {
+          errors++;
+          if (errors >= 3 && idx < TILE_PROVIDERS.length - 1) {
+            idx++;
+            attach();
+          }
+        });
+        layer.addTo(map);
+      } catch (e) { /* mapa removido durante a navegação */ }
+    };
+
+    attach();
+  });
 }
 
 // Stash existing map instances so re-renders don't double-init
@@ -4481,8 +4635,73 @@ function handleInitialHash() {
   }
 }
 
+// ---------- HOJE ----------
+// Detecta em que ponto da viagem estamos e mostra um atalho direto.
+function getTodayContext() {
+  const now = new Date();
+  if (now.getFullYear() !== 2026) return null;
+  const stamp = (now.getMonth() + 1) * 100 + now.getDate();
+  if (stamp < 820 || stamp > 913) return null;
+  if (stamp < 827) {
+    return { label: 'Contagem regressiva', sub: 'Embarque na madrugada de 27→28/08 — TP16 sai 04:40', route: 'voos' };
+  }
+  if (stamp === 827) {
+    return { label: 'É hoje! Embarque à noite', sub: 'TP16 sai 04:40 — cheguem ao aeroporto ainda na noite de 27/08 (check-in fecha 03:10)', route: 'voos' };
+  }
+  if (stamp === 828) return { label: '📍 Hoje · Voo + chegada em Londres', sub: 'REC 04:40 → LIS → LHR 22:55 · Piccadilly Line ou Uber até o Novotel', route: 'londres' };
+  if (stamp === 829) return { label: '📍 Hoje · Londres (sábado)', sub: 'Westminster → Buckingham → Mercato Mayfair → Soho → South Bank', route: 'londres' };
+  if (stamp === 830) return { label: '📍 Hoje · Londres (domingo)', sub: '🦖 Natural History Museum → Kensington → Tower Bridge → Borough · agendar táxi das 04:45!', route: 'londres' };
+  if (stamp === 831 || stamp <= 911) {
+    const n = stamp === 831 ? 1 : (stamp - 900) + 1;
+    const day = ROTEIRO.find(x => x.n === n);
+    return { label: `📍 Hoje · Dia ${n} de 12 na Islândia`, sub: day ? day.title : '', day: n };
+  }
+  if (stamp === 912) return { label: '📍 Hoje · Voo de volta', sub: 'Devolver o RAV4 às 08:00 · BA801 10:20 → LHR 14:25 · Norfolk Towers Paddington', day: 12 };
+  if (stamp === 913) return { label: '📍 Hoje · Voltando pra casa', sub: 'TP1367 11:20 (LHR T2) → TP11 17:05 → Recife 20:50', route: 'voos' };
+  return null;
+}
+
+function renderTodayBanner() {
+  const ctx = getTodayContext();
+  if (!ctx) return;
+  const banner = document.createElement('button');
+  banner.className = 'today-banner';
+  banner.innerHTML = `
+    <span class="tb-label">${ctx.label}</span>
+    <span class="tb-sub">${ctx.sub}</span>
+    <span class="tb-arrow">→</span>
+  `;
+  banner.addEventListener('click', () => {
+    if (ctx.day) navigateToDay(ctx.day);
+    else if (ctx.route) navigateToPillar(ctx.route);
+  });
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) heroContent.insertBefore(banner, heroContent.firstElementChild);
+
+  // Destaca o card do dia atual na lista
+  if (ctx.day) {
+    const card = document.querySelector(`#daysList .day-card[data-day="${ctx.day}"]`);
+    if (card) {
+      card.classList.add('today');
+      const tags = card.querySelector('.day-tags');
+      if (tags) {
+        const t = document.createElement('span');
+        t.className = 'day-tag today-tag';
+        t.textContent = '📍 HOJE';
+        tags.insertBefore(t, tags.firstChild);
+      }
+    }
+  }
+}
+
+// Service worker — modo offline (só em https; no file:// é ignorado)
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
 // Init
 renderDaysList();
+renderTodayBanner();
 // Overview map needs Leaflet ready — init when DOM/scripts are settled
 if (typeof L !== 'undefined') {
   initOverviewMap();

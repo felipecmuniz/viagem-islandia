@@ -1,0 +1,12 @@
+{
+  "name": "Ísland 2026 — Roteiro",
+  "short_name": "Ísland 2026",
+  "description": "Roteiro da viagem Londres + Islândia, 28/08–13/09/2026",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0E0E10",
+  "theme_color": "#0E0E10",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
