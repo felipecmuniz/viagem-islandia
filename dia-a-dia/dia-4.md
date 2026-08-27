@@ -1,8 +1,10 @@
 # Dia 4 (03/09) — Vík → Skaftafell (Cânion, Geleira e Basalto)
 
-**Trajeto:** \~146 km · \~1h50 de direção pura
-**Hospedagem:** Fosshotel Skaftafell (5 min do Visitor Center)
-**Atividade-âncora:** Glacier hike no Skaftafellsjökull (3h)
+**Trajeto:** \~190 km · \~2h30 de direção pura
+**Hospedagem:** Fosshotel Núpar (Kálfafell — \~45 km ANTES de Skaftafell; sem café da manhã) · PAGO
+**Atividade-âncora:** trilhas de Skaftafell (Svartifoss + mirante do Skaftafellsjökull)
+
+> ⚠️ **ATUALIZADO 27/08 — o glacier hike NÃO é mais hoje.** A reserva real (Glacier Adventure, GAD-T137625211, 4 adultos, ISK 67.600 **ainda não pago**) é **amanhã 04/09 às 09:00 em Hali** (13 km depois de Jökulsárlón). Hoje: Fjaðrárgljúfur de manhã + Svartifoss e mirante da geleira à tarde + Svínafellsjökull opcional. Dormir cedo — amanhã saída ~07:00. O hotel é o **Fosshotel Núpar**, que fica no caminho ANTES do parque (voltar ~40 min à noite). Detalhes no site (index.html).
 
 🗺️ [**Ver rota no Google Maps**](https://www.google.com/maps/dir/V%25C3%25ADk+%25C3%25AD+M%25C3%25BDrdal,+870,+Isl%25C3%25A2ndia/Fja%25C3%25B0r%25C3%25A1rglj%25C3%25BAfur,+881,+Isl%25C3%25A2ndia/Parque+Nacional+Skaftafell,+785+Skaftafell,+Isl%25C3%25A2ndia/Svartifoss,+785,+Isl%25C3%25A2ndia)
 

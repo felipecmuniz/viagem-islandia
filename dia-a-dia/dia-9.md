@@ -1,7 +1,9 @@
 # Dia 9 (08/09) — Mývatn → Húsavík → Akureyri
 
 **Trajeto:** \~190 km · \~3h de direção total
-**Hospedagem:** Akureyri (Centrum Hostel · Hotel Kea · Berjaya Akureyri)
+**Hospedagem:** Bryggjan Boutique Hotel (Strandgata 49, Akureyri; café incluído) · PAGO
+
+> ⚠️ **ATUALIZADO 27/08 — baleias reservadas:** North Sailing **NS-1 Húsavík Whale Watching, 08/09 às 09:00, 4 passageiros, booking 420013** (em nome de Camila). **Estar no ticket office às 08:30 para PAGAR e fazer check-in.**
 **Foco:** 🐋 Baleias de manhã · Goðafoss · 🛁 Forest Lagoon
 **Refeições:** café reforçado · almoço em Húsavík · jantar em Akureyri
 

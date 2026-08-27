@@ -1,7 +1,9 @@
 # Dia 12 (11/09) — Snæfellsnes → Reykjavík + Sky Lagoon
 
 **Trajeto:** \~210 km · \~2h45 de direção total (com Sky Lagoon)
-**Hospedagem:** Hotel em Reykjavík (sugestão: Center Hotels Plaza, Aurora Hotel ou Hotel Berg)
+**Hospedagem:** Hotel Reykjavík Grand (Sigtún; café incluído) · PAGO
+
+> ⚠️ **ATUALIZADO 27/08:** saída de manhã é do **Hótel Búðir** (~2h até Reykjavík). A **Sky Lagoon NÃO está reservada** — a Blue Lagoon já foi no Dia 1; se quiserem o banho de despedida, comprar em skylagoon.com 1–2 dias antes. Hotel da noite: **Reykjavík Grand** (não o Local 101, que foi a 1ª noite).
 **Foco:** Travessia + Reykjavík cultural + 🛁 Sky Lagoon + jantar de despedida
 **Refeições:** almoço no centro de Reykjavík · jantar premium de fechamento
 

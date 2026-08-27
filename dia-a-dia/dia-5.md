@@ -1,7 +1,9 @@
 # Dia 5 (04/09) — Skaftafell → Höfn (Sudeste Glacial)
 
 **Trajeto:** \~143 km · \~2h06 de direção pura (conte 2h45 com paradas)
-**Hospedagem:** Central Stays Höfn
+**Hospedagem:** REY Stays – Small & Cozy Studio, Höfn (um estúdio por casal; sem café da manhã) · PAGO
+
+> ⚠️ **ATUALIZADO 27/08 — o dia mudou:** o **glacier walk é HOJE às 09:00** (Glacier Adventure, base camp em **Hali**, ao lado do Hali Country Hotel — chegar 08:40; pagamento ISK 67.600 pendente). Saída do Fosshotel Núpar às **07:00** (~1h30 de estrada). Depois do gelo: Jökulsárlón + Diamond Beach (barco anfíbio opcional, NÃO reservado) e Höfn. Svínafellsjökull foi para o Dia 4; Múlagljúfur virou opcional. Detalhes no site (index.html).
 **Foco:** Svínafellsjökull · Múlagljúfur · Jökulsárlón · Diamond Beach
 **Refeições especiais:** humarsúpa em Höfn (capital da lagosta)
 

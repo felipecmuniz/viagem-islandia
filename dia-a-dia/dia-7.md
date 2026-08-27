@@ -1,7 +1,9 @@
 # Dia 7 (06/09) — Egilsstaðir → Mývatn (Hengifoss + Stuðlagil)
 
 **Trajeto:** \~290 km · \~4h30 de direção pura (com paradas conte \~5h)
-**Hospedagem:** Laxá Hótel (Mývatn)
+**Hospedagem:** Laxá Hótel (Mývatn) — ⚠️ pagar HOJE 02/09 (WISE Felipe + cartão Paloma); café incluído
+
+> ⚠️ **ATUALIZADO 27/08:** o café da manhã de hoje é no **East Apartment** (comprado na véspera), não no Hérað.
 **Foco:** Trilha Hengifoss + Stuðlagil lado leste + travessia do planalto
 **Refeições:** almoço em Egilsstaðir · jantar no próprio Hotel Laxá
 

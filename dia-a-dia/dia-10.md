@@ -1,7 +1,9 @@
 # Dia 10 (09/09) — Akureyri → Snæfellsnes (Kirkjufell ao pôr do sol)
 
 **Trajeto:** \~440 km · \~5h30 de direção pura (com paradas conte \~6h30)
-**Hospedagem:** Hotel Framnes (Grundarfjörður)
+**Hospedagem:** Hótel Fransiskus Stykkishólmi (Stykkishólmur; sem café da manhã) · PAGO
+
+> ⚠️ **ATUALIZADO 27/08:** o pernoite é em **Stykkishólmur**, não em Grundarfjörður. Kirkjufell fica a ~40 min da vila — check-in primeiro, ida ao Kirkjufell para a hora dourada (~18:30) e jantar no Bjargasteinn (Grundarfjörður) ou de volta na vila (Sjávarpakkhúsið / Narfeyrarstofa). Aurora a pé: farol Súgandisey.
 **Foco:** Travessia + Kirkjufell ao pôr do sol + caça à aurora
 **Refeições:** almoço em Borgarnes · jantar em Grundarfjörður
 
